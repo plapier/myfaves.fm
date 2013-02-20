@@ -6,23 +6,24 @@
 </head>
 
 <body>
-  {{> player}}
-</body>
-
-<template name="player">
   <section class="main">
-    <ol id="tracks" name="{{ greeting }}">
-      <!--
-         - <li class="track">
-         -   <a href="#" id="">
-         -     <span class="playtoggle" />
-         -       <span class="gutter">
-         -         <span class="loading" />
-         -       </span>
-         -     <div class="title"><span class="artist">Anthony Hamilton & Elayna Boynton</span> &mdash; <span class="track">Freedom Kool & Kabul Edit</span></div>
-         -   </a>
-         - </li>
-         -->
+    <ol id="tracks">
+      {{> Songs}}
     </ol>
   </section>
+</body>
+
+<template name="Songs">
+  <li class="track not-playing">
+    <a href="#" id="{{ id }}">
+      <span class="playtoggle"/>
+        <div class="title">
+          <span class='artist'>{{ artist }}</span> &ndash; <span class='title'>{{ title }}</span></div>
+    </a>
+    <div class="progress"></div>
+    <div class="buffer"></div>
+    <audio preload="none">
+      <source src="{{ url }}"/>
+    </audio>
+  </li>
 </template>
