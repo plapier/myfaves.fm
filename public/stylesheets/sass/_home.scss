@@ -1,0 +1,119 @@
+$primary-background: #F6D35D;
+$primary-background-timer: #F4BC35;
+$primary-color: #F4BC35;
+
+$secondary-background: #2ECC71;
+$secondary-color: #26AE60;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #EEE;
+}
+
+ol, ul {
+  margin: 0;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+section.main {
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      background: $secondary-background;
+      position: relative;
+
+      a {
+        color: $secondary-color;
+        // opacity: 0.5;
+        display: block;
+        display: table;
+        height: 116px;
+        padding: 20px 32px;
+        text-decoration: none;
+        // @include transition(all 0.08s);
+        width: 100%;
+
+        &:hover {
+          // opacity: 1.0;
+          // @include transition(all 0.3s);
+        }
+      }
+
+      .playtoggle {
+        // background-image: url("/images/play.svg");
+        -webkit-mask-image: url("/images/play.svg");
+        background-color: $secondary-color;
+        -webkit-mask-position: 50% 50%;
+        // -webkit-mask-size: 50px 50px;
+        -webkit-mask-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        @include background-size(contain);
+        display: table-cell;
+        height: 50px;
+        width: 50px;
+      }
+
+      &.playing-track {
+        background: $primary-background;
+
+        a {
+          color: $primary-color;
+          opacity: 1.0;
+          @include transition(all 0s);
+
+          .playtoggle {
+            // background-image: url("/images/pause.svg");
+            -webkit-mask-image: url("/images/pause.svg");
+            background-color: $primary-color;
+          }
+        }
+
+        .buffer {
+          background-color: $primary-color;
+        }
+
+        &.paused .playtoggle {
+          -webkit-mask-image: url("/images/play.svg");
+        }
+      }
+
+      div.title {
+        display: table-cell;
+        font: $helvetica;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 48px;
+        padding-left: 50px;
+        vertical-align: middle;
+      }
+
+      div.progress {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: hsla(0, 0%, 100%, 0.12);
+        z-index: 1;
+      }
+
+      div.buffer {
+        background: rgba($secondary-color, 0.35);
+        bottom: 0;
+        height: 4px;
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+}

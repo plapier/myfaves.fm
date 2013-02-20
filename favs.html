@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <title>Favs.fm</title>
+  <link rel="stylesheet" href="stylesheets/application.css">
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
+</head>
+
+<body>
+  {{> player}}
+</body>
+
+<template name="player">
+  <section class="main">
+    <ol id="tracks" name="{{ greeting }}">
+      <!--
+         - <li class="track">
+         -   <a href="#" id="">
+         -     <span class="playtoggle" />
+         -       <span class="gutter">
+         -         <span class="loading" />
+         -       </span>
+         -     <div class="title"><span class="artist">Anthony Hamilton & Elayna Boynton</span> &mdash; <span class="track">Freedom Kool & Kabul Edit</span></div>
+         -   </a>
+         - </li>
+         -->
+    </ol>
+  </section>
+</template>
