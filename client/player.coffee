@@ -3,17 +3,21 @@
   endTime = $currentSong.duration - 5
   $currentSong.currentTime = endTime
 
-# @currentTrack = []
+@playNext = () ->
+  currentTrack = $("#tracks").find(".playing-track")
+  if ($(currentTrack).length is 0) or ($(currentTrack).next().length is 0)
+    nextTrack = $('li:first-child')
+    new PlaySong(nextTrack)
+  else if $(currentTrack).length isnt 0
+    nextTrack = $(currentTrack).next()
+    new PlaySong(nextTrack)
 
-# @playNext = () ->
-  # currentTrack = $('li.playing-track')
-  # nextTrack = currentTrack.next()
-  # PlayTrack(nextTrack)
+@playPrev = (currentTrack) ->
+  currentTrack = $("#tracks").find(".playing-track")
+  unless $(currentTrack).prev().length is 0
+    prevTrack = $(currentTrack).prev()
+    new PlaySong(prevTrack)
 
-# @playPrev = (currentTrack) ->
-  # nextTrack = currentTrack.prev()
-  # PlayTrack(prevTrack)
-  # currentTrack = $('li.track:first-child')
 class PlaySong
   @clickedTrack
   @audio

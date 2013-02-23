@@ -5,5 +5,5 @@ $(document).keyup (event) ->
     right: 39
 
   switch keyCode
-    when arrow.left then @playPrev()
-    when arrow.right then @playNext()
+    when arrow.left then playPrev()
+    when arrow.right then playNext()
