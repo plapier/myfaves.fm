@@ -6,12 +6,19 @@
 </head>
 
 <body>
+  <div class="overlay">
+    {{> Username}}
+  </div>
   <section class="main">
     <ol id="tracks">
       {{> Songs}}
     </ol>
   </section>
 </body>
+
+<template name="Username">
+  <input type="text" id="username-input" placeholder="ex.fm username..." autofocus/>
+</template>
 
 <template name="Songs">
   {{#each Tracks}}
