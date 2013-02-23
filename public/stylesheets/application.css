@@ -334,7 +334,8 @@ html, body {
   height: 100%; }
 
 body {
-  background: #EEE; }
+  background: #EEE;
+  position: relative; }
 
 ol, ul {
   margin: 0; }
@@ -343,6 +344,35 @@ ol, ul {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+div.overlay {
+  height: 141.64971px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -108.32486px;
+  position: fixed;
+  top: 50%;
+  width: 600px;
+  z-index: 1; }
+  div.overlay input {
+    border: 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.4);
+    font-size: 50px;
+    padding: 0 20px;
+    font-weight: 200;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #219954; }
+    div.overlay input::-webkit-input-placeholder {
+      font-style: italic; }
+    div.overlay input:-moz-placeholder {
+      font-style: italic; }
+    div.overlay input:-ms-input-placeholder {
+      font-style: italic; }
+    div.overlay input:focus, div.overlay input:active {
+      box-shadow: 0;
+      outline: none; }
 
 section.main ol {
   margin: 0;

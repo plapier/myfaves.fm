@@ -11,6 +11,7 @@ html, body {
 
 body {
   background: #EEE;
+  position: relative;
 }
 
 ol, ul {
@@ -21,8 +22,41 @@ ol, ul {
   @include box-sizing(border-box);
 }
 
-section.main {
+div.overlay {
+  $width: 600px;
+  $height: golden-ratio($width, -3);
+  height: $height;
+  left: 50%;
+  margin-left: -$width  / 2;
+  margin-top:  (-$height - 75px) / 2;
+  position: fixed;
+  top: 50%;
+  width: $width;
+  z-index: 1;
 
+  input {
+    border: 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 18px 0 hsla(0, 0%, 0%, 0.4);
+    font-size: 50px;
+    padding: 0 20px;
+    font-weight: 200;
+    height: 100%;
+    width: 100%;
+    border: 1px solid darken($secondary-color, 5%);
+
+    @include placeholder {
+      font-style: italic;
+    }
+
+    &:focus, &:active {
+      box-shadow: 0;
+      outline: none;
+    }
+  }
+}
+
+section.main {
   ol {
     margin: 0;
     padding: 0;
