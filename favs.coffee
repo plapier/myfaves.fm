@@ -22,7 +22,7 @@ class TrackParser
 
 FetchUserTracks = (username) ->
   Songs.remove({})
-  url = "http://ex.fm/api/v3/user/" + username + "/loved?" + "results=2"
+  url = "http://ex.fm/api/v3/user/" + username + "/loved?" + "results=20"
   Meteor.http.get url, (error, results) ->
     tracks_data = JSON.parse(results.content)
     for track_data in tracks_data.songs
@@ -36,7 +36,7 @@ if Meteor.isClient
     if event.keyCode is 13
       $inputElement = $('#username-input')
       username = $inputElement.val()
-      $inputElement.hide()
+      $inputElement.parent().hide()
       FetchUserTracks(username)
 
 

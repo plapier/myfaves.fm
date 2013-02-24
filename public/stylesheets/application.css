@@ -335,7 +335,8 @@ html, body {
 
 body {
   background: #EEE;
-  position: relative; }
+  position: relative;
+  font-family: "proxima-nova-soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 ol, ul {
   margin: 0; }
@@ -391,6 +392,8 @@ section.main ol {
       width: 100%; }
     section.main ol li .playtoggle {
       -webkit-mask-image: url("/images/play.svg");
+      mask: url("/images/play.svg");
+      clip-path: url("/images/play.svg");
       background-color: #26ae60;
       -webkit-mask-position: 50% 50%;
       -webkit-mask-repeat: no-repeat;
@@ -416,28 +419,41 @@ section.main ol {
         transition: all 0s; }
         section.main ol li.playing-track a .playtoggle {
           -webkit-mask-image: url("/images/pause.svg");
+          mask: url("/images/pause.svg");
           background-color: #f4bc35; }
       section.main ol li.playing-track .buffer {
-        background-color: #f4bc35; }
+        background-color: #f4bc35;
+        opacity: 1; }
       section.main ol li.playing-track.paused .playtoggle {
-        -webkit-mask-image: url("/images/play.svg"); }
+        -webkit-mask-image: url("/images/play.svg");
+        mask: url("/images/play.svg"); }
     section.main ol li div.title {
       display: table-cell;
-      font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 36px;
+      font-weight: 600;
       margin-left: 48px;
       padding-left: 50px;
       vertical-align: middle; }
     section.main ol li div.progress {
       height: 100%;
       position: absolute;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0;
       top: 0;
       left: 0;
       background-color: rgba(255, 255, 255, 0.12);
       z-index: 1; }
     section.main ol li div.buffer {
       background: rgba(38, 174, 96, 0.35);
+      opacity: 0;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0;
       bottom: 0;
       height: 4px;
       left: 0;

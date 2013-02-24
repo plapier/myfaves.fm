@@ -18,13 +18,22 @@
     prevTrack = $(currentTrack).prev()
     new PlaySong(prevTrack)
 
+@playOrPause = (audio) ->
+  unless audio
+    audio = $(".playing-track").find("audio").get(0)
+  if audio.paused
+    audio.play()
+  else
+    audio.pause()
+
+
 class PlaySong
   @clickedTrack
   @audio
 
   constructor: (currentTrack) ->
     @playTrack(currentTrack)
-    @playOrPause(@audio)
+    playOrPause(@audio)
     @showBuffer(@clickedTrack, @audio)
     @showTrackProgress(@clickedTrack, @audio)
     @pauseAllOtherTracks()
@@ -48,14 +57,7 @@ class PlaySong
     ).on "ended", ->
       $(@).removeClass "playing"
       $(@clickedTrack).removeClass("playing-track").addClass("not-playing")
-      @playNextTrack(@clickedTrack)
-
-
-  playOrPause: (audio) ->
-    if audio.paused
-      audio.play()
-    else
-      audio.pause()
+      playNext()
 
   pauseAllOtherTracks: () ->
     $('.not-playing audio').each ->

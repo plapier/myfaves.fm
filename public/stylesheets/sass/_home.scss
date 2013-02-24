@@ -1,9 +1,3 @@
-$primary-background: #F6D35D;
-$primary-background-timer: #F4BC35;
-$primary-color: #F4BC35;
-
-$secondary-background: #2ECC71;
-$secondary-color: #26AE60;
 
 html, body {
   height: 100%;
@@ -12,6 +6,7 @@ html, body {
 body {
   background: #EEE;
   position: relative;
+  font-family: $base-font-family;
 }
 
 ol, ul {
@@ -86,6 +81,8 @@ section.main {
       .playtoggle {
         // background-image: url("/images/play.svg");
         -webkit-mask-image: url("/images/play.svg");
+        mask: url("/images/play.svg");
+        clip-path: url("/images/play.svg");
         background-color: $secondary-color;
         -webkit-mask-position: 50% 50%;
         // -webkit-mask-size: 50px 50px;
@@ -107,26 +104,27 @@ section.main {
           @include transition(all 0s);
 
           .playtoggle {
-            // background-image: url("/images/pause.svg");
             -webkit-mask-image: url("/images/pause.svg");
+            mask: url("/images/pause.svg");
             background-color: $primary-color;
           }
         }
 
         .buffer {
           background-color: $primary-color;
+          opacity: 1;
         }
 
         &.paused .playtoggle {
           -webkit-mask-image: url("/images/play.svg");
+          mask: url("/images/play.svg");
         }
       }
 
       div.title {
         display: table-cell;
-        font: $helvetica;
-        font-size: 28px;
-        font-weight: bold;
+        font-size: $title-font-size;
+        font-weight: $title-font-weight;
         margin-left: 48px;
         padding-left: 50px;
         vertical-align: middle;
@@ -135,6 +133,7 @@ section.main {
       div.progress {
         height: 100%;
         position: absolute;
+        @include transition;
         top: 0;
         left: 0;
         background-color: hsla(0, 0%, 100%, 0.12);
@@ -143,6 +142,8 @@ section.main {
 
       div.buffer {
         background: rgba($secondary-color, 0.35);
+        opacity: 0;
+        @include transition;
         bottom: 0;
         height: 4px;
         left: 0;
