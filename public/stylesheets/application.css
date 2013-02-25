@@ -335,8 +335,8 @@ html, body {
 
 body {
   background: #EEE;
-  position: relative;
-  font-family: "proxima-nova-soft", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "proxima-nova-soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative; }
 
 ol, ul {
   margin: 0; }
@@ -357,46 +357,34 @@ div.overlay {
   z-index: 1; }
   div.overlay input {
     border: 0px;
+    border: 1px solid #219954;
     border-radius: 4px;
     box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.4);
     font-size: 50px;
-    padding: 0 20px;
     font-weight: 200;
     height: 100%;
-    width: 100%;
-    border: 1px solid #219954; }
-    div.overlay input::-webkit-input-placeholder {
-      font-style: italic; }
-    div.overlay input:-moz-placeholder {
-      font-style: italic; }
-    div.overlay input:-ms-input-placeholder {
-      font-style: italic; }
+    padding: 0 20px;
+    width: 100%; }
     div.overlay input:focus, div.overlay input:active {
       box-shadow: 0;
       outline: none; }
 
 section.main ol {
+  list-style: none;
   margin: 0;
-  padding: 0;
-  list-style: none; }
+  padding: 0; }
   section.main ol li {
     background: #2ecc71;
     position: relative; }
     section.main ol li a {
       color: #26ae60;
-      display: block;
       display: table;
       height: 116px;
       padding: 20px 32px;
       text-decoration: none;
       width: 100%; }
     section.main ol li .playtoggle {
-      -webkit-mask-image: url("/images/play.svg");
-      mask: url("/images/play.svg");
-      clip-path: url("/images/play.svg");
       background-color: #26ae60;
-      -webkit-mask-position: 50% 50%;
-      -webkit-mask-repeat: no-repeat;
       background-position: 50% 50%;
       background-repeat: no-repeat;
       -webkit-background-size: contain;
@@ -406,6 +394,10 @@ section.main ol {
       background-size: contain;
       display: table-cell;
       height: 50px;
+      -webkit-mask-image: url("/images/play.svg");
+      mask: url("/images/play.svg");
+      -webkit-mask-position: 50% 50%;
+      -webkit-mask-repeat: no-repeat;
       width: 50px; }
     section.main ol li.playing-track {
       background: #f6d35d; }
@@ -418,9 +410,9 @@ section.main ol {
         -o-transition: all 0s;
         transition: all 0s; }
         section.main ol li.playing-track a .playtoggle {
+          background-color: #f4bc35;
           -webkit-mask-image: url("/images/pause.svg");
-          mask: url("/images/pause.svg");
-          background-color: #f4bc35; }
+          mask: url("/images/pause.svg"); }
       section.main ol li.playing-track .buffer {
         background-color: #f4bc35;
         opacity: 1; }
@@ -435,26 +427,26 @@ section.main ol {
       padding-left: 50px;
       vertical-align: middle; }
     section.main ol li div.progress {
+      background-color: rgba(255, 255, 255, 0.12);
       height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0;
+      z-index: 1; }
+    section.main ol li div.buffer {
+      background: rgba(38, 174, 96, 0.35);
+      bottom: 0;
+      height: 4px;
+      left: 0;
+      opacity: 0;
       position: absolute;
       -webkit-transition: all 0.15s ease-out 0;
       -moz-transition: all 0.15s ease-out 0;
       -ms-transition: all 0.15s ease-out 0;
       -o-transition: all 0.15s ease-out 0;
-      transition: all 0.15s ease-out 0;
-      top: 0;
-      left: 0;
-      background-color: rgba(255, 255, 255, 0.12);
-      z-index: 1; }
-    section.main ol li div.buffer {
-      background: rgba(38, 174, 96, 0.35);
-      opacity: 0;
-      -webkit-transition: all 0.15s ease-out 0;
-      -moz-transition: all 0.15s ease-out 0;
-      -ms-transition: all 0.15s ease-out 0;
-      -o-transition: all 0.15s ease-out 0;
-      transition: all 0.15s ease-out 0;
-      bottom: 0;
-      height: 4px;
-      left: 0;
-      position: absolute; }
+      transition: all 0.15s ease-out 0; }

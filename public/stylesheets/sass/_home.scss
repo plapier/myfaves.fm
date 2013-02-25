@@ -5,8 +5,8 @@ html, body {
 
 body {
   background: #EEE;
-  position: relative;
   font-family: $base-font-family;
+  position: relative;
 }
 
 ol, ul {
@@ -31,18 +31,14 @@ div.overlay {
 
   input {
     border: 0px;
+    border: 1px solid darken($secondary-color, 5%);
     border-radius: 4px;
     box-shadow: 0 2px 18px 0 hsla(0, 0%, 0%, 0.4);
     font-size: 50px;
-    padding: 0 20px;
     font-weight: 200;
     height: 100%;
+    padding: 0 20px;
     width: 100%;
-    border: 1px solid darken($secondary-color, 5%);
-
-    @include placeholder {
-      font-style: italic;
-    }
 
     &:focus, &:active {
       box-shadow: 0;
@@ -53,9 +49,9 @@ div.overlay {
 
 section.main {
   ol {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
 
     li {
       background: $secondary-background;
@@ -63,35 +59,25 @@ section.main {
 
       a {
         color: $secondary-color;
-        // opacity: 0.5;
-        display: block;
         display: table;
         height: 116px;
         padding: 20px 32px;
         text-decoration: none;
-        // @include transition(all 0.08s);
         width: 100%;
-
-        &:hover {
-          // opacity: 1.0;
-          // @include transition(all 0.3s);
-        }
       }
 
       .playtoggle {
-        // background-image: url("/images/play.svg");
-        -webkit-mask-image: url("/images/play.svg");
-        mask: url("/images/play.svg");
-        clip-path: url("/images/play.svg");
+        // clip-path: url("/images/play.svg");
         background-color: $secondary-color;
-        -webkit-mask-position: 50% 50%;
-        // -webkit-mask-size: 50px 50px;
-        -webkit-mask-repeat: no-repeat;
         background-position: 50% 50%;
         background-repeat: no-repeat;
         @include background-size(contain);
         display: table-cell;
         height: 50px;
+        -webkit-mask-image: url("/images/play.svg");
+        mask: url("/images/play.svg");
+        -webkit-mask-position: 50% 50%;
+        -webkit-mask-repeat: no-repeat;
         width: 50px;
       }
 
@@ -104,9 +90,9 @@ section.main {
           @include transition(all 0s);
 
           .playtoggle {
+            background-color: $primary-color;
             -webkit-mask-image: url("/images/pause.svg");
             mask: url("/images/pause.svg");
-            background-color: $primary-color;
           }
         }
 
@@ -131,23 +117,23 @@ section.main {
       }
 
       div.progress {
-        height: 100%;
-        position: absolute;
-        @include transition;
-        top: 0;
-        left: 0;
         background-color: hsla(0, 0%, 100%, 0.12);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        @include transition;
         z-index: 1;
       }
 
       div.buffer {
         background: rgba($secondary-color, 0.35);
-        opacity: 0;
-        @include transition;
         bottom: 0;
         height: 4px;
         left: 0;
+        opacity: 0;
         position: absolute;
+        @include transition;
       }
     }
   }
