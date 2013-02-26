@@ -8,22 +8,33 @@
 </head>
 
 <body>
-  <div class="overlay">
+  {{> RenderTemplate}}
+</body>
+
+<template name="RenderTemplate">
+  {{#if has_username.length}}
+    {{> RenderPlaylist}}
+  {{else}}
     {{> Username}}
+  {{/if}}
+
+</template>
+<template name="Username">
+  <div class="overlay">
+    <input type="text" id="username-input" placeholder="ex.fm username..." autofocus/>
   </div>
+</template>
+
+<template name="RenderPlaylist">
   <section class="main">
     <ol id="tracks">
       {{> Songs}}
     </ol>
   </section>
-</body>
-
-<template name="Username">
-  <input type="text" id="username-input" placeholder="ex.fm username..." autofocus/>
 </template>
 
 <template name="Songs">
-  {{#each Tracks}}
+  {{#each Track}}
     <li class="track not-playing">
       <a href="#" id="{{ id }}">
         <span class="playtoggle"/>
@@ -33,7 +44,7 @@
       <div class="progress"></div>
       <div class="buffer"></div>
       <audio preload="none">
-        <source src="{{ url }}"/>
+        <source src="{{ url }}">
       </audio>
     </li>
   {{/each}}

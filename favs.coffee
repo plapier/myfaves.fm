@@ -1,6 +1,6 @@
 Songs = new Meteor.Collection(null)
+Session.setDefault('username', false)
 soundcloud_id = "dcfa20cb4e60440dbf3e8bb3c54b68a8"
-@username = "plapier"
 
 class TrackParser
   constructor: (track_data) ->
@@ -20,8 +20,9 @@ class TrackParser
     title:  @title
     url:    @url()
 
-FetchUserTracks = (username) ->
+FetchUserTracks = ->
   Songs.remove({})
+  username = Session.get('username')
   url = "http://ex.fm/api/v3/user/" + username + "/loved?" + "results=20"
   Meteor.http.get url, (error, results) ->
     tracks_data = JSON.parse(results.content)
@@ -31,21 +32,20 @@ FetchUserTracks = (username) ->
 
 
 if Meteor.isClient
-  FetchUserTracks(username)
+  Template.RenderTemplate.has_username = ->
+    Session.get('username')
+
   Template.Username.events "keyup input#username-input": (event) ->
     if event.keyCode is 13
       $inputElement = $('#username-input')
       username = $inputElement.val()
+      Session.set('username',  username)
       $inputElement.parent().hide()
-      FetchUserTracks(username)
 
-
-  Template.Songs.Tracks = ->
+  Template.Songs.Track = ->
+    FetchUserTracks()
     Songs.find({})
 
-  # Template.Songs.events "click input": ->
-    # # template data, if any, is available in 'this'
-    # console.log "You pressed the button"  if typeof console isnt "undefined"
 
 if Meteor.isServer
   Meteor.startup ->
