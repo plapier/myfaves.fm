@@ -79,10 +79,3 @@ class PlaySong
       progressIndicator.css width: pos + "%"
       unless loaded
         loaded = true
-
-$(window).load ->
-  $("#tracks").on "click", "li.track", ->
-    event.preventDefault()
-    new PlaySong(@)
-
-

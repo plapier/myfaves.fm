@@ -1,0 +1,37 @@
+//************************************************************************//
+// Landing Page Template
+//************************************************************************//
+section.main.landing {
+  background: $secondary-background;
+  height: 100%;
+  width: 100%;
+
+  div.overlay {
+    $width: 600px;
+    $height: golden-ratio($width, -3);
+    height: $height;
+    left: 50%;
+    margin-left: -$width  / 2;
+    margin-top:  (-$height - 75px) / 2;
+    position: fixed;
+    top: 50%;
+    width: $width;
+    z-index: 1;
+
+    input {
+      border: 0;
+      border-radius: 4px;
+      font-size: 50px;
+      font-weight: 200;
+      height: 100%;
+      padding: 0 20px;
+      width: 100%;
+      color: darken($secondary-color, 10%);
+
+      &:focus, &:active {
+        box-shadow: 0;
+        outline: none;
+      }
+    }
+  }
+}

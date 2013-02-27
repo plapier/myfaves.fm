@@ -330,6 +330,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html, body {
   height: 100%; }
 
@@ -341,49 +346,49 @@ body {
 ol, ul {
   margin: 0; }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-div.overlay {
-  height: 141.64971px;
-  left: 50%;
-  margin-left: -300px;
-  margin-top: -108.32486px;
-  position: fixed;
-  top: 50%;
-  width: 600px;
-  z-index: 1; }
-  div.overlay input {
-    border: 0px;
-    border: 1px solid #219954;
-    border-radius: 4px;
-    box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.4);
-    font-size: 50px;
-    font-weight: 200;
-    height: 100%;
-    padding: 0 20px;
-    width: 100%; }
-    div.overlay input:focus, div.overlay input:active {
-      box-shadow: 0;
+header.playlist-header {
+  background: #29b765;
+  *zoom: 1;
+  color: #219954; }
+  header.playlist-header:before, header.playlist-header:after {
+    content: " ";
+    display: table; }
+  header.playlist-header:after {
+    clear: both; }
+  header.playlist-header h1 {
+    float: left;
+    font-size: 32px;
+    margin: 10px 32px;
+    margin-left: 32px; }
+  header.playlist-header input {
+    background: transparent;
+    border: 0;
+    clear: right;
+    color: #219954;
+    float: right;
+    font-size: 32px;
+    padding: 10px 32px;
+    text-align: right; }
+    header.playlist-header input:focus {
+      background: #25a25a;
+      color: #eee;
       outline: none; }
 
-section.main ol {
+section.main.playlist ol {
   list-style: none;
   margin: 0;
   padding: 0; }
-  section.main ol li {
+  section.main.playlist ol li {
     background: #2ecc71;
     position: relative; }
-    section.main ol li a {
+    section.main.playlist ol li a {
       color: #26ae60;
       display: table;
       height: 116px;
       padding: 20px 32px;
       text-decoration: none;
       width: 100%; }
-    section.main ol li .playtoggle {
+    section.main.playlist ol li .playtoggle {
       background-color: #26ae60;
       background-position: 50% 50%;
       background-repeat: no-repeat;
@@ -399,9 +404,9 @@ section.main ol {
       -webkit-mask-position: 50% 50%;
       -webkit-mask-repeat: no-repeat;
       width: 50px; }
-    section.main ol li.playing-track {
+    section.main.playlist ol li.playing-track {
       background: #f6d35d; }
-      section.main ol li.playing-track a {
+      section.main.playlist ol li.playing-track a {
         color: #f4bc35;
         opacity: 1.0;
         -webkit-transition: all 0s;
@@ -409,24 +414,24 @@ section.main ol {
         -ms-transition: all 0s;
         -o-transition: all 0s;
         transition: all 0s; }
-        section.main ol li.playing-track a .playtoggle {
+        section.main.playlist ol li.playing-track a .playtoggle {
           background-color: #f4bc35;
           -webkit-mask-image: url("/images/pause.svg");
           mask: url("/images/pause.svg"); }
-      section.main ol li.playing-track .buffer {
+      section.main.playlist ol li.playing-track .buffer {
         background-color: #f4bc35;
         opacity: 1; }
-      section.main ol li.playing-track.paused .playtoggle {
+      section.main.playlist ol li.playing-track.paused .playtoggle {
         -webkit-mask-image: url("/images/play.svg");
         mask: url("/images/play.svg"); }
-    section.main ol li div.title {
+    section.main.playlist ol li div.title {
       display: table-cell;
       font-size: 36px;
       font-weight: 600;
       margin-left: 48px;
       padding-left: 50px;
       vertical-align: middle; }
-    section.main ol li div.progress {
+    section.main.playlist ol li div.progress {
       background-color: rgba(255, 255, 255, 0.12);
       height: 100%;
       left: 0;
@@ -438,7 +443,7 @@ section.main ol {
       -o-transition: all 0.15s ease-out 0;
       transition: all 0.15s ease-out 0;
       z-index: 1; }
-    section.main ol li div.buffer {
+    section.main.playlist ol li div.buffer {
       background: rgba(38, 174, 96, 0.35);
       bottom: 0;
       height: 4px;
@@ -450,3 +455,29 @@ section.main ol {
       -ms-transition: all 0.15s ease-out 0;
       -o-transition: all 0.15s ease-out 0;
       transition: all 0.15s ease-out 0; }
+
+section.main.landing {
+  background: #2ecc71;
+  height: 100%;
+  width: 100%; }
+  section.main.landing div.overlay {
+    height: 141.64971px;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -108.32486px;
+    position: fixed;
+    top: 50%;
+    width: 600px;
+    z-index: 1; }
+    section.main.landing div.overlay input {
+      border: 0;
+      border-radius: 4px;
+      font-size: 50px;
+      font-weight: 200;
+      height: 100%;
+      padding: 0 20px;
+      width: 100%;
+      color: #1d8449; }
+      section.main.landing div.overlay input:focus, section.main.landing div.overlay input:active {
+        box-shadow: 0;
+        outline: none; }

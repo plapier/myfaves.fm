@@ -17,20 +17,30 @@
   {{else}}
     {{> Username}}
   {{/if}}
-
 </template>
+
 <template name="Username">
-  <div class="overlay">
-    <input type="text" id="username-input" placeholder="ex.fm username..." autofocus/>
-  </div>
+  <section class="main landing">
+    <div class="overlay">
+      <input type="text" id="username-input" placeholder="ex.fm username..." autofocus>
+    </div>
+  </section>
 </template>
 
 <template name="RenderPlaylist">
-  <section class="main">
+  {{> Header}}
+  <section class="main playlist">
     <ol id="tracks">
       {{> Songs}}
     </ol>
   </section>
+</template>
+
+<template name="Header">
+  <header class="playlist-header">
+    <h1>myfaves.fm</h1>
+    <input type="text" value="{{ current_username }}">
+  </header>
 </template>
 
 <template name="Songs">

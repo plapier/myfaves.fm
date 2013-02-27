@@ -1,53 +1,34 @@
+header.playlist-header {
+  background: $header-background-1;
+  @include clearfix;
+  color: $header-color-1;
 
-html, body {
-  height: 100%;
-}
-
-body {
-  background: #EEE;
-  font-family: $base-font-family;
-  position: relative;
-}
-
-ol, ul {
-  margin: 0;
-}
-
-* {
-  @include box-sizing(border-box);
-}
-
-div.overlay {
-  $width: 600px;
-  $height: golden-ratio($width, -3);
-  height: $height;
-  left: 50%;
-  margin-left: -$width  / 2;
-  margin-top:  (-$height - 75px) / 2;
-  position: fixed;
-  top: 50%;
-  width: $width;
-  z-index: 1;
+  h1 {
+    float: left;
+    font-size: 32px;
+    margin: 10px $gutter;
+    margin-left: $gutter;
+  }
 
   input {
-    border: 0px;
-    border: 1px solid darken($secondary-color, 5%);
-    border-radius: 4px;
-    box-shadow: 0 2px 18px 0 hsla(0, 0%, 0%, 0.4);
-    font-size: 50px;
-    font-weight: 200;
-    height: 100%;
-    padding: 0 20px;
-    width: 100%;
+    background: transparent;
+    border: 0;
+    clear: right;
+    color: $header-color-1;
+    float: right;
+    font-size: 32px;
+    padding: 10px $gutter;
+    text-align: right;
 
-    &:focus, &:active {
-      box-shadow: 0;
+    &:focus {
+      background: $header-background-2;
+      color: #eee;
       outline: none;
     }
   }
 }
 
-section.main {
+section.main.playlist {
   ol {
     list-style: none;
     margin: 0;
@@ -67,7 +48,6 @@ section.main {
       }
 
       .playtoggle {
-        // clip-path: url("/images/play.svg");
         background-color: $secondary-color;
         background-position: 50% 50%;
         background-repeat: no-repeat;

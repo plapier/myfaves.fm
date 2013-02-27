@@ -1,0 +1,19 @@
+* {
+  @include box-sizing(border-box);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #EEE;
+  // background: $secondary-background;
+  // background: darken($secondary-background, 5%);
+  font-family: $base-font-family;
+  position: relative;
+}
+
+ol, ul {
+  margin: 0;
+}
