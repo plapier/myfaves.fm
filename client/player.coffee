@@ -19,11 +19,14 @@
     new PlaySong(prevTrack)
 
 @playOrPause = (audio) ->
+  currentTrack = $("#tracks").find(".playing-track")
   unless audio
-    audio = $(".playing-track").find("audio").get(0)
+    audio = currentTrack.find("audio").get(0)
   if audio.paused
+    currentTrack.removeClass("paused").addClass("playing")
     audio.play()
   else
+    currentTrack.removeClass("playing").addClass("paused")
     audio.pause()
 
 

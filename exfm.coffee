@@ -20,7 +20,7 @@ class ExfmTrackParser
 
 FetchExfmData = ->
   Songs.remove({})
-  username = Session.get('username')
+  username = Session.get('exfm_username')
   url = "http://ex.fm/api/v3/user/" + username + "/loved?" + "results=20"
   Meteor.http.get url, (error, results) ->
     tracks_data = JSON.parse(results.content)
@@ -28,3 +28,12 @@ FetchExfmData = ->
       parsed_track = new ExfmTrackParser(track_data)
       Songs.insert parsed_track.data()
 
+SetExfmUsername = (username) ->
+  $.totalStorage('exfm_username', username)
+  Session.set('exfm_username', username)
+
+GetExfmUsername = ->
+  username = $.totalStorage('exfm_username')
+  if username
+    Session.set('exfm_username', username)
+  Session.get('exfm_username')

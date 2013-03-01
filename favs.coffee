@@ -1,37 +1,37 @@
 Songs = new Meteor.Collection(null)
-Session.setDefault('username', false)
-
-
+Session.setDefault('exfm_username', false)
 
 ###### CLIENT #######
 if Meteor.isClient
+
   Template.RenderTemplate.has_username = ->
-    Session.get('username')
+    GetExfmUsername()
 
   Template.Username.events "keyup input#username-input": (event) ->
     if event.keyCode is 13
       $inputElement = $('#username-input')
-      username = $inputElement.val()
-      Session.set('username',  username)
+      SetExfmUsername($inputElement.val())
       $inputElement.parent().hide()
+
+  Template.RenderPlaylist.events "click li.track": (event) ->
+    event.preventDefault()
+    clickedElement = $(event.currentTarget)
+    new PlaySong(clickedElement)
 
   Template.Songs.Track = ->
     FetchExfmData()
     Songs.find({})
 
   Template.Header.current_username = ->
-    Session.get('username')
+    GetExfmUsername()
 
   Template.Header.events "keyup header input": (event) ->
     if event.keyCode is 13
-      $inputElement = $('header input')
-      username = $inputElement.val()
-      Session.set('username',  username)
+      exfm_username = $('header input').val()
+      SetExfmUsername(exfm_username)
 
-  Template.RenderPlaylist.events "click li.track": (event) ->
-    event.preventDefault()
-    clickedElement = $(event.currentTarget)
-    new PlaySong(clickedElement)
+
+# ---- Helper Functions ----
 
 
 ###### SERVER #######
