@@ -424,7 +424,7 @@ section.main.playlist ol {
       section.main.playlist ol li.playing-track.paused .playtoggle {
         -webkit-mask-image: url("/images/play.svg");
         mask: url("/images/play.svg"); }
-    section.main.playlist ol li div.title {
+    section.main.playlist ol li div.track-title {
       display: table-cell;
       font-size: 36px;
       font-weight: 600;

@@ -30,7 +30,6 @@ if Meteor.isClient
       exfm_username = $('header input').val()
       SetExfmUsername(exfm_username)
 
-
 # ---- Helper Functions ----
 
 

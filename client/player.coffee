@@ -29,8 +29,6 @@
     currentTrack.removeClass("playing").addClass("paused")
     audio.pause()
 
-$(document).ready ->
-
 
 class PlaySong
   @clickedTrack
@@ -39,7 +37,7 @@ class PlaySong
 
   constructor: (currentTrack) ->
     @setVars(currentTrack)
-    @checkForErrors(@audio)
+    @checkForErrors(@clickedTrack, @audio)
     @playTrack(@clickedTrack, @audio)
     playOrPause(@audio)
     @showCurrentBuffer(@clickedTrack, @audio)
@@ -50,41 +48,14 @@ class PlaySong
   setVars: (track) ->
     @clickedTrack = $(track)
     @audio = @clickedTrack.find("audio").get(0)
-    SC.initialize
-      client_id: "dcfa20cb4e60440dbf3e8bb3c54b68a8"
 
-  checkForErrors: (audio) ->
-    url = audio.currentSrc
-
-    if url.search("soundcloud") isnt -1
-      urlArray = url.split("/")
-      trackId = urlArray[4]
-      url = "/tracks/#{trackId}"
-
-      SC.get url, (track, error) ->
-        console.log track
-        if error
-          console.log "soundcloud error"
-
-    # audio.addEventListener "error", (->
-      # console.log true
-    # ), false
-
-    # $(audio).on "loadstart", ->
-      # console.log("loading")
-
-    # m = "loadstart"
-    # audio.addEventListener m, ((event) ->
-      # console.log("#{m}. Skip Song")
-    # ), false
-    # m = "abort"
-    # audio.addEventListener m, ((event) ->
-      # console.log("#{m}. Skip Song")
-    # ), false
-    # m = "error"
-    # audio.addEventListener m, ((event) ->
-      # console.log("#{m}. Skip Song")
-    # ), false
+  checkForErrors: (track, audio) ->
+    audio.addEventListener "error", ((event) ->
+      trackName = track.find('.title').text()
+      console.log "Error: #{trackName}"
+      track.addClass("error").removeClass("playing")
+      playNext()
+    ), true ## !useCapture must be set to true!
 
   playTrack: (track, audio) ->
     @bufferNext = false if typeof @bufferNext?
