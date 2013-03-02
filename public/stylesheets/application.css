@@ -404,9 +404,9 @@ section.main.playlist ol {
       -webkit-mask-position: 50% 50%;
       -webkit-mask-repeat: no-repeat;
       width: 50px; }
-    section.main.playlist ol li.playing-track {
+    section.main.playlist ol li.playing {
       background: #f6d35d; }
-      section.main.playlist ol li.playing-track a {
+      section.main.playlist ol li.playing a {
         color: #f4bc35;
         opacity: 1.0;
         -webkit-transition: all 0s;
@@ -414,14 +414,14 @@ section.main.playlist ol {
         -ms-transition: all 0s;
         -o-transition: all 0s;
         transition: all 0s; }
-        section.main.playlist ol li.playing-track a .playtoggle {
+        section.main.playlist ol li.playing a .playtoggle {
           background-color: #f4bc35;
           -webkit-mask-image: url("/images/pause.svg");
           mask: url("/images/pause.svg"); }
-      section.main.playlist ol li.playing-track .buffer {
+      section.main.playlist ol li.playing .buffer {
         background-color: #f4bc35;
         opacity: 1; }
-      section.main.playlist ol li.playing-track.paused .playtoggle {
+      section.main.playlist ol li.playing.paused .playtoggle {
         -webkit-mask-image: url("/images/play.svg");
         mask: url("/images/play.svg"); }
     section.main.playlist ol li div.track-title {

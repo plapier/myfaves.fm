@@ -1,10 +1,10 @@
 @endSong = () ->
-  $currentSong = $('.playing-track audio').get(0)
+  $currentSong = $('.playing audio').get(0)
   endTime = $currentSong.duration - 10
   $currentSong.currentTime = endTime
 
 @playNext = () ->
-  currentTrack = $("#tracks").find(".playing-track")
+  currentTrack = $("#tracks").find(".playing")
   if ($(currentTrack).length is 0) or ($(currentTrack).next().length is 0)
     nextTrack = $('li:first-child')
     new PlaySong(nextTrack)
@@ -13,20 +13,20 @@
     new PlaySong(nextTrack)
 
 @playPrev = (currentTrack) ->
-  currentTrack = $("#tracks").find(".playing-track")
+  currentTrack = $("#tracks").find(".playing")
   unless $(currentTrack).prev().length is 0
     prevTrack = $(currentTrack).prev()
     new PlaySong(prevTrack)
 
 @playOrPause = (audio) ->
-  currentTrack = $("#tracks").find(".playing-track")
+  currentTrack = $("#tracks").find(".playing")
   unless audio
     audio = currentTrack.find("audio").get(0)
   if audio.paused
-    currentTrack.removeClass("paused").addClass("playing")
+    currentTrack.removeClass("paused")
     audio.play()
   else
-    currentTrack.removeClass("playing").addClass("paused")
+    currentTrack.addClass("paused")
     audio.pause()
 
 
@@ -54,7 +54,7 @@ class PlaySong
     audio.addEventListener "error", ((event) ->
       trackName = track.find('.title').text()
       console.log "Error: #{trackName}"
-      track.addClass("error").removeClass("playing")
+      track.addClass("error")
       playNext()
     ), true ## !useCapture must be set to true!
 
@@ -62,19 +62,16 @@ class PlaySong
     @bufferNext = false if typeof @bufferNext?
 
     # remove class from all currently playing tracks
-    $('.playing-track').removeClass("playing-track").addClass("not-playing")
+    $('.playing').removeClass("playing").addClass("not-playing")
 
-    # add playing-track to clicked track
-    track.removeClass("not-playing").addClass("playing-track")
+    # add playing to clicked track
+    track.removeClass("not-playing").addClass("playing")
 
     $(audio).on("play", ->
-      $(@).addClass "playing"
       $(track).removeClass "paused"
     ).on("pause", ->
-      $(@).removeClass "playing"
       $(track).addClass "paused"
     ).on "ended", ->
-      $(@).removeClass "playing"
       $("track").addClass("not-playing")
       @bufferNext = null
       playNext()
