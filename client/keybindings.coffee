@@ -11,3 +11,4 @@ $(window).keydown (event) ->
     when space
       event.preventDefault()
       playOrPause()
+      # new playSong.playOrPause()

@@ -29,6 +29,8 @@
     currentTrack.removeClass("playing").addClass("paused")
     audio.pause()
 
+$(document).ready ->
+
 
 class PlaySong
   @clickedTrack
@@ -36,48 +38,89 @@ class PlaySong
   @bufferNext
 
   constructor: (currentTrack) ->
-    @playTrack(currentTrack)
+    @setVars(currentTrack)
+    @checkForErrors(@audio)
+    @playTrack(@clickedTrack, @audio)
     playOrPause(@audio)
     @showCurrentBuffer(@clickedTrack, @audio)
     @showTrackProgress(@clickedTrack, @audio, @bufferNext)
     @pauseAllOtherTracks()
     @bufferNextTrack(@clickedTrack, @audio, @bufferNext)
 
-  playTrack: (newTrack) ->
-    @clickedTrack = $(newTrack)
+  setVars: (track) ->
+    @clickedTrack = $(track)
     @audio = @clickedTrack.find("audio").get(0)
+    SC.initialize
+      client_id: "dcfa20cb4e60440dbf3e8bb3c54b68a8"
+
+  checkForErrors: (audio) ->
+    url = audio.currentSrc
+
+    if url.search("soundcloud") isnt -1
+      urlArray = url.split("/")
+      trackId = urlArray[4]
+      url = "/tracks/#{trackId}"
+
+      SC.get url, (track, error) ->
+        console.log track
+        if error
+          console.log "soundcloud error"
+
+    # audio.addEventListener "error", (->
+      # console.log true
+    # ), false
+
+    # $(audio).on "loadstart", ->
+      # console.log("loading")
+
+    # m = "loadstart"
+    # audio.addEventListener m, ((event) ->
+      # console.log("#{m}. Skip Song")
+    # ), false
+    # m = "abort"
+    # audio.addEventListener m, ((event) ->
+      # console.log("#{m}. Skip Song")
+    # ), false
+    # m = "error"
+    # audio.addEventListener m, ((event) ->
+      # console.log("#{m}. Skip Song")
+    # ), false
+
+  playTrack: (track, audio) ->
     @bufferNext = false if typeof @bufferNext?
 
     # remove class from all currently playing tracks
     $('.playing-track').removeClass("playing-track").addClass("not-playing")
 
     # add playing-track to clicked track
-    @clickedTrack.removeClass("not-playing").addClass("playing-track")
+    track.removeClass("not-playing").addClass("playing-track")
 
-    $(@audio).on("play", ->
+    $(audio).on("play", ->
       $(@).addClass "playing"
-      $(@clickedTrack).removeClass "paused"
+      $(track).removeClass "paused"
     ).on("pause", ->
       $(@).removeClass "playing"
-      $(@clickedTrack).addClass "paused"
+      $(track).addClass "paused"
     ).on "ended", ->
       $(@).removeClass "playing"
-      $(@clickedTrack).removeClass("playing-track").addClass("not-playing")
+      $("track").addClass("not-playing")
       @bufferNext = null
       playNext()
 
   pauseAllOtherTracks: () ->
     $('.not-playing audio').each ->
       @.pause()
-      @currentTime = 0 if @currentTime > 0
+      @.currentTime = 0 if @.currentTime > 0
 
   # Show loading Indicator
   showBuffer: (track, audio) ->
     loadingIndicator  = track.find('.buffer')
     if (audio.buffered isnt 'undefined')
       $(audio).on "progress", ->
-        loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10)
-        loadingIndicator.css width: loaded + "%"
+        ## check if audio has started buffered
+        if audio.buffered.length is 1
+          loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10)
+          loadingIndicator.css width: loaded + "%"
 
   showCurrentBuffer: (track, audio) ->
     @showBuffer(track, audio)
