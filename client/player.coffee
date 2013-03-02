@@ -43,6 +43,7 @@ class PlaySong
     @showCurrentBuffer(@clickedTrack, @audio)
     @showTrackProgress(@clickedTrack, @audio, @bufferNext)
     @pauseAllOtherTracks()
+    @scrollInView(@clickedTrack)
     @bufferNextTrack(@clickedTrack, @audio, @bufferNext)
 
   setVars: (track) ->
@@ -113,3 +114,6 @@ class PlaySong
     ), 1000
     nextAudio = $nextTrack.find('audio').get(0)
     @showBuffer($nextTrack, nextAudio)
+
+  scrollInView: (track) ->
+    track.scrollIntoView()
