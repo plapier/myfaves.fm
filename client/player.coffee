@@ -55,7 +55,7 @@ class PlaySong
       trackName = track.find('.title').text()
       console.log "Error: #{trackName}"
       track.addClass("error")
-      playNext()
+      new PlaySong(track.next())
     ), true ## !useCapture must be set to true!
 
   playTrack: (track, audio) ->
@@ -75,6 +75,7 @@ class PlaySong
       $("track").addClass("not-playing")
       @bufferNext = null
       playNext()
+      new PlaySong(track.next())
 
   pauseAllOtherTracks: () ->
     $('.not-playing audio').each ->
