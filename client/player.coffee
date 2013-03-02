@@ -1,6 +1,6 @@
 @endSong = () ->
   $currentSong = $('.playing-track audio').get(0)
-  endTime = $currentSong.duration - 5
+  endTime = $currentSong.duration - 10
   $currentSong.currentTime = endTime
 
 @playNext = () ->
@@ -33,17 +33,20 @@
 class PlaySong
   @clickedTrack
   @audio
+  @bufferNext
 
   constructor: (currentTrack) ->
     @playTrack(currentTrack)
     playOrPause(@audio)
-    @showBuffer(@clickedTrack, @audio)
-    @showTrackProgress(@clickedTrack, @audio)
+    @showCurrentBuffer(@clickedTrack, @audio)
+    @showTrackProgress(@clickedTrack, @audio, @bufferNext)
     @pauseAllOtherTracks()
+    @bufferNextTrack(@clickedTrack, @audio, @bufferNext)
 
   playTrack: (newTrack) ->
     @clickedTrack = $(newTrack)
     @audio = @clickedTrack.find("audio").get(0)
+    @bufferNext = false if typeof @bufferNext?
 
     # remove class from all currently playing tracks
     $('.playing-track').removeClass("playing-track").addClass("not-playing")
@@ -60,11 +63,12 @@ class PlaySong
     ).on "ended", ->
       $(@).removeClass "playing"
       $(@clickedTrack).removeClass("playing-track").addClass("not-playing")
+      @bufferNext = null
       playNext()
 
   pauseAllOtherTracks: () ->
     $('.not-playing audio').each ->
-      @pause()
+      @.pause()
       @currentTime = 0 if @currentTime > 0
 
   # Show loading Indicator
@@ -75,10 +79,23 @@ class PlaySong
         loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10)
         loadingIndicator.css width: loaded + "%"
 
-  showTrackProgress: (track, audio) ->
+  showCurrentBuffer: (track, audio) ->
+    @showBuffer(track, audio)
+
+  showTrackProgress: (track, audio, bufferNext) ->
     progressIndicator = track.find('.progress')
-    $(audio).bind "timeupdate", ->
-      pos = (audio.currentTime / audio.duration) * 100
-      progressIndicator.css width: pos + "%"
-      unless loaded
-        loaded = true
+    $(audio).bind "timeupdate", bufferNext, ->
+      progress = (audio.currentTime / audio.duration) * 100
+      progressIndicator.css width: progress + "%"
+
+  bufferNextTrack: (track, audio, bufferNext) ->
+    $nextTrack = track.next()
+    checkProgress = setInterval ( ->
+      progress = (audio.currentTime / audio.duration) * 100
+      if bufferNext? and progress > 75             #if track is 75% complete
+        bufferNext = true
+        $nextTrack.find('audio').attr('preload', 'metadata')
+        clearInterval(checkProgress)
+    ), 1000
+    nextAudio = $nextTrack.find('audio').get(0)
+    @showBuffer($nextTrack, nextAudio)
