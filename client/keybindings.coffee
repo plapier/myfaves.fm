@@ -13,5 +13,5 @@ $(window).keydown (event) ->
     when arrow.right then new PlaySong(track.next())
     when space
       event.preventDefault()
-      playOrPause()
-      # new playSong.playOrPause()
+      unless track?
+        new PlaySong(track)

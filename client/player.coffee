@@ -18,16 +18,16 @@
     prevTrack = $(currentTrack).prev()
     new PlaySong(prevTrack)
 
-@playOrPause = (audio) ->
-  currentTrack = $("#tracks").find(".playing")
-  unless audio
-    audio = currentTrack.find("audio").get(0)
-  if audio.paused
-    currentTrack.removeClass("paused")
-    audio.play()
-  else
-    currentTrack.addClass("paused")
-    audio.pause()
+# @playOrPause = (audio) ->
+  # currentTrack = $("#tracks").find(".playing")
+  # unless audio
+    # audio = currentTrack.find("audio").get(0)
+  # if audio.paused
+    # currentTrack.removeClass("paused")
+    # audio.play()
+  # else
+    # currentTrack.addClass("paused")
+    # audio.pause()
 
 
 class PlaySong
@@ -39,12 +39,13 @@ class PlaySong
     @setVars(currentTrack)
     @checkForErrors(@clickedTrack, @audio)
     @playTrack(@clickedTrack, @audio)
-    playOrPause(@audio)
+    # playOrPause(@audio)
     @showCurrentBuffer(@clickedTrack, @audio)
     @showTrackProgress(@clickedTrack, @audio, @bufferNext)
     @pauseAllOtherTracks()
     @scrollInView(@clickedTrack)
     @bufferNextTrack(@clickedTrack, @audio, @bufferNext)
+    @songEnd(@clickedTrack, @audio)
 
   setVars: (track) ->
     $('.playing').removeClass("playing").addClass("not-playing")
@@ -64,21 +65,21 @@ class PlaySong
   playTrack: (track, audio) ->
     @bufferNext = false if typeof @bufferNext?
 
+    if audio.paused
+      audio.play()
+    else
+      audio.pause()
+
     $(audio).on("play", ->
       track.removeClass "paused"
-    ).on("pause", ->
+    ).on "pause", ->
       track.addClass "paused"
-    ).on "ended", ->
-      track.addClass("not-playing")
-      @bufferNext = null
-      new PlaySong(track.next())
 
   pauseAllOtherTracks: () ->
     $('.not-playing audio').each ->
       @.pause()
       @.currentTime = 0 if @.currentTime > 0
 
-  # Show loading Indicator
   showBuffer: (track, audio) ->
     loadingIndicator  = track.find('.buffer')
     if (audio.buffered isnt 'undefined')
@@ -111,3 +112,10 @@ class PlaySong
 
   scrollInView: (track) ->
     track.scrollIntoView()
+
+  songEnd: (track, audio) ->
+    $(audio).on "timeupdate", ->
+      if audio.ended
+        @bufferNext = null
+        track.addClass("not-playing")
+        new PlaySong(track.next())
