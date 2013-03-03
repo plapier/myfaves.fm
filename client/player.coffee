@@ -3,33 +3,6 @@
   endTime = $currentSong.duration - 5
   $currentSong.currentTime = endTime
 
-@playNext = () ->
-  currentTrack = $("#tracks").find(".playing")
-  if ($(currentTrack).length is 0) or ($(currentTrack).next().length is 0)
-    nextTrack = $('li:first-child')
-    new PlaySong(nextTrack)
-  else if $(currentTrack).length isnt 0
-    nextTrack = $(currentTrack).next()
-    new PlaySong(nextTrack)
-
-@playPrev = (currentTrack) ->
-  currentTrack = $("#tracks").find(".playing")
-  unless $(currentTrack).prev().length is 0
-    prevTrack = $(currentTrack).prev()
-    new PlaySong(prevTrack)
-
-# @playOrPause = (audio) ->
-  # currentTrack = $("#tracks").find(".playing")
-  # unless audio
-    # audio = currentTrack.find("audio").get(0)
-  # if audio.paused
-    # currentTrack.removeClass("paused")
-    # audio.play()
-  # else
-    # currentTrack.addClass("paused")
-    # audio.pause()
-
-
 class PlaySong
   @clickedTrack
   @audio
@@ -39,7 +12,6 @@ class PlaySong
     @setVars(currentTrack)
     @checkForErrors(@clickedTrack, @audio)
     @playTrack(@clickedTrack, @audio)
-    # playOrPause(@audio)
     @showCurrentBuffer(@clickedTrack, @audio)
     @showTrackProgress(@clickedTrack, @audio, @bufferNext)
     @pauseAllOtherTracks()
@@ -50,7 +22,6 @@ class PlaySong
   setVars: (track) ->
     $('.playing').removeClass("playing").addClass("not-playing")
     track.removeClass("not-playing").addClass("playing")
-    console.log(track)
     @clickedTrack = track
     @audio = @clickedTrack.find("audio").get(0)
 
