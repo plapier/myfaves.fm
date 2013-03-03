@@ -1,6 +1,6 @@
 @endSong = () ->
   $currentSong = $('.playing audio').get(0)
-  endTime = $currentSong.duration - 10
+  endTime = $currentSong.duration - 5
   $currentSong.currentTime = endTime
 
 @playNext = () ->
@@ -47,7 +47,10 @@ class PlaySong
     @bufferNextTrack(@clickedTrack, @audio, @bufferNext)
 
   setVars: (track) ->
-    @clickedTrack = $(track)
+    $('.playing').removeClass("playing").addClass("not-playing")
+    track.removeClass("not-playing").addClass("playing")
+    console.log(track)
+    @clickedTrack = track
     @audio = @clickedTrack.find("audio").get(0)
 
   checkForErrors: (track, audio) ->
@@ -61,20 +64,13 @@ class PlaySong
   playTrack: (track, audio) ->
     @bufferNext = false if typeof @bufferNext?
 
-    # remove class from all currently playing tracks
-    $('.playing').removeClass("playing").addClass("not-playing")
-
-    # add playing to clicked track
-    track.removeClass("not-playing").addClass("playing")
-
     $(audio).on("play", ->
-      $(track).removeClass "paused"
+      track.removeClass "paused"
     ).on("pause", ->
-      $(track).addClass "paused"
+      track.addClass "paused"
     ).on "ended", ->
-      $("track").addClass("not-playing")
+      track.addClass("not-playing")
       @bufferNext = null
-      playNext()
       new PlaySong(track.next())
 
   pauseAllOtherTracks: () ->
