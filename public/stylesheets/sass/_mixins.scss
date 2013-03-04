@@ -1,0 +1,14 @@
+//************************************************************************//
+// MIXINS
+//************************************************************************//
+
+@mixin center($width, $height, $offset-v: 0, $offset-h: 0) {
+  height: $height;
+  left: 50%;
+  margin-left: -( $width / 2) + $offset-h;
+  margin-top:  -($height / 2) + $offset-v;
+  position: fixed;
+  top: 50%;
+  width: $width;
+  z-index: 1;
+}

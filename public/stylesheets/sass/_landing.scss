@@ -9,14 +9,7 @@ section.main.landing {
   div.overlay {
     $width: 600px;
     $height: golden-ratio($width, -3);
-    height: $height;
-    left: 50%;
-    margin-left: -$width  / 2;
-    margin-top:  (-$height - 75px) / 2;
-    position: fixed;
-    top: 50%;
-    width: $width;
-    z-index: 1;
+    @include center($width, $height, -75px);
 
     input {
       border: 0;

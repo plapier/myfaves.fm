@@ -330,6 +330,66 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@-webkit-keyframes show-alert {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+
+  50%, 60% {
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: scale(4);
+    opacity: 0; } }
+
+@-moz-keyframes show-alert {
+  0% {
+    -moz-transform: scale(0);
+    opacity: 0; }
+
+  50%, 60% {
+    opacity: 1; }
+
+  100% {
+    -moz-transform: scale(4);
+    opacity: 0; } }
+
+@-ms-keyframes show-alert {
+  0% {
+    -ms-transform: scale(0);
+    opacity: 0; }
+
+  50%, 60% {
+    opacity: 1; }
+
+  100% {
+    -ms-transform: scale(4);
+    opacity: 0; } }
+
+@-o-keyframes show-alert {
+  0% {
+    -o-transform: scale(0);
+    opacity: 0; }
+
+  50%, 60% {
+    opacity: 1; }
+
+  100% {
+    -o-transform: scale(4);
+    opacity: 0; } }
+
+@keyframes show-alert {
+  0% {
+    transform: scale(0);
+    opacity: 0; }
+
+  50%, 60% {
+    opacity: 1; }
+
+  100% {
+    transform: scale(4);
+    opacity: 0; } }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -339,7 +399,7 @@ html, body {
   height: 100%; }
 
 body {
-  background: #EEE;
+  background: #eeeeee;
   font-family: "proxima-nova-soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative; }
 
@@ -464,7 +524,7 @@ section.main.landing {
     height: 141.64971px;
     left: 50%;
     margin-left: -300px;
-    margin-top: -108.32486px;
+    margin-top: -145.82486px;
     position: fixed;
     top: 50%;
     width: 600px;
@@ -481,3 +541,37 @@ section.main.landing {
       section.main.landing div.overlay input:focus, section.main.landing div.overlay input:active {
         box-shadow: 0;
         outline: none; }
+
+div.alert {
+  height: 200px;
+  left: 50%;
+  margin-left: -125px;
+  margin-top: -150px;
+  position: fixed;
+  top: 50%;
+  width: 250px;
+  z-index: 1;
+  width: 250px;
+  height: 200px;
+  border-radius: 10px;
+  position: fixed;
+  opacity: 0;
+  -webkit-animation: show-alert 1s ease-in;
+  -moz-animation: show-alert 1s ease-in;
+  animation: show-alert 1s ease-in; }
+  div.alert .icon {
+    background-color: #eeeeee;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -ms-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    height: 100%;
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 50% 50%;
+    width: 100%; }
+  div.alert.pause .icon {
+    -webkit-mask-image: url("/images/pause.svg"); }
+  div.alert.play .icon {
+    -webkit-mask-image: url("/images/play.svg"); }

@@ -1,0 +1,29 @@
+div.alert {
+  $height: 200px;
+  $width: 250px;
+  @include center($width, $height, -50);
+  @include size($width $height);
+  // background: hsla(0, 0%, 0%, 0.7);
+  border-radius: 10px;
+  position: fixed;
+  opacity: 0;
+  @include animation-show-alert;
+
+  .icon {
+    background-color: $white;
+    @include background-size(contain);
+    height: 100%;
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 50% 50%;
+    width: 100%;
+  }
+
+  &.pause .icon {
+    -webkit-mask-image: url("/images/pause.svg");
+  }
+
+  &.play .icon {
+    -webkit-mask-image: url("/images/play.svg");
+  }
+}

@@ -22,4 +22,5 @@ $(window).keydown (event) ->
     when space
       event.preventDefault()
       unless track.length is 0
+        new ShowAlert(track)
         new PlaySong(track)
