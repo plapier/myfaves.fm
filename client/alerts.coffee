@@ -11,9 +11,8 @@ class ShowAlert
 
   insertAlert: (type) ->
     $('body').append( @alertHtml(type) )
-    $selector = $(".alert.#{type}")
-    $selector.on "animationend webkitAnimationEnd", =>
-      $selector.remove()
+    $(".alert.#{type}").on "animationend webkitAnimationEnd", ->
+      @.remove()
 
   alertHtml: (type) ->
     alert = """
