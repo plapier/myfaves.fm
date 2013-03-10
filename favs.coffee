@@ -24,6 +24,7 @@ if Meteor.isClient
     if event.keyCode is 13
       exfm_username = $('header input').val()
       SetExfmUsername(exfm_username)
+      ResetSessionVars()
       Songs.remove({})
 
   Template.Songs.Track = ->

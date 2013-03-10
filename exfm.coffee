@@ -64,6 +64,10 @@ FetchUserTracks = ->
   update()
 FetchUserTracks()
 
+ResetSessionVars = ->
+  Session.set('exfm_start', 0)
+  Session.set('exfm_results', 21)
+
 # Fetch more user tracks (!defualt 20)
 FetchMore = ->
   num_start     = Session.get('exfm_start')
