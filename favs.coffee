@@ -3,7 +3,6 @@ Session.setDefault('exfm_username', false)
 
 ###### CLIENT #######
 if Meteor.isClient
-
   Template.RenderTemplate.has_username = ->
     GetExfmUsername()
 
@@ -18,20 +17,19 @@ if Meteor.isClient
     clickedElement = $(event.currentTarget)
     new PlaySong(clickedElement)
 
-  Template.Songs.Track = ->
-    FetchExfmData()
-    Songs.find({})
-
   Template.Header.current_username = ->
-    GetExfmUsername()
+    Session.get('exfm_username')
 
   Template.Header.events "keyup header input": (event) ->
     if event.keyCode is 13
       exfm_username = $('header input').val()
       SetExfmUsername(exfm_username)
+      Songs.remove({})
+
+  Template.Songs.Track = ->
+    Songs.find({})
 
 # ---- Helper Functions ----
-
 
 ###### SERVER #######
 if Meteor.isServer
