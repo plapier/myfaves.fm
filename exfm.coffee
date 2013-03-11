@@ -51,22 +51,10 @@ SetExfmUsername = (username) ->
   $.totalStorage('exfm_username', username)
   Session.set('exfm_username', username)
 
-# fetch new user tracks when username is changed
-FetchUserTracks = ->
-  update = ->
-    ctx = new Meteor.deps.Context() # invalidation context
-    ctx.onInvalidate update # rerun update() on invalidation
-    ctx.run ->
-      Session.set('exfm_results_total', null)
-      username = Session.get("exfm_username")
-      if username
-        new FetchExfmJSON()
-  update()
-FetchUserTracks()
-
 ResetSessionVars = ->
   Session.set('exfm_start', 0)
   Session.set('exfm_results', 21)
+  Session.set('exfm_results_total', null)
 
 # Fetch more user tracks (!defualt 20)
 FetchMore = ->

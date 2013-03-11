@@ -28,6 +28,7 @@ if Meteor.isClient
       Songs.remove({})
 
   Template.Songs.Track = ->
+    new FetchExfmJSON()
     Songs.find({})
 
 # ---- Helper Functions ----
