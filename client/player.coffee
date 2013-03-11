@@ -31,7 +31,7 @@ class PlaySong
       console.log "Error: #{trackName}"
       track.addClass("error")
       new PlaySong(track.next())
-    ), true ## !useCapture must be set to true!
+    ), false ## !useCapture must be set to true!
 
   playTrack: (track, audio) ->
     @bufferNext = false if typeof @bufferNext?
