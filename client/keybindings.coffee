@@ -1,3 +1,6 @@
+$(window).focus ->
+  window_focus = true
+
 $(window).keydown (event) ->
   keyCode = event.keyCode or event.which
   arrow =
