@@ -30,7 +30,7 @@ if Meteor.isClient
   Template.Songs.Track = ->
     new FetchExfmJSON()
     GetHypemData()
-    Songs.find({})
+    Songs.find({}, {sort: {date_loved: -1}})
 
 # ---- Helper Functions ----
 

@@ -4,10 +4,17 @@ Session.setDefault('exfm_results', 21)
 Session.set('exfm_results_total', null)
 
 class ExfmTrackParser
-  constructor: (track_data) ->
+  constructor: (track_data, date_loved) ->
     @track  = track_data
     @artist = @track.artist
     @title  = @track.title
+    @setDate(date_loved)
+
+  setDate: (date_loved) ->
+    if date_loved
+      @date_loved = date_loved
+    else
+      @date_loved = moment.utc(@track.user_love.created_on).format()
 
   url: ->
     if @track.url.search("soundcloud") isnt -1
@@ -20,6 +27,7 @@ class ExfmTrackParser
     artist: @artist
     title:  @title
     url:    @url()
+    date_loved: @date_loved
 
 class FetchExfmJSON
   constructor: ->

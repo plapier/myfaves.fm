@@ -3,13 +3,12 @@ class MatchSong
   constructor: (song) ->
     @artist = type: "artist", string: song.artist
     @title  = type: "title", string: song.title
-    @date_loved = song.dateloved
-    # console.log @date_loved
+    date = moment.unix(song.dateloved)
+    @date_loved = moment.utc(date).format()
     @searchTitles()
 
   searchTitles: () ->
     # Search Titles -> match artists
-    # console.log "Searching for #{@title.type}:", @title.string
     search = @title
     @getJSON(search)
 
@@ -17,7 +16,6 @@ class MatchSong
     # Search by artist -> match resulting titles
     unless @searched_artist is true
       @searched_artist = true
-      # console.log "Searching for #{@title.type}:", @title.string
       search = @artist
       @getJSON(search)
 
@@ -26,7 +24,6 @@ class MatchSong
     query = search.string
     exfm_url = encodeURI("http://ex.fm/api/v3/song/search/#{query}?results=20")
     $.getJSON exfm_url, (data) =>
-      # console.log data
       @compareData(type, query, data)
 
   compareData: (type, query, data) ->
@@ -36,19 +33,16 @@ class MatchSong
         exfm  = @exfmMatchParser(type, track)
 
         if _.isEqual(hypem, exfm)
-          # console.log "Found match:", exfm, track
           @track = track
           @insertTrack(track)
           found_match = true
           break
 
-      if found_match is true
-        # console.log "Done! :)"
-      else
-        # console.log "No Artist Match found :("
+      unless found_match is true
+        # No Artist Match found :( Try Searching for Artist
         @searchArtists()
     else
-      # console.log "0 Results"
+      # 0 Results from Exfm :( Try Searching for Artist
       @searchArtists()
 
   exfmMatchParser: (type, track) ->
@@ -64,19 +58,15 @@ class MatchSong
       @artist.string
 
   insertTrack: (track) ->
-    parsed_track = new ExfmTrackParser(track)
+    hypem_date_loved = @date_loved
+    parsed_track = new ExfmTrackParser(track, hypem_date_loved)
     Songs.insert parsed_track.data()
 
 
 GetHypemData = () ->
-  # hurl = "http://hypem.com/playlist/loved/phillapier/json/1/data.js"
-  # $.getJSON hurl, (data) ->
-    # song = data[2]
-    # matchSong(song)
-  # song = hypem_faves[2]
-  # new MatchSong(song)
-  console.log hypem_faves
-  for own key, each_song of hypem_faves
-    unless key is "version"
-      new MatchSong(each_song)
+  hypem_url = "http://hypem.com/playlist/loved/phillapier/json/1/data.js"
+  $.getJSON hypem_url, (data) ->
+    for own key, each_song of data
+      unless key is "version"
+        new MatchSong(each_song)
 
