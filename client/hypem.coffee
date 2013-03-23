@@ -1,5 +1,26 @@
+Session.setDefault('hypem_username', "phillapier")
+Session.setDefault('hypem_page', 1)
 
-class MatchSong
+class HypemJSONFetcher
+  constructor: ->
+    @username = Session.get('hypem_username')
+    @page     = Session.get('hypem_page')
+    @getResults()
+    # @test()
+
+  getResults: ->
+    url = "http://hypem.com/playlist/loved/#{@username}/json/#{@page}/data.js"
+    Meteor.http.get url, (error, results) =>
+      json_data = JSON.parse(results.content)
+      for own key, each_song of json_data
+        unless key is "version"
+          new SongMatcher(each_song)
+  test: ->
+    song = hypem_faves[2]
+    console.log "running hypem"
+    new SongMatcher(song)
+
+class SongMatcher
   constructor: (song) ->
     @artist = type: "artist", string: song.artist
     @title  = type: "title", string: song.title
@@ -59,14 +80,23 @@ class MatchSong
 
   insertTrack: (track) ->
     hypem_date_loved = @date_loved
-    parsed_track = new ExfmTrackParser(track, hypem_date_loved)
+    parsed_track = new ExfmTrackParser("hypem", track, hypem_date_loved)
     Songs.insert parsed_track.data()
 
+GetHypemUsername = ->
+  username = $.totalStorage('hypem_username')
+  if username
+    Session.set('hypem_username', username)
+  Session.get('hypem_username')
 
-GetHypemData = () ->
-  hypem_url = "http://hypem.com/playlist/loved/phillapier/json/1/data.js"
-  $.getJSON hypem_url, (data) ->
-    for own key, each_song of data
-      unless key is "version"
-        new MatchSong(each_song)
+SetHypemUsername = (username) ->
+  $.totalStorage('hypem_username', username)
+  Session.set('hypem_username', username)
 
+# fetch new user tracks when username is changed
+FetchHypemUserTracks = ->
+  Deps.autorun ->
+    username = Session.get("hypem_username")
+    if username
+      new HypemJSONFetcher()
+FetchHypemUserTracks()

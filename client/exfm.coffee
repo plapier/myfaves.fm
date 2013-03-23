@@ -1,10 +1,12 @@
 soundcloud_id = "dcfa20cb4e60440dbf3e8bb3c54b68a8"
+Session.setDefault('exfm_username', false)
 Session.setDefault('exfm_start', 0)
 Session.setDefault('exfm_results', 21)
 Session.set('exfm_results_total', null)
 
 class ExfmTrackParser
-  constructor: (track_data, date_loved) ->
+  constructor: (source, track_data, date_loved) ->
+    @source = source
     @track  = track_data
     @artist = @track.artist
     @title  = @track.title
@@ -24,12 +26,13 @@ class ExfmTrackParser
       @track.url
 
   data: ->
+    source: @source
     artist: @artist
     title:  @title
     url:    @url()
     date_loved: @date_loved
 
-class FetchExfmJSON
+class ExfmJSONFetcher
   constructor: ->
     @username = Session.get('exfm_username')
     @num_start = Session.get('exfm_start')
@@ -46,7 +49,7 @@ class FetchExfmJSON
     tracks_data = json_data.songs
     Session.set('exfm_results_total', json_data.total)
     for track_data in tracks_data
-      parsed_track = new ExfmTrackParser(track_data)
+      parsed_track = new ExfmTrackParser("exfm", track_data)
       Songs.insert parsed_track.data()
 
 GetExfmUsername = ->
@@ -63,6 +66,15 @@ ResetSessionVars = ->
   Session.set('exfm_start', 0)
   Session.set('exfm_results', 21)
   Session.set('exfm_results_total', null)
+
+# fetch new user tracks when username is changed
+FetchExfmUserTracks = ->
+  Deps.autorun ->
+    Session.set('exfm_results_total', null)
+    username = Session.get("exfm_username")
+    if username
+      new ExfmJSONFetcher()
+FetchExfmUserTracks()
 
 # Fetch more user tracks (!defualt 20)
 FetchMore = ->

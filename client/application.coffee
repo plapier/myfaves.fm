@@ -1,5 +1,4 @@
 Songs = new Meteor.Collection(null)
-Session.setDefault('exfm_username', false)
 
 ###### CLIENT #######
 if Meteor.isClient
@@ -17,19 +16,26 @@ if Meteor.isClient
     clickedElement = $(event.currentTarget)
     new PlaySong(clickedElement)
 
-  Template.Header.current_username = ->
+  Template.Header.exfm_username = ->
     Session.get('exfm_username')
 
-  Template.Header.events "keyup header input": (event) ->
+  Template.Header.hypem_username = ->
+    Session.get('hypem_username')
+
+  Template.Header.events "keyup header input#exfm_username": (event) ->
     if event.keyCode is 13
-      exfm_username = $('header input').val()
+      exfm_username = $('header input#exfm_username').val()
       SetExfmUsername(exfm_username)
       ResetSessionVars()
-      Songs.remove({})
+      Songs.remove({source: "exfm"})
+
+  Template.Header.events "keyup header input#hypem_username": (event) ->
+    if event.keyCode is 13
+      hypem_username = $('header input#hypem_username').val()
+      SetHypemUsername(hypem_username)
+      Songs.remove({source: "hypem"})
 
   Template.Songs.Track = ->
-    new FetchExfmJSON()
-    GetHypemData()
     Songs.find({}, {sort: {date_loved: -1}})
 
 # ---- Helper Functions ----
