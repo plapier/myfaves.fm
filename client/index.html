@@ -39,8 +39,19 @@
 <template name="Header">
   <header class="playlist-header">
     <h1>myfaves.fm</h1>
-    <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
-    <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
+    <div class="user-info hide">
+      <div class="mini-avatar">
+        <!-- <img src=""> -->
+      </div>
+      <div class="dropdown">
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <!-- <img src=""> -->
+          </div>
+        </div>
+        <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
+        <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
+      </div>
   </header>
 </template>
 

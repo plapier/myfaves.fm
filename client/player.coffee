@@ -3,7 +3,7 @@
   endTime = $currentSong.duration - 5
   $currentSong.currentTime = endTime
 
-class PlaySong
+class @PlaySong
   @clickedTrack
   @audio
   @bufferNext

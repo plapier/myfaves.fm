@@ -1,0 +1,98 @@
+$header-height: 60px;
+
+header.playlist-header {
+  background: $header-background-1;
+  @include clearfix;
+  color: $header-color-1;
+  height: $header-height;
+  position: relative;
+  z-index: 1;
+
+  h1 {
+    float: left;
+    font-size: 32px;
+    margin: 10px $gutter;
+    margin-left: $gutter;
+  }
+
+  div.user-info {
+    margin-right: 10px;
+    float: right;
+    position: relative;
+
+    &.show {
+      background: $header-background-2;
+
+      .dropdown {
+        opacity: 1;
+      }
+    }
+
+    &.hide .dropdown {
+      opacity: 0;
+      display: none;
+    }
+
+    div.mini-avatar {
+      $padding: 10px;
+      background-image: url('/images/user-2.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 100%;
+      margin: $padding 20px;
+      @include size($header-height - $padding*2);
+
+      img {
+        display: block;
+      }
+    }
+
+    div.dropdown {
+      background: $header-background-2;
+      border-radius: 8px 0 8px 8px;
+      position: absolute;
+      right: 0;
+      top: $header-height;
+      width: 400px;
+      overflow: hidden;
+
+      div.avatar-wrapper{
+        background: hsla(0, 0%, 0%, 0.15);
+        border-radius: 100%;
+        margin: 20px auto;
+        @include size(100px);
+
+        div.avatar {
+          height: 100%;
+          background-image: url('/images/user-2.svg');
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+      }
+
+      input {
+        background: transparent;
+        border: 0;
+        color: $header-color-1;
+        color: $white;
+        font-size: 32px;
+        padding: 10px $gutter;
+        text-align: center;
+
+        &:hover, &:focus {
+          background: hsla(0, 0%, 0%, 0.15);
+          outline: none;
+        }
+
+        @include placeholder {
+          color: hsla(0, 0%, 0%, 0.25);
+        }
+
+        &:last-child {
+          padding-bottom: 14px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,4 +1,4 @@
-Songs = new Meteor.Collection(null)
+@Songs = new Meteor.Collection(null)
 
 GetUsernames = ->
   GetExfmUsername()

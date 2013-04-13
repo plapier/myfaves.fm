@@ -83,13 +83,13 @@ class SongMatcher
     parsed_track = new ExfmTrackParser("hypem", track, hypem_date_loved)
     Songs.insert parsed_track.data()
 
-GetHypemUsername = ->
+@GetHypemUsername = ->
   username = $.totalStorage('hypem_username')
   if username
     Session.set('hypem_username', username)
   Session.get('hypem_username')
 
-SetHypemUsername = (username) ->
+@SetHypemUsername = (username) ->
   $.totalStorage('hypem_username', username)
   Session.set('hypem_username', username)
 

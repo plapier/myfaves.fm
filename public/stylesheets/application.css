@@ -354,18 +354,6 @@ table {
     -moz-transform: scale(4);
     opacity: 0; } }
 
-@-ms-keyframes show-alert {
-  0% {
-    -ms-transform: scale(0);
-    opacity: 0; }
-
-  50%, 60% {
-    opacity: 1; }
-
-  100% {
-    -ms-transform: scale(4);
-    opacity: 0; } }
-
 @-o-keyframes show-alert {
   0% {
     -o-transform: scale(0);
@@ -409,7 +397,10 @@ ol, ul {
 header.playlist-header {
   background: #29b765;
   *zoom: 1;
-  color: #219954; }
+  color: #219954;
+  height: 60px;
+  position: relative;
+  z-index: 1; }
   header.playlist-header:before, header.playlist-header:after {
     content: " ";
     display: table; }
@@ -420,25 +411,67 @@ header.playlist-header {
     font-size: 32px;
     margin: 10px 32px;
     margin-left: 32px; }
-  header.playlist-header input {
-    background: transparent;
-    border: 0;
-    clear: right;
-    color: #219954;
+  header.playlist-header div.user-info {
+    margin-right: 10px;
     float: right;
-    font-size: 32px;
-    padding: 10px 32px;
-    text-align: right; }
-    header.playlist-header input::-webkit-input-placeholder {
-      color: #219954; }
-    header.playlist-header input:-moz-placeholder {
-      color: #219954; }
-    header.playlist-header input:-ms-input-placeholder {
-      color: #219954; }
-    header.playlist-header input:focus {
-      background: #25a25a;
-      color: #eee;
-      outline: none; }
+    position: relative; }
+    header.playlist-header div.user-info.show {
+      background: #4d5b69; }
+      header.playlist-header div.user-info.show .dropdown {
+        opacity: 1; }
+    header.playlist-header div.user-info.hide .dropdown {
+      opacity: 0;
+      display: none; }
+    header.playlist-header div.user-info div.mini-avatar {
+      background-image: url("/images/user-2.svg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 100%;
+      margin: 10px 20px;
+      width: 40px;
+      height: 40px; }
+      header.playlist-header div.user-info div.mini-avatar img {
+        display: block; }
+    header.playlist-header div.user-info div.dropdown {
+      background: #4d5b69;
+      border-radius: 8px 0 8px 8px;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      width: 400px;
+      overflow: hidden; }
+      header.playlist-header div.user-info div.dropdown div.avatar-wrapper {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 100%;
+        margin: 20px auto;
+        width: 100px;
+        height: 100px; }
+        header.playlist-header div.user-info div.dropdown div.avatar-wrapper div.avatar {
+          height: 100%;
+          background-image: url("/images/user-2.svg");
+          background-repeat: no-repeat;
+          background-size: 100%; }
+      header.playlist-header div.user-info div.dropdown input {
+        background: transparent;
+        border: 0;
+        color: #219954;
+        color: #eeeeee;
+        font-size: 32px;
+        padding: 10px 32px;
+        text-align: center; }
+        header.playlist-header div.user-info div.dropdown input:hover, header.playlist-header div.user-info div.dropdown input:focus {
+          background: rgba(0, 0, 0, 0.15);
+          outline: none; }
+        header.playlist-header div.user-info div.dropdown input::-webkit-input-placeholder {
+          color: rgba(0, 0, 0, 0.25); }
+        header.playlist-header div.user-info div.dropdown input:-moz-placeholder {
+          color: rgba(0, 0, 0, 0.25); }
+        header.playlist-header div.user-info div.dropdown input::-moz-placeholder {
+          color: rgba(0, 0, 0, 0.25); }
+        header.playlist-header div.user-info div.dropdown input:-ms-input-placeholder {
+          color: rgba(0, 0, 0, 0.25); }
+        header.playlist-header div.user-info div.dropdown input:last-child {
+          padding-bottom: 14px; }
 
 section.main.playlist ol {
   list-style: none;
@@ -458,10 +491,6 @@ section.main.playlist ol {
       background-color: #26ae60;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      -webkit-background-size: contain;
-      -moz-background-size: contain;
-      -ms-background-size: contain;
-      -o-background-size: contain;
       background-size: contain;
       display: table-cell;
       height: 50px;
@@ -477,8 +506,6 @@ section.main.playlist ol {
         opacity: 1.0;
         -webkit-transition: all 0s;
         -moz-transition: all 0s;
-        -ms-transition: all 0s;
-        -o-transition: all 0s;
         transition: all 0s; }
         section.main.playlist ol li.playing a .playtoggle {
           background-color: #f4bc35;
@@ -505,8 +532,6 @@ section.main.playlist ol {
       top: 0;
       -webkit-transition: all 0.15s ease-out 0;
       -moz-transition: all 0.15s ease-out 0;
-      -ms-transition: all 0.15s ease-out 0;
-      -o-transition: all 0.15s ease-out 0;
       transition: all 0.15s ease-out 0;
       z-index: 1; }
     section.main.playlist ol li div.buffer {
@@ -518,8 +543,6 @@ section.main.playlist ol {
       position: absolute;
       -webkit-transition: all 0.15s ease-out 0;
       -moz-transition: all 0.15s ease-out 0;
-      -ms-transition: all 0.15s ease-out 0;
-      -o-transition: all 0.15s ease-out 0;
       transition: all 0.15s ease-out 0; }
 
 section.main.landing {
@@ -567,10 +590,6 @@ div.alert {
   animation: show-alert 1s ease-in; }
   div.alert .icon {
     background-color: #eeeeee;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -ms-background-size: contain;
-    -o-background-size: contain;
     background-size: contain;
     height: 100%;
     -webkit-mask-position: 50% 50%;

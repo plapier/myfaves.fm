@@ -4,7 +4,7 @@ Session.setDefault('exfm_start', 0)
 Session.setDefault('exfm_results', 21)
 Session.set('exfm_results_total', null)
 
-class ExfmTrackParser
+class @ExfmTrackParser
   constructor: (source, track_data, date_loved) ->
     @source = source
     @track  = track_data
@@ -52,17 +52,17 @@ class ExfmJSONFetcher
       parsed_track = new ExfmTrackParser("exfm", track_data)
       Songs.insert parsed_track.data()
 
-GetExfmUsername = ->
+@GetExfmUsername = ->
   username = $.totalStorage('exfm_username')
   if username
     Session.set('exfm_username', username)
   Session.get('exfm_username')
 
-SetExfmUsername = (username) ->
+@SetExfmUsername = (username) ->
   $.totalStorage('exfm_username', username)
   Session.set('exfm_username', username)
 
-ResetSessionVars = ->
+@ResetSessionVars = ->
   Session.set('exfm_start', 0)
   Session.set('exfm_results', 21)
   Session.set('exfm_results_total', null)
