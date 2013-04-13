@@ -1,4 +1,4 @@
-Session.setDefault('hypem_username', "phillapier")
+Session.setDefault('hypem_username', false)
 Session.setDefault('hypem_page', 1)
 
 class HypemJSONFetcher

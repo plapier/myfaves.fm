@@ -20,6 +20,10 @@ header.playlist-header {
     padding: 10px $gutter;
     text-align: right;
 
+    @include placeholder {
+      color: $header-color-1;
+    }
+
     &:focus {
       background: $header-background-2;
       color: #eee;

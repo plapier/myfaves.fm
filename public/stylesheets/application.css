@@ -429,6 +429,12 @@ header.playlist-header {
     font-size: 32px;
     padding: 10px 32px;
     text-align: right; }
+    header.playlist-header input::-webkit-input-placeholder {
+      color: #219954; }
+    header.playlist-header input:-moz-placeholder {
+      color: #219954; }
+    header.playlist-header input:-ms-input-placeholder {
+      color: #219954; }
     header.playlist-header input:focus {
       background: #25a25a;
       color: #eee;
