@@ -1,4 +1,4 @@
-class ShowAlert
+class @ShowAlert
   constructor: (track) ->
     @alert(track)
 

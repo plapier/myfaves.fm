@@ -1,4 +1,4 @@
-soundcloud_id = "dcfa20cb4e60440dbf3e8bb3c54b68a8"
+@soundcloud_id = "dcfa20cb4e60440dbf3e8bb3c54b68a8"
 Session.setDefault('exfm_username', false)
 Session.setDefault('exfm_start', 0)
 Session.setDefault('exfm_results', 21)

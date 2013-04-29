@@ -423,6 +423,8 @@ header.playlist-header {
       opacity: 0;
       display: none; }
     header.playlist-header div.user-info div.mini-avatar {
+      background-image: -webkit-linear-gradient(top, #fffcd1 0%, #fff9b1 40%, #fff9b1 100%);
+      background-image: linear-gradient(to bottom, #fffcd1 0%, #fff9b1 40%, #fff9b1 100%);
       background-image: url("/images/user-2.svg");
       background-repeat: no-repeat;
       background-size: 100%;
