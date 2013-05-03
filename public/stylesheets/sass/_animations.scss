@@ -22,3 +22,17 @@
     opacity: 0;
   }
 }
+
+%animation-show-track {
+  @include animation(show-track 0.25s $ease-out-sine 1s forwards);
+}
+@include keyframes(show-track) {
+  0% {
+    @include transform(scale(0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+}

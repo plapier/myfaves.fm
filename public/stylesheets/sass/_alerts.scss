@@ -11,7 +11,7 @@ div.alert {
 
   .icon {
     background-color: $white;
-    @include background-size(contain);
+    background-size: contain;
     height: 100%;
     -webkit-mask-position: 50% 50%;
     -webkit-mask-repeat: no-repeat;

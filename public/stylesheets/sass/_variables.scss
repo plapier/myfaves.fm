@@ -1,9 +1,22 @@
+$white: #EEE;
+
+$body-background: #2c3e50;
+$body-background-alt: #34495e;
+
+// Yellow
+//************************************************************************//
 $primary-background: #F6D35D;
 $primary-background-timer: #F4BC35;
 $primary-color: #F4BC35;
 
+// $primary-background: #f1c40f;
+$primary-color: #f39c12;
+
+// Green
+//************************************************************************//
 $secondary-background: #2ECC71;
-$secondary-color: #27AE60;
+// $secondary-color: #27AE60;
+$secondary-color: #22A35A;
 
 $header-background-1: darken($secondary-background,  5%);
 $header-background-2: darken($secondary-background, 10%);
@@ -11,7 +24,12 @@ $header-background-2: #4D5B69;
 $header-color-1:      darken($secondary-color,  5%);
 $header-color-2:      darken($secondary-color, 10%);
 
-$white: #EEE;
+$header-background-1: $body-background-alt;
+$header-background-2: darken($secondary-background, 10%);
+$header-background-2: #4D5B69;
+$header-color-1:      $white;
+$header-color-2:      darken($secondary-color, 10%);
+
 
 $base-font-family: "proxima-nova-soft", $helvetica;
 // $base-font-family: "museo-sans-rounded", $helvetica;
@@ -19,4 +37,5 @@ $base-font-family: "proxima-nova-soft", $helvetica;
 $title-font-size: 36px;
 $title-font-weight: 600;
 
+$border-radius: 20px;
 $gutter: 32px;

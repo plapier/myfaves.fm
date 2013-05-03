@@ -378,6 +378,42 @@ table {
     transform: scale(4);
     opacity: 0; } }
 
+@-webkit-keyframes show-track {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-moz-keyframes show-track {
+  0% {
+    -moz-transform: scale(0);
+    opacity: 0; }
+
+  100% {
+    -moz-transform: scale(1);
+    opacity: 1; } }
+
+@-o-keyframes show-track {
+  0% {
+    -o-transform: scale(0);
+    opacity: 0; }
+
+  100% {
+    -o-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes show-track {
+  0% {
+    transform: scale(0);
+    opacity: 0; }
+
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -387,7 +423,7 @@ html, body {
   height: 100%; }
 
 body {
-  background: #eeeeee;
+  background: #2c3e50;
   font-family: "proxima-nova-soft", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative; }
 
@@ -395,9 +431,9 @@ ol, ul {
   margin: 0; }
 
 header.playlist-header {
-  background: #29b765;
+  background: #34495e;
   *zoom: 1;
-  color: #229955;
+  color: #eeeeee;
   height: 60px;
   position: relative;
   z-index: 1; }
@@ -456,7 +492,7 @@ header.playlist-header {
       header.playlist-header div.user-info div.dropdown input {
         background: transparent;
         border: 0;
-        color: #229955;
+        color: #eeeeee;
         color: #eeeeee;
         font-size: 32px;
         padding: 10px 32px;
@@ -481,40 +517,46 @@ section.main.playlist ol {
   padding: 0; }
   section.main.playlist ol li {
     background: #2ecc71;
+    border-radius: 20px;
+    box-shadow: 0 5px 0 #22a35a;
+    margin: 40px 10%;
+    overflow: hidden;
     position: relative; }
     section.main.playlist ol li a {
-      color: #27ae60;
+      color: rgba(0, 0, 0, 0.2);
       display: table;
-      height: 116px;
       padding: 20px 32px;
       text-decoration: none;
       width: 100%; }
     section.main.playlist ol li .playtoggle {
-      background-color: #27ae60;
+      background-color: #22a35a;
+      background-color: rgba(0, 0, 0, 0.2);
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: contain;
       display: table-cell;
       height: 50px;
-      -webkit-mask-image: url("/images/play.svg");
       mask: url("/images/play.svg");
+      -webkit-mask-image: url("/images/play.svg");
       -webkit-mask-position: 50% 50%;
       -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 50px 50px;
       width: 50px; }
     section.main.playlist ol li.playing {
-      background: #f6d35d; }
+      background: #f6d35d;
+      box-shadow: 0 5px 0 #f39c12; }
       section.main.playlist ol li.playing a {
-        color: #f4bc35;
+        color: #f39c12;
         opacity: 1.0;
         -webkit-transition: all 0s;
         -moz-transition: all 0s;
         transition: all 0s; }
         section.main.playlist ol li.playing a .playtoggle {
-          background-color: #f4bc35;
+          background-color: #f39c12;
           -webkit-mask-image: url("/images/pause.svg");
           mask: url("/images/pause.svg"); }
       section.main.playlist ol li.playing .buffer {
-        background-color: #f4bc35;
+        background-color: #f39c12;
         opacity: 1; }
       section.main.playlist ol li.playing.paused .playtoggle {
         -webkit-mask-image: url("/images/play.svg");
@@ -528,6 +570,7 @@ section.main.playlist ol {
       vertical-align: middle; }
     section.main.playlist ol li div.progress {
       background-color: rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
       height: 100%;
       left: 0;
       position: absolute;
@@ -537,7 +580,7 @@ section.main.playlist ol {
       transition: all 0.15s ease-out 0;
       z-index: 1; }
     section.main.playlist ol li div.buffer {
-      background: rgba(39, 174, 96, 0.35);
+      background: rgba(34, 163, 90, 0.35);
       bottom: 0;
       height: 4px;
       left: 0;
@@ -568,7 +611,7 @@ section.main.landing {
       height: 100%;
       padding: 0 20px;
       width: 100%;
-      color: #1e8449; }
+      color: #197943; }
       section.main.landing div.overlay input:focus, section.main.landing div.overlay input:active {
         box-shadow: 0;
         outline: none; }

@@ -7,9 +7,7 @@ html, body {
 }
 
 body {
-  background: $white;
-  // background: $secondary-background;
-  // background: darken($secondary-background, 5%);
+  background: $body-background;
   font-family: $base-font-family;
   position: relative;
 }
