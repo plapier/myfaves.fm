@@ -397,7 +397,7 @@ ol, ul {
 header.playlist-header {
   background: #29b765;
   *zoom: 1;
-  color: #219954;
+  color: #229955;
   height: 60px;
   position: relative;
   z-index: 1; }
@@ -456,7 +456,7 @@ header.playlist-header {
       header.playlist-header div.user-info div.dropdown input {
         background: transparent;
         border: 0;
-        color: #219954;
+        color: #229955;
         color: #eeeeee;
         font-size: 32px;
         padding: 10px 32px;
@@ -483,14 +483,14 @@ section.main.playlist ol {
     background: #2ecc71;
     position: relative; }
     section.main.playlist ol li a {
-      color: #26ae60;
+      color: #27ae60;
       display: table;
       height: 116px;
       padding: 20px 32px;
       text-decoration: none;
       width: 100%; }
     section.main.playlist ol li .playtoggle {
-      background-color: #26ae60;
+      background-color: #27ae60;
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: contain;
@@ -537,7 +537,7 @@ section.main.playlist ol {
       transition: all 0.15s ease-out 0;
       z-index: 1; }
     section.main.playlist ol li div.buffer {
-      background: rgba(38, 174, 96, 0.35);
+      background: rgba(39, 174, 96, 0.35);
       bottom: 0;
       height: 4px;
       left: 0;
@@ -568,7 +568,7 @@ section.main.landing {
       height: 100%;
       padding: 0 20px;
       width: 100%;
-      color: #1d8449; }
+      color: #1e8449; }
       section.main.landing div.overlay input:focus, section.main.landing div.overlay input:active {
         box-shadow: 0;
         outline: none; }
