@@ -1,4 +1,4 @@
-Session.setDefault('sc_username', 'phil-lapier')
+Session.setDefault('sc_username', false)
 
 class @ScTrackParser
   constructor: (source, track_data) ->
@@ -44,20 +44,20 @@ class ScJSONFetcher
       # console.log parsed_track.data()
       Songs.insert parsed_track.data()
 
-# @GetExfmUsername = ->
-  # username = $.totalStorage('exfm_username')
-  # if username
-    # Session.set('exfm_username', username)
-  # Session.get('exfm_username')
+@GetScUsername = ->
+  username = $.totalStorage('sc_username')
+  if username
+    Session.set('sc_username', username)
+  Session.get('sc_username')
 
-# @SetExfmUsername = (username) ->
-  # $.totalStorage('exfm_username', username)
-  # Session.set('exfm_username', username)
+@SetScUsername = (username) ->
+  $.totalStorage('sc_username', username)
+  Session.set('sc_username', username)
 
 # @ResetSessionVars = ->
-  # Session.set('exfm_start', 0)
-  # Session.set('exfm_results', 21)
-  # Session.set('exfm_results_total', null)
+  # Session.set('sc_start', 0)
+  # Session.set('sc_results', 21)
+  # Session.set('sc_results_total', null)
 
 # fetch new user tracks when username is changed
 FetchScUserTracks = ->

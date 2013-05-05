@@ -592,6 +592,7 @@ section.main.playlist {
         left: 0;
         opacity: 0;
         position: absolute;
+        display: none;
         -webkit-transition: all 0.15s ease-out 0;
         -moz-transition: all 0.15s ease-out 0;
         transition: all 0.15s ease-out 0; }
