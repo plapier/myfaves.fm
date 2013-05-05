@@ -433,9 +433,10 @@ ol, ul {
 header.playlist-header {
   background: #34495e;
   *zoom: 1;
-  color: #eeeeee;
-  height: 60px;
-  position: relative;
+  color: #ecf0f1;
+  height: 100%;
+  position: fixed;
+  width: 300px;
   z-index: 1; }
   header.playlist-header:before, header.playlist-header:after {
     content: " ";
@@ -443,152 +444,157 @@ header.playlist-header {
   header.playlist-header:after {
     clear: both; }
   header.playlist-header h1 {
-    float: left;
-    font-size: 32px;
-    margin: 10px 32px;
-    margin-left: 32px; }
+    background: rgba(0, 0, 0, 0.075);
+    color: #1abc9c;
+    font-size: 34px;
+    margin: 0 0 15px 0;
+    padding: 15px 0 15px 32px; }
   header.playlist-header div.user-info {
-    margin-right: 10px;
-    float: right;
     position: relative; }
-    header.playlist-header div.user-info.show {
-      background: #4d5b69; }
-      header.playlist-header div.user-info.show .dropdown {
-        opacity: 1; }
-    header.playlist-header div.user-info.hide .dropdown {
-      opacity: 0;
-      display: none; }
-    header.playlist-header div.user-info div.mini-avatar {
-      background-image: -webkit-linear-gradient(top, #fffcd1 0%, #fff9b1 40%, #fff9b1 100%);
-      background-image: linear-gradient(to bottom, #fffcd1 0%, #fff9b1 40%, #fff9b1 100%);
-      background-image: url("/images/user-2.svg");
-      background-repeat: no-repeat;
-      background-size: 100%;
+    header.playlist-header div.user-info div.dropdown div.avatar-wrapper {
+      background: rgba(0, 0, 0, 0.15);
       border-radius: 100%;
-      margin: 10px 20px;
-      width: 40px;
-      height: 40px; }
-      header.playlist-header div.user-info div.mini-avatar img {
-        display: block; }
-    header.playlist-header div.user-info div.dropdown {
-      background: #4d5b69;
-      border-radius: 8px 0 8px 8px;
-      position: absolute;
-      right: 0;
-      top: 60px;
-      width: 400px;
-      overflow: hidden; }
-      header.playlist-header div.user-info div.dropdown div.avatar-wrapper {
-        background: rgba(0, 0, 0, 0.15);
-        border-radius: 100%;
-        margin: 20px auto;
-        width: 100px;
-        height: 100px; }
-        header.playlist-header div.user-info div.dropdown div.avatar-wrapper div.avatar {
-          height: 100%;
-          background-image: url("/images/user-2.svg");
-          background-repeat: no-repeat;
-          background-size: 100%; }
-      header.playlist-header div.user-info div.dropdown input {
-        background: transparent;
-        border: 0;
-        color: #eeeeee;
-        color: #eeeeee;
-        font-size: 32px;
-        padding: 10px 32px;
-        text-align: center; }
-        header.playlist-header div.user-info div.dropdown input:hover, header.playlist-header div.user-info div.dropdown input:focus {
-          background: rgba(0, 0, 0, 0.15);
-          outline: none; }
-        header.playlist-header div.user-info div.dropdown input::-webkit-input-placeholder {
-          color: rgba(0, 0, 0, 0.25); }
-        header.playlist-header div.user-info div.dropdown input:-moz-placeholder {
-          color: rgba(0, 0, 0, 0.25); }
-        header.playlist-header div.user-info div.dropdown input::-moz-placeholder {
-          color: rgba(0, 0, 0, 0.25); }
-        header.playlist-header div.user-info div.dropdown input:-ms-input-placeholder {
-          color: rgba(0, 0, 0, 0.25); }
-        header.playlist-header div.user-info div.dropdown input:last-child {
-          padding-bottom: 14px; }
+      display: none;
+      margin: 20px auto;
+      width: 100px;
+      height: 100px; }
+      header.playlist-header div.user-info div.dropdown div.avatar-wrapper div.avatar {
+        height: 100%;
+        background-image: url("/images/user-2.svg");
+        background-repeat: no-repeat;
+        background-size: 100%; }
+    header.playlist-header div.user-info div.dropdown input {
+      background: transparent;
+      border: 0;
+      color: #ecf0f1;
+      color: #ecf0f1;
+      font-size: 28px;
+      margin-bottom: 4px;
+      padding: 10px 32px 14px;
+      width: 300px; }
+      header.playlist-header div.user-info div.dropdown input:hover, header.playlist-header div.user-info div.dropdown input:focus {
+        background: #2980B9;
+        background: #3498DB;
+        outline: none; }
+        header.playlist-header div.user-info div.dropdown input:hover::-webkit-input-placeholder, header.playlist-header div.user-info div.dropdown input:focus::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.7); }
+        header.playlist-header div.user-info div.dropdown input:hover:-moz-placeholder, header.playlist-header div.user-info div.dropdown input:focus:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.7); }
+        header.playlist-header div.user-info div.dropdown input:hover::-moz-placeholder, header.playlist-header div.user-info div.dropdown input:focus::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.7); }
+        header.playlist-header div.user-info div.dropdown input:hover:-ms-input-placeholder, header.playlist-header div.user-info div.dropdown input:focus:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.7); }
+      header.playlist-header div.user-info div.dropdown input:focus {
+        background: #3498DB; }
+      header.playlist-header div.user-info div.dropdown input::-webkit-input-placeholder {
+        color: #6285a8;
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 34px; }
+      header.playlist-header div.user-info div.dropdown input:-moz-placeholder {
+        color: #6285a8;
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 34px; }
+      header.playlist-header div.user-info div.dropdown input::-moz-placeholder {
+        color: #6285a8;
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 34px; }
+      header.playlist-header div.user-info div.dropdown input:-ms-input-placeholder {
+        color: #6285a8;
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 34px; }
+      header.playlist-header div.user-info div.dropdown input:last-child {
+        padding-bottom: 14px; }
 
-section.main.playlist ol {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  section.main.playlist ol li {
-    background: #2ecc71;
-    border-radius: 20px;
-    box-shadow: 0 5px 0 #22a35a;
-    margin: 40px 10%;
-    overflow: hidden;
-    position: relative; }
-    section.main.playlist ol li a {
-      color: rgba(0, 0, 0, 0.2);
-      display: table;
-      padding: 20px 32px;
-      text-decoration: none;
-      width: 100%; }
-    section.main.playlist ol li .playtoggle {
-      background-color: #22a35a;
-      background-color: rgba(0, 0, 0, 0.2);
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: contain;
-      display: table-cell;
-      height: 50px;
-      mask: url("/images/play.svg");
-      -webkit-mask-image: url("/images/play.svg");
-      -webkit-mask-position: 50% 50%;
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: 50px 50px;
-      width: 50px; }
-    section.main.playlist ol li.playing {
-      background: #f6d35d;
-      box-shadow: 0 5px 0 #f39c12; }
-      section.main.playlist ol li.playing a {
-        color: #f39c12;
-        opacity: 1.0;
-        -webkit-transition: all 0s;
-        -moz-transition: all 0s;
-        transition: all 0s; }
-        section.main.playlist ol li.playing a .playtoggle {
-          background-color: #f39c12;
-          -webkit-mask-image: url("/images/pause.svg");
-          mask: url("/images/pause.svg"); }
-      section.main.playlist ol li.playing .buffer {
-        background-color: #f39c12;
-        opacity: 1; }
-      section.main.playlist ol li.playing.paused .playtoggle {
+section.main.playlist {
+  float: left;
+  margin-left: 300px;
+  clear: both;
+  width: calc(100% - 300px); }
+  section.main.playlist ol {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    section.main.playlist ol li {
+      background: #2ecc71;
+      border-radius: 10px;
+      box-shadow: 0 5px 0 #22a35a;
+      margin: 40px 10%;
+      overflow: hidden;
+      position: relative; }
+      section.main.playlist ol li a {
+        color: rgba(236, 240, 241, 0.8);
+        display: table;
+        padding: 20px 32px;
+        text-decoration: none;
+        width: 100%; }
+      section.main.playlist ol li .playtoggle {
+        background-color: rgba(236, 240, 241, 0.8);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: table-cell;
+        width: 30px;
+        height: 30px;
+        mask: url("/images/play.svg");
         -webkit-mask-image: url("/images/play.svg");
-        mask: url("/images/play.svg"); }
-    section.main.playlist ol li div.track-title {
-      display: table-cell;
-      font-size: 36px;
-      font-weight: 600;
-      margin-left: 48px;
-      padding-left: 50px;
-      vertical-align: middle; }
-    section.main.playlist ol li div.progress {
-      background-color: rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      -webkit-transition: all 0.15s ease-out 0;
-      -moz-transition: all 0.15s ease-out 0;
-      transition: all 0.15s ease-out 0;
-      z-index: 1; }
-    section.main.playlist ol li div.buffer {
-      background: rgba(34, 163, 90, 0.35);
-      bottom: 0;
-      height: 4px;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      -webkit-transition: all 0.15s ease-out 0;
-      -moz-transition: all 0.15s ease-out 0;
-      transition: all 0.15s ease-out 0; }
+        -webkit-mask-position: 50% 50%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 30px; }
+      section.main.playlist ol li.playing {
+        background: #f6d35d;
+        box-shadow: 0 5px 0 #f39c12; }
+        section.main.playlist ol li.playing a {
+          color: #f39c12;
+          opacity: 1.0;
+          -webkit-transition: all 0s;
+          -moz-transition: all 0s;
+          transition: all 0s; }
+          section.main.playlist ol li.playing a .playtoggle {
+            background-color: #f39c12;
+            -webkit-mask-image: url("/images/pause.svg");
+            mask: url("/images/pause.svg"); }
+        section.main.playlist ol li.playing .buffer {
+          background-color: #f39c12;
+          opacity: 1; }
+        section.main.playlist ol li.playing.paused .playtoggle {
+          -webkit-mask-image: url("/images/play.svg");
+          mask: url("/images/play.svg"); }
+      section.main.playlist ol li div.track-title {
+        display: table-cell;
+        font-size: 28px;
+        font-weight: 600;
+        margin-left: 48px;
+        padding-left: 32px;
+        vertical-align: middle; }
+      section.main.playlist ol li div.progress {
+        background-color: rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        -webkit-transition: all 0.15s ease-out 0;
+        -moz-transition: all 0.15s ease-out 0;
+        transition: all 0.15s ease-out 0;
+        z-index: 1; }
+      section.main.playlist ol li div.buffer {
+        background: rgba(34, 163, 90, 0.35);
+        bottom: 0;
+        height: 4px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        -webkit-transition: all 0.15s ease-out 0;
+        -moz-transition: all 0.15s ease-out 0;
+        transition: all 0.15s ease-out 0; }
 
 section.main.landing {
   background: #2ecc71;
@@ -634,7 +640,7 @@ div.alert {
   -moz-animation: show-alert 1s ease-in;
   animation: show-alert 1s ease-in; }
   div.alert .icon {
-    background-color: #eeeeee;
+    background-color: #ecf0f1;
     background-size: contain;
     height: 100%;
     -webkit-mask-position: 50% 50%;

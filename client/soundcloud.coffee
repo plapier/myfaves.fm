@@ -39,9 +39,9 @@ class ScJSONFetcher
   insertNewTracks: (tracks_data) ->
     # Session.set('exfm_results_total', json_data.total)
     for track_data in tracks_data
-      console.log track_data
+      # console.log track_data
       parsed_track = new ScTrackParser("soundcloud", track_data)
-      console.log parsed_track.data()
+      # console.log parsed_track.data()
       Songs.insert parsed_track.data()
 
 # @GetExfmUsername = ->

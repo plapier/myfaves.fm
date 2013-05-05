@@ -1,65 +1,31 @@
 $header-height: 60px;
+$sidebar-width: 300px;
 
 header.playlist-header {
   background: $header-background-1;
   @include clearfix;
   color: $header-color-1;
-  height: $header-height;
-  position: relative;
+  height: 100%;
+  position: fixed;
+  width: $sidebar-width;
   z-index: 1;
 
   h1 {
-    float: left;
-    font-size: 32px;
-    margin: 10px $gutter;
-    margin-left: $gutter;
+    background: hsla(0, 0%, 0%, 0.075);
+    color: #1abc9c;
+    font-size: 34px;
+    margin: 0 0 15px 0;
+    padding: 15px 0 15px $gutter;
   }
 
   div.user-info {
-    margin-right: 10px;
-    float: right;
     position: relative;
 
-    &.show {
-      background: $header-background-2;
-
-      .dropdown {
-        opacity: 1;
-      }
-    }
-
-    &.hide .dropdown {
-      opacity: 0;
-      display: none;
-    }
-
-    div.mini-avatar {
-      @include background-image(linear-gradient(to bottom, #FFFCD1 0%, #FFF9B1 40%, #FFF9B1 100%));
-      $padding: 10px;
-      background-image: url('/images/user-2.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
-      border-radius: 100%;
-      margin: $padding 20px;
-      @include size($header-height - $padding*2);
-
-      img {
-        display: block;
-      }
-    }
-
     div.dropdown {
-      background: $header-background-2;
-      border-radius: 8px 0 8px 8px;
-      position: absolute;
-      right: 0;
-      top: $header-height;
-      width: 400px;
-      overflow: hidden;
-
-      div.avatar-wrapper{
+      div.avatar-wrapper {
         background: hsla(0, 0%, 0%, 0.15);
         border-radius: 100%;
+        display: none;
         margin: 20px auto;
         @include size(100px);
 
@@ -76,17 +42,30 @@ header.playlist-header {
         border: 0;
         color: $header-color-1;
         color: $white;
-        font-size: 32px;
-        padding: 10px $gutter;
-        text-align: center;
+        font-size: 28px;
+        margin-bottom: 4px;
+        padding: 10px $gutter 14px;
+        width: $sidebar-width;
 
         &:hover, &:focus {
-          background: hsla(0, 0%, 0%, 0.15);
+          background: #2980B9;
+          background: #3498DB;
           outline: none;
+
+          @include placeholder {
+            color: hsla(0, 0%, 100%, 0.7);
+          }
+        }
+        &:focus {
+          background: #3498DB;
         }
 
         @include placeholder {
-          color: hsla(0, 0%, 0%, 0.25);
+          color: #6285a8;
+          color: hsla(0, 0%, 100%, 0.25);
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 34px;
         }
 
         &:last-child {

@@ -40,10 +40,7 @@
   <header class="playlist-header">
     <h1>myfaves.fm</h1>
     {{#constant}}
-      <div class="user-info hide">
-        <div class="mini-avatar">
-          <!-- <img src=""> -->
-        </div>
+      <div class="user-info">
         <div class="dropdown">
           <div class="avatar-wrapper">
             <div class="avatar">
@@ -52,6 +49,7 @@
           </div>
           <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
           <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
+          <input type="text" id="soundcloud_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
         </div>
       {{/constant}}
   </header>
@@ -59,7 +57,7 @@
 
 <template name="Songs">
   {{#each Track}}
-    <li class="track not-playing">
+    <li class="♫ track not-playing">
       <a href="#" id="{{ id }}">
         <span class="playtoggle"></span>
         <div class="track-title">

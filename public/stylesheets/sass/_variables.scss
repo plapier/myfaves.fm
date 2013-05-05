@@ -1,4 +1,5 @@
-$white: #EEE;
+// $white: #EEE;
+$white: #ECF0F1;
 
 $body-background: #2c3e50;
 $body-background-alt: #34495e;
@@ -15,8 +16,12 @@ $primary-color: #f39c12;
 // Green
 //************************************************************************//
 $secondary-background: #2ECC71;
-// $secondary-color: #27AE60;
+$secondary-color: #27AE60;
 $secondary-color: #22A35A;
+
+// $secondary-background: hsl(133, 49%, 58%);
+// $secondary-color: darken($secondary-background, 10%);
+
 
 $header-background-1: darken($secondary-background,  5%);
 $header-background-2: darken($secondary-background, 10%);
@@ -34,8 +39,8 @@ $header-color-2:      darken($secondary-color, 10%);
 $base-font-family: "proxima-nova-soft", $helvetica;
 // $base-font-family: "museo-sans-rounded", $helvetica;
 // $base-font-family: "omnes-pro", $helvetica;
-$title-font-size: 36px;
+$title-font-size: 28px;
 $title-font-weight: 600;
 
-$border-radius: 20px;
+$border-radius: 10px;
 $gutter: 32px;

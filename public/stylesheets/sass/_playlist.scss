@@ -1,4 +1,9 @@
 section.main.playlist {
+  float: left;
+  margin-left: 300px;
+  clear: both;
+  width: calc(100% - 300px);
+
   ol {
     list-style: none;
     margin: 0;
@@ -24,7 +29,9 @@ section.main.playlist {
 
       a {
         // color: $secondary-color;
-        color: hsla(0, 0%, 0%, 0.2);
+        // color: hsla(0, 0%, 0%, 0.2);
+        // color: $white;
+        color: transparentize($white, 0.2);
         display: table;
         padding: 20px 32px;
         text-decoration: none;
@@ -32,19 +39,20 @@ section.main.playlist {
       }
 
       .playtoggle {
-        background-color: $secondary-color;
-        background-color: hsla(0, 0%, 0%, 0.2);
+        $size: 30px;
+        // background-color: $secondary-color;
+        // background-color: hsla(0, 0%, 0%, 0.2);
+        background-color: transparentize($white, 0.2);
         background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: contain;
         display: table-cell;
-        height: 50px;
+        @include size($size);
         mask: url("/images/play.svg");
         -webkit-mask-image: url("/images/play.svg");
         -webkit-mask-position: 50% 50%;
         -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: 50px 50px;
-        width: 50px;
+        -webkit-mask-size: $size;
       }
 
       &.playing {
@@ -79,7 +87,7 @@ section.main.playlist {
         font-size: $title-font-size;
         font-weight: $title-font-weight;
         margin-left: 48px;
-        padding-left: 50px;
+        padding-left: $gutter;
         vertical-align: middle;
       }
 
