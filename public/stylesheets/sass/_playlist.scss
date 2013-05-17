@@ -10,22 +10,25 @@ section.main.playlist {
     padding: 0;
 
     li {
-      // @extend %animation-show-track;
       background: $secondary-background;
       border-radius: $border-radius;
       box-shadow: 0 5px 0 $secondary-color;
       margin: 40px 10%;
+      opacity: 0;
       overflow: hidden;
       position: relative;
 
-      // $t: 0.05s;
-      // $delay: $t;
-      // @for $child from 1 through 20 {
-        // &:nth-child(#{$child}) {
-          // @include animation-delay($delay);
-        // }
-        // $delay: $delay + $t;
-      // }
+      &.show-track {
+        @extend %animation-show-track;
+        $t: 0.05s;
+        $delay: $t;
+        @for $child from 1 through 20 {
+          &:nth-child(#{$child}) {
+            @include animation-delay($delay);
+          }
+          $delay: $delay + $t;
+        }
+      }
 
       a {
         // color: $secondary-color;

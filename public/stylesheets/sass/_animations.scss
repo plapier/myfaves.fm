@@ -24,15 +24,17 @@
 }
 
 %animation-show-track {
-  @include animation(show-track 0.25s $ease-out-sine 1s forwards);
+  @include animation(show-track 0.5s $ease-out-back forwards);
 }
 @include keyframes(show-track) {
   0% {
-    @include transform(scale(0));
+    @include transform(scale(0.90));
+    // @include transform(translate(10%, -20px));
     opacity: 0;
   }
   100% {
     @include transform(scale(1));
+    // @include transform(translate(0%, 0px));
     opacity: 1;
   }
 }
