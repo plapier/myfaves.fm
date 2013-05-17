@@ -1,4 +1,6 @@
-Session.setDefault('sc_username', false)
+Session.setDefault('sc_username', null)
+Session.set('sc_tracks', [])
+Session.set('sc_status', null)
 
 class @ScTrackParser
   constructor: (source, track_data) ->
@@ -11,7 +13,7 @@ class @ScTrackParser
 
   splitTitle: ->
     if @title.search(' - ') isnt -1
-      split = @title.split(' - ')
+      split   = @title.split(' - ')
       @artist = split[0]
       @title  = split[1]
 
@@ -25,7 +27,7 @@ class @ScTrackParser
     url:    @url()
     date_loved: @date_loved
 
-class ScJSONFetcher
+class @ScJSONFetcher
   constructor: ->
     @username = Session.get('sc_username')
     @getResults()
@@ -37,41 +39,9 @@ class ScJSONFetcher
       @insertNewTracks(json_data)
 
   insertNewTracks: (tracks_data) ->
-    # Session.set('exfm_results_total', json_data.total)
-    for track_data in tracks_data
-      # console.log track_data
-      parsed_track = new ScTrackParser("soundcloud", track_data)
-      # console.log parsed_track.data()
-      Songs.insert parsed_track.data()
-
-@GetScUsername = ->
-  username = $.totalStorage('sc_username')
-  if username
-    Session.set('sc_username', username)
-  Session.get('sc_username')
-
-@SetScUsername = (username) ->
-  $.totalStorage('sc_username', username)
-  Session.set('sc_username', username)
-
-# @ResetSessionVars = ->
-  # Session.set('sc_start', 0)
-  # Session.set('sc_results', 21)
-  # Session.set('sc_results_total', null)
-
-# fetch new user tracks when username is changed
-FetchScUserTracks = ->
-  Deps.autorun ->
-    username = Session.get("sc_username")
-    if username
-      new ScJSONFetcher()
-FetchScUserTracks()
-
-# # Fetch more user tracks (!defualt 20)
-# FetchMore = ->
-  # num_start     = Session.get('exfm_start')
-  # num_results   = Session.get('exfm_results')
-  # total_results = Session.get("exfm_results_total")
-  # if num_start <= total_results
-    # Session.set('exfm_start', num_start + num_results)
-
+    tracks = []
+    for track in tracks_data
+      parsed_track = new ScTrackParser("soundcloud", track)
+      tracks.push(parsed_track.data())
+    Session.set('sc_tracks', tracks)
+    Session.set('sc_status', 'ready')

@@ -10,22 +10,23 @@ section.main.playlist {
     padding: 0;
 
     li {
-      // @extend %animation-show-track;
+      @extend %animation-show-track;
       background: $secondary-background;
+      opacity: 0;
       border-radius: $border-radius;
       box-shadow: 0 5px 0 $secondary-color;
       margin: 40px 10%;
       overflow: hidden;
       position: relative;
 
-      // $t: 0.05s;
-      // $delay: $t;
-      // @for $child from 1 through 20 {
-        // &:nth-child(#{$child}) {
-          // @include animation-delay($delay);
-        // }
-        // $delay: $delay + $t;
-      // }
+      $t: 0.05s;
+      $delay: $t;
+      @for $child from 1 through 20 {
+        &:nth-child(#{$child}) {
+          @include animation-delay($delay);
+        }
+        $delay: $delay + $t;
+      }
 
       a {
         // color: $secondary-color;
