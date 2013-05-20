@@ -1,30 +1,57 @@
-Session.setDefault('hypem_username', false)
+Session.setDefault('hypem_username', null)
 Session.setDefault('hypem_page', 1)
+Session.set('hypem_tracks', [])
+Session.set('hypem_status', null)
 
-class HypemJSONFetcher
+class @HypemJSONFetcher
   constructor: ->
     @username = Session.get('hypem_username')
     @page     = Session.get('hypem_page')
     @getResults()
-    # @test()
+    # @debug()
 
   getResults: ->
     url = "http://hypem.com/playlist/loved/#{@username}/json/#{@page}/data.js"
     Meteor.http.get url, (error, results) =>
-      json_data = JSON.parse(results.content)
-      for own key, each_song of json_data
-        unless key is "version"
-          new SongMatcher(each_song)
-  test: ->
-    song = hypem_faves[2]
-    console.log "running hypem"
-    new SongMatcher(song)
+      if results.statusCode is 200
+        json_data = JSON.parse(results.content)
+        @parseResults(json_data)
+
+  parseResults: (songs) ->
+    # Use Promisses to wait for all asynchonous tasks to be finsihed
+    promises = []
+    for own key, song of songs
+      unless key is "version"
+        promise = new RSVP.Promise((resolve, reject) ->
+          new SongMatcher(song, resolve, reject)
+        )
+        promises.push(promise)
+
+    RSVP.all(promises).then ((values) ->
+      tracks = []
+      for key in values
+        if key isnt "No Match Found"
+          tracks.push(key)
+
+      # Push all returned data to Session
+      Session.set('hypem_tracks', tracks)
+      Session.set('hypem_status', 'ready')
+    )
+
+  debug: ->
+    console.log "running hypem debug"
+    songs = [hypem_faves[2], hypem_faves[3], hypem_faves[5]]
+    song  = hypem_faves[2]
+    @parseResults(songs)
 
 class SongMatcher
-  constructor: (song) ->
-    @artist = type: "artist", string: song.artist
-    @title  = type: "title", string: song.title
-    date = moment.unix(song.dateloved)
+  constructor: (song, resolve, reject) ->
+    @resolve    = resolve
+    @reject     = reject
+    @source     = 'hypem'
+    @artist     = type: 'artist', string: song.artist
+    @title      = type: 'title', string: song.title
+    date        = moment.unix(song.dateloved)
     @date_loved = moment.utc(date).format()
     @searchTitles()
 
@@ -33,29 +60,25 @@ class SongMatcher
     search = @title
     @getJSON(search)
 
-  searchArtists: () ->
-    # Search by artist -> match resulting titles
-    unless @searched_artist is true
-      @searched_artist = true
-      search = @artist
-      @getJSON(search)
-
   getJSON: (search) ->
     type = search.type
     query = search.string
-    exfm_url = encodeURI("http://ex.fm/api/v3/song/search/#{query}?results=20")
-    $.getJSON exfm_url, (data) =>
-      @compareData(type, query, data)
+    url = encodeURI("http://ex.fm/api/v3/song/search/#{query}?results=20")
+    Meteor.http.get url, (error, results) =>
+      if results.statusCode is 200
+        @compareData(type, query, results.data)
+      else
 
-  compareData: (type, query, data) ->
-    if data.results > 0
-      for track in data.songs
+
+  compareData: (type, query, results) ->
+    if results.results > 0
+      for track in results.songs
         hypem = @hypemMatchParser(type)
         exfm  = @exfmMatchParser(type, track)
 
         if _.isEqual(hypem, exfm)
           @track = track
-          @insertTrack(track)
+          @parseTrack(track)
           found_match = true
           break
 
@@ -65,6 +88,15 @@ class SongMatcher
     else
       # 0 Results from Exfm :( Try Searching for Artist
       @searchArtists()
+
+  searchArtists: () ->
+    # Search by artist -> match resulting titles
+    if @searched_artist isnt true
+      @searched_artist = true
+      search = @artist
+      @getJSON(search)
+    else
+      @resolve("No Match Found")
 
   exfmMatchParser: (type, track) ->
     if type is "artist"
@@ -78,25 +110,7 @@ class SongMatcher
     else
       @artist.string
 
-  insertTrack: (track) ->
+  parseTrack: (track) ->
     hypem_date_loved = @date_loved
-    parsed_track = new ExfmTrackParser("hypem", track, hypem_date_loved)
-    Songs.insert parsed_track.data()
-
-@GetHypemUsername = ->
-  username = $.totalStorage('hypem_username')
-  if username
-    Session.set('hypem_username', username)
-  Session.get('hypem_username')
-
-@SetHypemUsername = (username) ->
-  $.totalStorage('hypem_username', username)
-  Session.set('hypem_username', username)
-
-# fetch new user tracks when username is changed
-FetchHypemUserTracks = ->
-  Deps.autorun ->
-    username = Session.get("hypem_username")
-    if username
-      new HypemJSONFetcher()
-FetchHypemUserTracks()
+    parsed_track = new ExfmTrackParser(@source, track, hypem_date_loved)
+    @resolve(parsed_track.data())

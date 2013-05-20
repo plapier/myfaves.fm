@@ -1,12 +1,11 @@
 @Songs = new Meteor.Collection(null)
 
 GetUsernames = ->
-  GetExfmUsername()
-  GetHypemUsername()
-  GetScUsername()
-  if GetExfmUsername() or GetHypemUsername() or GetScUsername()
+  UsernameGetter("exfm")
+  UsernameGetter("hypem")
+  UsernameGetter("sc")
+  if UsernameGetter('exfm') or UsernameGetter('hypem') or UsernameGetter('sc')
     true
-
 
 ###### CLIENT #######
 if Meteor.isClient
@@ -16,7 +15,7 @@ if Meteor.isClient
   Template.Username.events "keyup input#username-input": (event) ->
     if event.keyCode is 13
       $inputElement = $('#username-input')
-      SetExfmUsername($inputElement.val())
+      SetUsername('exfm', $inputElement.val())
       $inputElement.parent().hide()
 
   Template.RenderPlaylist.events "click li.track": (event) ->
@@ -26,44 +25,36 @@ if Meteor.isClient
 
   Template.Header.exfm_username = ->
     username = Session.get('exfm_username')
-    unless username is false
+    if username?
       username
 
   Template.Header.hypem_username = ->
     username = Session.get('hypem_username')
-    unless username is false
+    if username?
       username
 
   Template.Header.sc_username = ->
     username = Session.get('sc_username')
-    unless username is false
+    if username?
       username
 
   Template.Header.events "keyup header input#exfm_username": (event) ->
     if event.keyCode is 13
-      exfm_username = $('#exfm_username').val()
-      SetExfmUsername(exfm_username)
-      ResetSessionVars()
-      Songs.remove({source: "exfm"})
+      username = $('#exfm_username').val()
+      UsernameSetter('exfm', username)
 
   Template.Header.events "keyup header input#hypem_username": (event) ->
     if event.keyCode is 13
-      hypem_username = $('#hypem_username').val()
-      SetHypemUsername(hypem_username)
-      Songs.remove({source: "hypem"})
+      username = $('#hypem_username').val()
+      UsernameSetter('hypem', username)
 
   Template.Header.events "keyup header input#soundcloud_username": (event) ->
     if event.keyCode is 13
-      sc_username = $('#soundcloud_username').val()
-      SetScUsername(sc_username)
-      Songs.remove({source: "soundcloud"})
+      username = $('#soundcloud_username').val()
+      UsernameSetter('sc', username)
 
   Template.Songs.Track = ->
     Songs.find({}, {sort: {date_loved: -1}})
 
-# ---- Helper Functions ----
 
-###### SERVER #######
-if Meteor.isServer
-  Meteor.startup ->
-# code to run on server at startup
+# ---- Helper Functions ----
