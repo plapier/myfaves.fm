@@ -30,6 +30,10 @@
 <template name="RenderPlaylist">
   {{> Header}}
   <section class="main playlist">
+    {{> flashes}}
+    {{#if Notices}}
+      {{> Notices}}
+    {{/if}}
     {{#if empty_database}}
       {{> Spinner}}
     {{/if}}
@@ -37,6 +41,10 @@
       {{> Songs}}
     </ol>
   </section>
+</template>
+
+<template name="Notices">
+  <div class="notice">Exfm User has 0 favorite tracks</div>
 </template>
 
 <template name="Header">

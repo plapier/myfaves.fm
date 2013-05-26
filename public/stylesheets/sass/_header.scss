@@ -41,6 +41,7 @@ header.playlist-header {
             color: hsla(0, 0%, 100%, 0.7);
           }
         }
+
         &:focus {
           background: #3498DB;
         }
@@ -55,6 +56,10 @@ header.playlist-header {
 
         &:last-child {
           padding-bottom: 14px;
+        }
+
+        &.error {
+          background: #e74c3c;
         }
       }
     }

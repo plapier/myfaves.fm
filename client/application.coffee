@@ -26,7 +26,7 @@ if Meteor.isClient
   Template.Header.exfm_username = ->
     username = Session.get('exfm_username')
     if username?
-      username
+       username
 
   Template.Header.hypem_username = ->
     username = Session.get('hypem_username')
@@ -57,7 +57,10 @@ if Meteor.isClient
     Songs.find({}, {sort: {date_loved: -1}})
 
   Template.RenderPlaylist.empty_database = ->
-    true if Songs.find({}).count() is 0
+    if Session.equals('exfm_status', 'Fetching...') \
+    or Session.equals('hypem_status', 'Fetching...') \
+    or Session.equals('sc_status', 'Fetching...')
+      true
 
   Template.Spinner.rendered = ->
     showSpinner()

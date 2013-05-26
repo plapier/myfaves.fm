@@ -505,6 +505,8 @@ header.playlist-header {
         line-height: 34px; }
       header.playlist-header div.user-info div.dropdown input:last-child {
         padding-bottom: 14px; }
+      header.playlist-header div.user-info div.dropdown input.error {
+        background: #e74c3c; }
 
 section.main.playlist {
   float: left;
@@ -513,6 +515,14 @@ section.main.playlist {
   width: calc(100% - 300px); }
   section.main.playlist #loading-spinner {
     height: 90vh; }
+  section.main.playlist div.flash {
+    background-color: #e67e22;
+    padding: 10px 32px;
+    margin: 0 10%;
+    color: rgba(236, 240, 241, 0.8);
+    text-align: center;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px; }
   section.main.playlist ol {
     list-style: none;
     margin: 0;
@@ -523,7 +533,6 @@ section.main.playlist {
       border-radius: 10px;
       box-shadow: 0 5px 0 #22a35a;
       margin: 40px 10%;
-      opacity: 0;
       overflow: hidden;
       position: relative; }
       section.main.playlist ol li:nth-child(1) {

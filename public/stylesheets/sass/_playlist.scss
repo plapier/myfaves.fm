@@ -8,6 +8,16 @@ section.main.playlist {
     height: 90vh;
   }
 
+  div.flash {
+    background-color: #e67e22;
+    padding: 10px 32px;
+    margin: 0 10%;
+    color: transparentize($white, 0.2);
+    text-align: center;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+  }
+
   ol {
     list-style: none;
     margin: 0;
@@ -20,7 +30,6 @@ section.main.playlist {
       border-radius: $border-radius;
       box-shadow: 0 5px 0 $secondary-color;
       margin: 40px 10%;
-      opacity: 0;
       overflow: hidden;
       position: relative;
 
