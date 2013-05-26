@@ -4,6 +4,10 @@ section.main.playlist {
   clear: both;
   width: calc(100% - 300px);
 
+  #loading-spinner {
+    height: 90vh;
+  }
+
   ol {
     list-style: none;
     margin: 0;
@@ -30,12 +34,10 @@ section.main.playlist {
       }
 
       a {
-        // color: $secondary-color;
-        // color: hsla(0, 0%, 0%, 0.2);
-        // color: $white;
         color: transparentize($white, 0.2);
         display: table;
         padding: 20px 32px;
+        table-layout: fixed;
         text-decoration: none;
         width: 100%;
       }
@@ -50,11 +52,12 @@ section.main.playlist {
         background-size: contain;
         display: table-cell;
         @include size($size);
-        mask: url("/images/play.svg");
-        -webkit-mask-image: url("/images/play.svg");
+        clip-path:  url('/images/play.svg#polyclip');
+        mask-image: url('/images/play.svg#poly');
+        -webkit-mask-image: url("/images/play.svg#poly");
         -webkit-mask-position: 50% 50%;
         -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: $size;
+        -webkit-mask-size: $size 36px;
       }
 
       &.playing {
@@ -68,8 +71,9 @@ section.main.playlist {
 
           .playtoggle {
             background-color: $primary-color;
-            -webkit-mask-image: url("/images/pause.svg");
-            mask: url("/images/pause.svg");
+            clip-path:  url('/images/pause.svg#polyclip');
+            mask-image: url('/images/pause.svg#poly');
+            -webkit-mask-image: url("/images/pause.svg#poly");
           }
         }
 
@@ -79,8 +83,9 @@ section.main.playlist {
         }
 
         &.paused .playtoggle {
-          -webkit-mask-image: url("/images/play.svg");
-          mask: url("/images/play.svg");
+          clip-path:  url('/images/play.svg#polyclip');
+          mask-image: url('/images/play.svg#poly');
+          -webkit-mask-image: url("/images/play.svg#poly");
         }
       }
 

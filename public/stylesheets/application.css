@@ -456,18 +456,6 @@ header.playlist-header {
     padding: 15px 0 15px 32px; }
   header.playlist-header div.user-info {
     position: relative; }
-    header.playlist-header div.user-info div.dropdown div.avatar-wrapper {
-      background: rgba(0, 0, 0, 0.15);
-      border-radius: 100%;
-      display: none;
-      margin: 20px auto;
-      width: 100px;
-      height: 100px; }
-      header.playlist-header div.user-info div.dropdown div.avatar-wrapper div.avatar {
-        height: 100%;
-        background-image: url("/images/user-2.svg");
-        background-repeat: no-repeat;
-        background-size: 100%; }
     header.playlist-header div.user-info div.dropdown input {
       background: transparent;
       border: 0;
@@ -523,6 +511,8 @@ section.main.playlist {
   margin-left: 300px;
   clear: both;
   width: calc(100% - 300px); }
+  section.main.playlist #loading-spinner {
+    height: 90vh; }
   section.main.playlist ol {
     list-style: none;
     margin: 0;
@@ -620,6 +610,7 @@ section.main.playlist {
         color: rgba(236, 240, 241, 0.8);
         display: table;
         padding: 20px 32px;
+        table-layout: fixed;
         text-decoration: none;
         width: 100%; }
       section.main.playlist ol li .playtoggle {
@@ -630,11 +621,12 @@ section.main.playlist {
         display: table-cell;
         width: 30px;
         height: 30px;
-        mask: url("/images/play.svg");
-        -webkit-mask-image: url("/images/play.svg");
+        clip-path: url("/images/play.svg#polyclip");
+        mask-image: url("/images/play.svg#poly");
+        -webkit-mask-image: url("/images/play.svg#poly");
         -webkit-mask-position: 50% 50%;
         -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: 30px; }
+        -webkit-mask-size: 30px 36px; }
       section.main.playlist ol li.playing {
         background: #f6d35d;
         box-shadow: 0 5px 0 #f39c12; }
@@ -646,14 +638,16 @@ section.main.playlist {
           transition: all 0s; }
           section.main.playlist ol li.playing a .playtoggle {
             background-color: #f39c12;
-            -webkit-mask-image: url("/images/pause.svg");
-            mask: url("/images/pause.svg"); }
+            clip-path: url("/images/pause.svg#polyclip");
+            mask-image: url("/images/pause.svg#poly");
+            -webkit-mask-image: url("/images/pause.svg#poly"); }
         section.main.playlist ol li.playing .buffer {
           background-color: #f39c12;
           opacity: 1; }
         section.main.playlist ol li.playing.paused .playtoggle {
-          -webkit-mask-image: url("/images/play.svg");
-          mask: url("/images/play.svg"); }
+          clip-path: url("/images/play.svg#polyclip");
+          mask-image: url("/images/play.svg#poly");
+          -webkit-mask-image: url("/images/play.svg#poly"); }
       section.main.playlist ol li div.track-title {
         display: table-cell;
         font-size: 28px;

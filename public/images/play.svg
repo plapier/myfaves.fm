@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="48px" height="55px" viewBox="0 0 48 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <title>Slice 1</title>
-    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
-    <defs></defs>
-    <g id="Page 1" fill="rgb(206,206,206)" fill-rule="evenodd">
-        <path d="M10.3490738,52.9276584 C4.63343815,56.2813201 0,53.6272395 0,47.0037668 L0,8.29752925 C0,1.67219258 4.63634574,-0.978318029 10.3490738,2.37363758 L43.0795341,21.5783064 C48.7951697,24.9319681 48.7922621,30.371034 43.0795341,33.7229896 L10.3490738,52.9276584 Z M10.3490738,52.9276584" id="Triangle 1 copy" fill="rgb(29,163,74)"></path>
-    </g>
+<svg width="30px" height="34px" viewBox="0 0 30 34" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <clipPath id="polyclip">
+    <path id="triangle" fill="#CCCCCC" d="M0,29.3088587 L0,4.69088114 C0,0.477028293 2.93655382,-1.20875195 6.55486322,0.923162001 L27.2855773,13.1377335 C30.9057283,15.2707326 30.9038867,18.7300924 27.2855773,20.8620063 L6.55486322,33.0765778 C2.93471222,35.2095768 0,33.521526 0,29.3088587 Z M0,29.3088587"></path>
+  </clipPath>
+
+  <path id="poly" fill="#CCCCCC" d="M0,29.3088587 L0,4.69088114 C0,0.477028293 2.93655382,-1.20875195 6.55486322,0.923162001 L27.2855773,13.1377335 C30.9057283,15.2707326 30.9038867,18.7300924 27.2855773,20.8620063 L6.55486322,33.0765778 C2.93471222,35.2095768 0,33.521526 0,29.3088587 Z M0,29.3088587"></path>
 </svg>

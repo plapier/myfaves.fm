@@ -22,21 +22,6 @@ header.playlist-header {
     position: relative;
 
     div.dropdown {
-      div.avatar-wrapper {
-        background: hsla(0, 0%, 0%, 0.15);
-        border-radius: 100%;
-        display: none;
-        margin: 20px auto;
-        @include size(100px);
-
-        div.avatar {
-          height: 100%;
-          background-image: url('/images/user-2.svg');
-          background-repeat: no-repeat;
-          background-size: 100%;
-        }
-      }
-
       input {
         background: transparent;
         border: 0;

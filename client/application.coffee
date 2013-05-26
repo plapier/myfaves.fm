@@ -56,5 +56,11 @@ if Meteor.isClient
   Template.Songs.Track = ->
     Songs.find({}, {sort: {date_loved: -1}})
 
+  Template.RenderPlaylist.empty_database = ->
+    true if Songs.find({}).count() is 0
+
+  Template.Spinner.rendered = ->
+    showSpinner()
+
 
 # ---- Helper Functions ----

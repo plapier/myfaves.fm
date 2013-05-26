@@ -30,6 +30,9 @@
 <template name="RenderPlaylist">
   {{> Header}}
   <section class="main playlist">
+    {{#if empty_database}}
+      {{> Spinner}}
+    {{/if}}
     <ol id="tracks">
       {{> Songs}}
     </ol>
@@ -39,17 +42,13 @@
 <template name="Header">
   <header class="playlist-header">
     <h1>myfaves.fm</h1>
-      <div class="user-info">
-        <div class="dropdown">
-          <div class="avatar-wrapper">
-            <div class="avatar">
-              <!-- <img src=""> -->
-            </div>
-          </div>
-          <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
-          <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
-          <input type="text" id="soundcloud_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
-        </div>
+    <div class="user-info">
+      <div class="dropdown">
+        <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
+        <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
+        <input type="text" id="soundcloud_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
+      </div>
+    </div>
   </header>
 </template>
 
@@ -69,4 +68,8 @@
       </audio>
     </li>
   {{/each}}
+</template>
+
+<template name="Spinner">
+  <div id="loading-spinner"></div>
 </template>
