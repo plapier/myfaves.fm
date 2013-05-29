@@ -30,7 +30,7 @@ FetchUserTracks('sc')
     else
       SetUsername(source, null)
       Songs.remove({})
-      # Songs.remove({source: "hypem"})
+      # Songs.remove({source: source})
     if source is 'exfm'
       ResetSessionVars()
 

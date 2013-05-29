@@ -57,9 +57,9 @@ class @ExfmJSONFetcher
         Session.set('exfm_status', 'ready')
 
   insertNewTracks: (json_data) ->
+    flash.clear 'exfm'
     if json_data.results is 0
-      flash.info 'exfm', 'Exfm user has 0 tracks'
-    else flash.clear 'exfm'
+      flash.info 'exfm', "Exfm: #{@username} has 0 favorite tracks"
 
     tracks_data = json_data.songs
     Session.set('exfm_results_total', json_data.total)

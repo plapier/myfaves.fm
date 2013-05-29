@@ -13,11 +13,21 @@ class @HypemJSONFetcher
   getResults: ->
     url = "http://hypem.com/playlist/loved/#{@username}/json/#{@page}/data.js"
     Meteor.http.get url, (error, results) =>
-      if results.statusCode is 200
+      if error
+        $('#hypem_username').addClass('error')
+
+      else if results.statusCode is 200
         json_data = JSON.parse(results.content)
         @parseResults(json_data)
 
+      else
+        console.log "Something went wrong with HypeMachine"
+
   parseResults: (songs) ->
+    flash.clear 'hypem'
+    if _.size(songs) <= 1
+      flash.info 'hypem', "Hypem: #{@username} has 0 favorite tracks"
+
     # Use Promisses to wait for all asynchonous tasks to be finsihed
     promises = []
     for own key, song of songs
@@ -63,11 +73,10 @@ class SongMatcher
   getJSON: (search) ->
     type = search.type
     query = search.string
-    url = encodeURI("http://ex.fm/api/v3/song/search/#{query}?results=20")
+    query = query.replace(/\//g, '') # remove all forwardslash
+    url = encodeURI "http://ex.fm/api/v3/song/search/#{query}?results=20"
     Meteor.http.get url, (error, results) =>
-      if results.statusCode is 200
-        @compareData(type, query, results.data)
-      else
+      @compareData(type, query, results.data)
 
 
   compareData: (type, query, results) ->

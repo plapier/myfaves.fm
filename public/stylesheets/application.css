@@ -515,14 +515,17 @@ section.main.playlist {
   width: calc(100% - 300px); }
   section.main.playlist #loading-spinner {
     height: 90vh; }
-  section.main.playlist div.flash {
+  section.main.playlist section.notices {
     background-color: #e67e22;
-    padding: 10px 32px;
-    margin: 0 10%;
+    border-radius: 0 0 8px 8px;
     color: rgba(236, 240, 241, 0.8);
-    text-align: center;
     font-weight: 600;
-    border-radius: 0 0 8px 8px; }
+    margin: 0 10%;
+    text-align: center; }
+    section.main.playlist section.notices div {
+      padding: 10px 32px; }
+      section.main.playlist section.notices div:nth-child(n+2) {
+        padding-top: 0; }
   section.main.playlist ol {
     list-style: none;
     margin: 0;
