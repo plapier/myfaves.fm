@@ -17,14 +17,12 @@ class @HypemJSONFetcher
         $('#hypem_username').addClass('error')
 
       else if results.statusCode is 200
-        json_data = JSON.parse(results.content)
-        @parseResults(json_data)
+        @parseResults(results.data)
 
       else
         console.log "Something went wrong with HypeMachine"
 
   parseResults: (songs) ->
-    flash.clear 'hypem'
     if _.size(songs) <= 1
       flash.info 'hypem', "Hypem: #{@username} has 0 favorite tracks"
 

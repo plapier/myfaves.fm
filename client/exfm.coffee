@@ -44,20 +44,19 @@ class @ExfmJSONFetcher
   getResults: ->
     url = "http://ex.fm/api/v3/user/#{@username}/loved?start=#{@num_start}&results=#{@num_results}"
     Meteor.http.get url, (error, results) =>
-      json_data = JSON.parse(results.content)
       if results.statusCode is 200
-        @insertNewTracks(json_data)
+        @insertNewTracks(results.data)
 
       else if results.statusCode is 404
-        console.log json_data.status_text
+        console.log results.data.status_text
         $('#exfm_username').addClass('error')
+        flash.error 'exfm', "Exfm: User doesn't exist"
 
       else
         console.log "Something went wrong with exfm"
         Session.set('exfm_status', 'ready')
 
   insertNewTracks: (json_data) ->
-    flash.clear 'exfm'
     if json_data.results is 0
       flash.info 'exfm', "Exfm: #{@username} has 0 favorite tracks"
 

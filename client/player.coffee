@@ -52,8 +52,8 @@ class @PlaySong
       @.currentTime = 0 if @.currentTime > 0
 
   showBuffer: (track, audio) ->
-    loadingIndicator  = track.find('.buffer')
-    if (audio.buffered isnt 'undefined')
+    loadingIndicator = track.find('.buffer')
+    if audio.buffered isnt 'undefined'
       $(audio).on "progress", ->
         ## check if audio has started buffered
         if audio.buffered.length is 1

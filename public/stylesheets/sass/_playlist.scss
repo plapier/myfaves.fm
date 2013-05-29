@@ -9,8 +9,6 @@ section.main.playlist {
   }
 
   section.notices {
-    background-color: #e67e22;
-    border-radius: 0 0 8px 8px;
     color: transparentize($white, 0.2);
     font-weight: 600;
     margin: 0 10%;
@@ -18,9 +16,14 @@ section.main.playlist {
 
     div {
       padding: 10px 32px;
+      background-color: #e67e22;
 
       &:nth-child(n+2) {
         padding-top: 0;
+      }
+
+      &:last-child, &:only-child {
+        border-radius: 0 0 8px 8px;
       }
     }
   }

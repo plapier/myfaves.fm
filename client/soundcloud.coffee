@@ -36,14 +36,12 @@ class @ScJSONFetcher
     url = "http://api.soundcloud.com/users/#{@username}/favorites.json?client_id=#{soundcloud_id}"
     Meteor.http.get url, (error, results) =>
       if results.statusCode is 200
-        json_data = JSON.parse(results.content)
-        @insertNewTracks(json_data)
+        @insertNewTracks(results.data)
 
       else if results.statusCode is 404
         $('#soundcloud_username').addClass('error')
 
   insertNewTracks: (tracks_data) ->
-    flash.clear 'sc'
     if _.size(tracks_data) is 0
       flash.info 'sc', "Soundcloud: #{@username} has 0 favorite tracks"
 
