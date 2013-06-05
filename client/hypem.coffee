@@ -11,8 +11,7 @@ class @HypemJSONFetcher
     # @debug()
 
   getResults: ->
-    url = "http://hypem.com/playlist/loved/#{@username}/json/#{@page}/data.js"
-    Meteor.http.get url, (error, results) =>
+    Meteor.call "parallelAsyncJob", @username, (error, results) =>
       if error
         $('#hypem_username').addClass('error')
         flash.error 'hypem', "Hypem: User doesn't exist"
