@@ -39,6 +39,7 @@ class @ScJSONFetcher
         @insertNewTracks(results.data)
 
       else if results.statusCode is 404
+        flash.error 'sc', "Soundcloud: User doesn't exist"
         $('#soundcloud_username').addClass('error')
 
   insertNewTracks: (tracks_data) ->

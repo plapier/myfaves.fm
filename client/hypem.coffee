@@ -15,6 +15,7 @@ class @HypemJSONFetcher
     Meteor.http.get url, (error, results) =>
       if error
         $('#hypem_username').addClass('error')
+        flash.error 'hypem', "Hypem: User doesn't exist"
 
       else if results.statusCode is 200
         @parseResults(results.data)
