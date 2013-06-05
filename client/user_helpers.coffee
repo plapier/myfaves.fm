@@ -25,12 +25,13 @@ FetchUserTracks('sc')
   username = null if username.length is 0
   unless Session.equals("#{source}_username", username)
     flash.clear source
-    if username.length > 0
-      SetUsername(source, username)
-      Songs.remove({})
-    else
+    if not username?
       SetUsername(source, null)
       Songs.remove({})
+    else if username.length > 0
+      SetUsername(source, username)
+      Songs.remove({})
+    # else
       # Songs.remove({source: source})
     if source is 'exfm'
       ResetSessionVars()
