@@ -22,7 +22,7 @@ FetchUserTracks('sc')
   Session.get("#{source}_username")
 
 @UsernameSetter = (source, username) ->
-  username is null if username.length is 0
+  username = null if username.length is 0
   unless Session.equals("#{source}_username", username)
     flash.clear source
     if username.length > 0

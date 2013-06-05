@@ -12,11 +12,14 @@ if Meteor.isClient
   Template.RenderTemplate.has_username = ->
     GetUsernames()
 
-  Template.Username.events "keyup input#username-input": (event) ->
-    if event.keyCode is 13
-      $inputElement = $('#username-input')
-      SetUsername('exfm', $inputElement.val())
-      $inputElement.parent().hide()
+  Template.Username.events "click #submit": (event) ->
+    $exfm_username = $('#exfm_username').val()
+    $hypem_username = $('#hypem_username').val()
+    $sc_username = $('#sc_username').val()
+    UsernameSetter('exfm', $exfm_username)
+    UsernameSetter('hypem', $hypem_username)
+    UsernameSetter('sc', $sc_username)
+    # $inputElement.parent().hide()
 
   Template.RenderPlaylist.events "click li.track": (event) ->
     event.preventDefault()
@@ -38,20 +41,26 @@ if Meteor.isClient
     if username?
       username
 
-  Template.Header.events "keyup header input#exfm_username": (event) ->
-    if event.keyCode is 13
-      username = $('#exfm_username').val()
-      UsernameSetter('exfm', username)
+  Template.Header.events 
+    "keyup input#exfm_username": (event) ->
+      if event.keyCode is 13
+        setUser('exfm')
+    "blur input#exfm_username": (event) ->
+      setUser('exfm')
 
-  Template.Header.events "keyup header input#hypem_username": (event) ->
-    if event.keyCode is 13
-      username = $('#hypem_username').val()
-      UsernameSetter('hypem', username)
+  Template.Header.events
+    "keyup input#hypem_username": (event) ->
+      if event.keyCode is 13
+        setUser('hypem')
+    "blur input#hypem_username": (event) ->
+      setUser('hypem')
 
-  Template.Header.events "keyup header input#soundcloud_username": (event) ->
-    if event.keyCode is 13
-      username = $('#soundcloud_username').val()
-      UsernameSetter('sc', username)
+  Template.Header.events
+    "keyup input#sc_username": (event) ->
+      if event.keyCode is 13
+        setUser('sc')
+    "blur input#sc_username": (event) ->
+      setUser('sc')
 
   Template.Songs.Track = ->
     Songs.find({}, {sort: {date_loved: -1}})
@@ -67,3 +76,6 @@ if Meteor.isClient
 
 
 # ---- Helper Functions ----
+@setUser = (user) ->
+  username = $("##{user}_username").val()
+  UsernameSetter("#{user}", username)

@@ -19,16 +19,6 @@ $secondary-background: #2ECC71;
 $secondary-color: #27AE60;
 $secondary-color: #22A35A;
 
-// $secondary-background: hsl(133, 49%, 58%);
-// $secondary-color: darken($secondary-background, 10%);
-
-
-$header-background-1: darken($secondary-background,  5%);
-$header-background-2: darken($secondary-background, 10%);
-$header-background-2: #4D5B69;
-$header-color-1:      darken($secondary-color,  5%);
-$header-color-2:      darken($secondary-color, 10%);
-
 $header-background-1: $body-background-alt;
 $header-background-2: darken($secondary-background, 10%);
 $header-background-2: #4D5B69;

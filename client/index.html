@@ -22,7 +22,12 @@
 <template name="Username">
   <section class="main landing">
     <div class="overlay">
-      <input type="text" id="username-input" placeholder="ex.fm username..." autofocus>
+      <form>
+        <input type="text" id="exfm_username" placeholder="Exfm Username" autofocus>
+        <input type="text" id="hypem_username" placeholder="Hypem Username">
+        <input type="text" id="sc_username" placeholder="Soundcloud Username">
+        <button id="submit">Start Listening</button>
+      </form>
     </div>
   </section>
 </template>
@@ -54,7 +59,7 @@
       <div class="dropdown">
         <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
         <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
-        <input type="text" id="soundcloud_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
+        <input type="text" id="sc_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
       </div>
     </div>
   </header>
