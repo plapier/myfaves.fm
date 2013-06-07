@@ -41,7 +41,7 @@ if Meteor.isClient
     if username?
       username
 
-  Template.Header.events 
+  Template.Header.events
     "keyup input#exfm_username": (event) ->
       if event.keyCode is 13
         setUser('exfm')

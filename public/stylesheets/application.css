@@ -456,7 +456,7 @@ header.playlist-header {
     padding: 15px 0 15px 32px; }
   header.playlist-header div.user-info {
     position: relative; }
-    header.playlist-header div.user-info div.dropdown input {
+    header.playlist-header div.user-info input {
       background: transparent;
       border: 0;
       color: #ecf0f1;
@@ -465,48 +465,118 @@ header.playlist-header {
       margin-bottom: 4px;
       padding: 10px 32px 14px;
       width: 300px; }
-      header.playlist-header div.user-info div.dropdown input:hover, header.playlist-header div.user-info div.dropdown input:focus {
-        background: #2980B9;
+      header.playlist-header div.user-info input:hover, header.playlist-header div.user-info input:focus {
         background: #3498DB;
         outline: none; }
-        header.playlist-header div.user-info div.dropdown input:hover::-webkit-input-placeholder, header.playlist-header div.user-info div.dropdown input:focus::-webkit-input-placeholder {
+        header.playlist-header div.user-info input:hover::-webkit-input-placeholder, header.playlist-header div.user-info input:focus::-webkit-input-placeholder {
           color: rgba(255, 255, 255, 0.7); }
-        header.playlist-header div.user-info div.dropdown input:hover:-moz-placeholder, header.playlist-header div.user-info div.dropdown input:focus:-moz-placeholder {
+        header.playlist-header div.user-info input:hover:-moz-placeholder, header.playlist-header div.user-info input:focus:-moz-placeholder {
           color: rgba(255, 255, 255, 0.7); }
-        header.playlist-header div.user-info div.dropdown input:hover::-moz-placeholder, header.playlist-header div.user-info div.dropdown input:focus::-moz-placeholder {
+        header.playlist-header div.user-info input:hover::-moz-placeholder, header.playlist-header div.user-info input:focus::-moz-placeholder {
           color: rgba(255, 255, 255, 0.7); }
-        header.playlist-header div.user-info div.dropdown input:hover:-ms-input-placeholder, header.playlist-header div.user-info div.dropdown input:focus:-ms-input-placeholder {
+        header.playlist-header div.user-info input:hover:-ms-input-placeholder, header.playlist-header div.user-info input:focus:-ms-input-placeholder {
           color: rgba(255, 255, 255, 0.7); }
-      header.playlist-header div.user-info div.dropdown input:focus {
+      header.playlist-header div.user-info input:focus {
         background: #3498DB; }
-      header.playlist-header div.user-info div.dropdown input::-webkit-input-placeholder {
-        color: #6285a8;
+      header.playlist-header div.user-info input::-webkit-input-placeholder {
         color: rgba(255, 255, 255, 0.25);
         font-size: 22px;
         font-weight: 600;
         line-height: 34px; }
-      header.playlist-header div.user-info div.dropdown input:-moz-placeholder {
-        color: #6285a8;
+      header.playlist-header div.user-info input:-moz-placeholder {
         color: rgba(255, 255, 255, 0.25);
         font-size: 22px;
         font-weight: 600;
         line-height: 34px; }
-      header.playlist-header div.user-info div.dropdown input::-moz-placeholder {
-        color: #6285a8;
+      header.playlist-header div.user-info input::-moz-placeholder {
         color: rgba(255, 255, 255, 0.25);
         font-size: 22px;
         font-weight: 600;
         line-height: 34px; }
-      header.playlist-header div.user-info div.dropdown input:-ms-input-placeholder {
-        color: #6285a8;
+      header.playlist-header div.user-info input:-ms-input-placeholder {
         color: rgba(255, 255, 255, 0.25);
         font-size: 22px;
         font-weight: 600;
         line-height: 34px; }
-      header.playlist-header div.user-info div.dropdown input:last-child {
+      header.playlist-header div.user-info input:last-child {
         padding-bottom: 14px; }
-      header.playlist-header div.user-info div.dropdown input.error {
+      header.playlist-header div.user-info input.error {
         background: #e74c3c; }
+
+div.shortcuts {
+  position: fixed;
+  bottom: 0;
+  margin-left: 32px;
+  padding-bottom: 20px; }
+  div.shortcuts:hover span {
+    opacity: 1; }
+  div.shortcuts span {
+    color: #627586;
+    font-size: 12px;
+    opacity: 0;
+    position: absolute;
+    top: -24px;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0; }
+  div.shortcuts div {
+    border-radius: 2px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #2c3e50;
+    float: left;
+    background: #304457; }
+    div.shortcuts div.left {
+      margin-right: 5px;
+      position: relative; }
+      div.shortcuts div.left:before, div.shortcuts div.left:after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        height: 0;
+        width: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-right-color: #576877; }
+      div.shortcuts div.left:before {
+        right: 10px; }
+      div.shortcuts div.left:after {
+        right: 15px; }
+    div.shortcuts div.up {
+      margin-top: -35px; }
+    div.shortcuts div.right {
+      margin-left: 5px;
+      position: relative; }
+      div.shortcuts div.right:before, div.shortcuts div.right:after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        height: 0;
+        width: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-left-color: #576877; }
+      div.shortcuts div.right:before {
+        left: 10px; }
+      div.shortcuts div.right:after {
+        left: 15px; }
+    div.shortcuts div.space {
+      margin-right: 10px;
+      width: 120px;
+      position: relative; }
+      div.shortcuts div.space:before, div.shortcuts div.space:after {
+        background: #576877;
+        content: "";
+        height: 10px;
+        position: absolute;
+        top: 9px;
+        width: 3px; }
+      div.shortcuts div.space:before {
+        left: calc(50% - 2px); }
+      div.shortcuts div.space:after {
+        left: calc(50% + 3px); }
 
 section.main.playlist {
   float: left;

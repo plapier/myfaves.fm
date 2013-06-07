@@ -26,12 +26,13 @@ class @PlaySong
     @audio = @clickedTrack.find("audio").get(0)
 
   checkForErrors: (track, audio) ->
-    audio.addEventListener "error", ((event) ->
+    audio.addEventListener "error", ((event) =>
+      console.log @
       trackName = track.find('.title').text()
       console.log "Error: #{trackName}"
       track.addClass("error")
       new PlaySong(track.next())
-    ), false ## !useCapture must be set to true!
+    ), false ## useCapture must be set to true!
 
   playTrack: (track, audio) ->
     @bufferNext = false if typeof @bufferNext?

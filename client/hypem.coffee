@@ -76,7 +76,6 @@ class SongMatcher
     Meteor.http.get url, (error, results) =>
       @compareData(type, query, results.data)
 
-
   compareData: (type, query, results) ->
     if results.results > 0
       for track in results.songs
