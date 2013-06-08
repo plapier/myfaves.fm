@@ -12,10 +12,16 @@ header.playlist-header {
 
   h1 {
     background: hsla(0, 0%, 0%, 0.075);
-    color: #1abc9c;
+    color: $title-color;
+    font-family: $title-font-family;
     font-size: 34px;
     margin: 0 0 15px 0;
     padding: 15px 0 15px $gutter;
+
+    span {
+      letter-spacing: -1px;
+      margin-left: 1px;
+    }
   }
 
   div.user-info {
@@ -24,7 +30,6 @@ header.playlist-header {
     input {
       background: transparent;
       border: 0;
-      color: $header-color-1;
       color: $white;
       font-size: 28px;
       margin-bottom: 4px;

@@ -1,52 +1,112 @@
 //************************************************************************//
 // Landing Page Template
 //************************************************************************//
+$max-width: 700px;
 section.main.landing {
-  // background: $secondary-background;
-  // background: $body-background;
   height: 100%;
   width: 100%;
+}
 
-  div.overlay {
-    $width: 500px;
-    width: $width;
-    float: right;
-    margin: 20vh 10vw 0 10%;
+section.marketing {
+  padding: 5vh 5vw 50px;
 
-    input {
-      border: 0;
-      border-radius: 4px;
-      font-size: 28px;
-      font-weight: 200;
-      height: 80px;
-      padding: 0 20px;
-      width: 100%;
-      color: $body-background-alt;
-      margin-bottom: 20px;
+  h1 {
+    color: $title-color;
+    font-family: $title-font-family;
+    font-size: 130px;
+    letter-spacing: -3px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0 0 5vh;
+    text-align: center;
+    $shadow: darken($title-color, 15%);
+    text-shadow: 0 1px 0 $shadow, 0 2px 0 $shadow,
+                 0 3px 0 $shadow, 0 4px 0 $shadow;
 
-      &:focus, &:active {
-        box-shadow: 0;
-        outline: none;
-      }
+    @include media($tablet) {
+      font-size: 16vw;
     }
 
-    button {
-      @include appearance(none);
-      background: $secondary-background;
-      border: 0;
-      border-radius: 4px;
-      box-shadow: 0 5px 0 $secondary-color;
-      color: $white;
-      font-size: 36px;
-      padding: 20px;
-      text-align: center;
-      width: 100%;
-      @include transition;
+    @include media($mobile) {
+      text-shadow: 0 1px 0 $shadow, 0 2px 0 $shadow;
+    }
 
-      &:active {
-        @include transform(translateY(5px));
-        box-shadow: none;
+    span.faves {
+      color: $white;
+      margin-left: 4px;
+      $shadow: #bdc3c7;
+      $shadow: darken(#bdc3c7, 4%);
+      text-shadow: 0 1px 0 $shadow, 0 2px 0 $shadow,
+                   0 3px 0 $shadow, 0 4px 0 $shadow;
+
+      @include media($mobile) {
+        text-shadow: 0 1px 0 $shadow, 0 2px 0 $shadow;
       }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: $white;
+    font-size: 2.2em;
+    font-weight: 200;
+    line-height: 1.4em;
+    margin: 0 auto;
+    width: $max-width;
+
+    @include media($tablet) {
+      width: 100%;
+    }
+  }
+}
+
+section.inputs {
+  background: $body-background-alt;
+  padding: 50px 5vw;
+
+  form {
+    margin: 0 auto;
+    width: 50vw;
+
+    @include media($tablet) {
+      width: 100%;
+    }
+  }
+
+  input {
+    border: 0;
+    border-radius: 4px;
+    font-size: 28px;
+    font-weight: 200;
+    height: 80px;
+    padding: 0 20px;
+    width: 100%;
+    color: $body-background-alt;
+    margin-bottom: 20px;
+
+    &:focus, &:active {
+      box-shadow: 0;
+      outline: none;
+    }
+  }
+
+  button {
+    @include appearance(none);
+    background: $secondary-background;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 $secondary-color;
+    color: $white;
+    font-size: 36px;
+    font-weight: 600;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    @include transition;
+
+    &:active {
+      @include transform(translateY(5px));
+      box-shadow: none;
     }
   }
 }

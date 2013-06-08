@@ -24,12 +24,11 @@ $header-background-2: #4D5B69;
 $header-color-1:      $white;
 $header-color-2:      darken($secondary-color, 10%);
 
-
 $base-font-family: "proxima-nova-soft", $helvetica;
-// $base-font-family: "museo-sans-rounded", $helvetica;
-// $base-font-family: "omnes-pro", $helvetica;
+$title-font-family: "omnes-pro", $helvetica;
 $title-font-size: 28px;
 $title-font-weight: 600;
+$title-color: #1abc9c;
 
 $border-radius: 10px;
 $gutter: 32px;

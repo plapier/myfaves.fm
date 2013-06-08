@@ -5,6 +5,7 @@
   <!-- <script src="http://connect.soundcloud.com/sdk.js"></script> -->
   <script type="text/javascript" src="//use.typekit.net/rkw1rla.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
 </head>
 
 <body>
@@ -21,14 +22,18 @@
 
 <template name="Username">
   <section class="main landing">
-    <div class="overlay">
+    <section class="marketing">
+      <h1>my<span class="faves">faves</span>.fm</h1>
+      <h2>Listen to all your favorite tracks pulled from <b>Soundcloud</b>, <b>Hype Machine</b>, and <b>Exfm</b>.</h2>
+    </section>
+    <section class="inputs">
       <form>
         <input type="text" id="exfm_username" placeholder="Exfm Username" autofocus>
         <input type="text" id="hypem_username" placeholder="Hypem Username">
         <input type="text" id="sc_username" placeholder="Soundcloud Username">
         <button id="submit">Start Listening</button>
       </form>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -54,7 +59,7 @@
 
 <template name="Header">
   <header class="playlist-header">
-    <h1>myfaves.fm</h1>
+    <h1>my<span>faves</span>.fm</h1>
     <div class="user-info">
       <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
       <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">

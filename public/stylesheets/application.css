@@ -330,6 +330,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 @-webkit-keyframes show-alert {
   0% {
     -webkit-transform: scale(0);
@@ -451,15 +456,18 @@ header.playlist-header {
   header.playlist-header h1 {
     background: rgba(0, 0, 0, 0.075);
     color: #1abc9c;
+    font-family: "omnes-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 34px;
     margin: 0 0 15px 0;
     padding: 15px 0 15px 32px; }
+    header.playlist-header h1 span {
+      letter-spacing: -1px;
+      margin-left: 1px; }
   header.playlist-header div.user-info {
     position: relative; }
     header.playlist-header div.user-info input {
       background: transparent;
       border: 0;
-      color: #ecf0f1;
       color: #ecf0f1;
       font-size: 28px;
       margin-bottom: 4px;
@@ -764,48 +772,92 @@ section.main.playlist {
 section.main.landing {
   height: 100%;
   width: 100%; }
-  section.main.landing div.overlay {
-    width: 500px;
-    float: right;
-    margin: 20vh 10vw 0 10%; }
-    section.main.landing div.overlay input {
-      border: 0;
-      border-radius: 4px;
-      font-size: 28px;
-      font-weight: 200;
-      height: 80px;
-      padding: 0 20px;
-      width: 100%;
-      color: #34495e;
-      margin-bottom: 20px; }
-      section.main.landing div.overlay input:focus, section.main.landing div.overlay input:active {
-        box-shadow: 0;
-        outline: none; }
-    section.main.landing div.overlay button {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      background: #2ecc71;
-      border: 0;
-      border-radius: 4px;
-      box-shadow: 0 5px 0 #22a35a;
+
+section.marketing {
+  padding: 5vh 5vw 50px; }
+  section.marketing h1 {
+    color: #1abc9c;
+    font-family: "omnes-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 130px;
+    letter-spacing: -3px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0 0 5vh;
+    text-align: center;
+    text-shadow: 0 1px 0 #117964, 0 2px 0 #117964, 0 3px 0 #117964, 0 4px 0 #117964; }
+    @media screen and (max-width: 768px) {
+      section.marketing h1 {
+        font-size: 16vw; } }
+    @media screen and (max-width: 480px) {
+      section.marketing h1 {
+        text-shadow: 0 1px 0 #117964, 0 2px 0 #117964; } }
+    section.marketing h1 span.faves {
       color: #ecf0f1;
-      font-size: 36px;
-      padding: 20px;
-      text-align: center;
-      width: 100%;
-      -webkit-transition: all 0.15s ease-out 0;
-      -moz-transition: all 0.15s ease-out 0;
-      transition: all 0.15s ease-out 0; }
-      section.main.landing div.overlay button:active {
-        -webkit-transform: translateY(5px);
-        -moz-transform: translateY(5px);
-        -ms-transform: translateY(5px);
-        -o-transform: translateY(5px);
-        transform: translateY(5px);
-        box-shadow: none; }
+      margin-left: 4px;
+      text-shadow: 0 1px 0 #b2b9be, 0 2px 0 #b2b9be, 0 3px 0 #b2b9be, 0 4px 0 #b2b9be; }
+      @media screen and (max-width: 480px) {
+        section.marketing h1 span.faves {
+          text-shadow: 0 1px 0 #b2b9be, 0 2px 0 #b2b9be; } }
+  section.marketing h2 {
+    text-align: center;
+    color: #ecf0f1;
+    font-size: 2.2em;
+    font-weight: 200;
+    line-height: 1.4em;
+    margin: 0 auto;
+    width: 700px; }
+    @media screen and (max-width: 768px) {
+      section.marketing h2 {
+        width: 100%; } }
+
+section.inputs {
+  background: #34495e;
+  padding: 50px 5vw; }
+  section.inputs form {
+    margin: 0 auto;
+    width: 50vw; }
+    @media screen and (max-width: 768px) {
+      section.inputs form {
+        width: 100%; } }
+  section.inputs input {
+    border: 0;
+    border-radius: 4px;
+    font-size: 28px;
+    font-weight: 200;
+    height: 80px;
+    padding: 0 20px;
+    width: 100%;
+    color: #34495e;
+    margin-bottom: 20px; }
+    section.inputs input:focus, section.inputs input:active {
+      box-shadow: 0;
+      outline: none; }
+  section.inputs button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: #2ecc71;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #22a35a;
+    color: #ecf0f1;
+    font-size: 36px;
+    font-weight: 600;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0; }
+    section.inputs button:active {
+      -webkit-transform: translateY(5px);
+      -moz-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+      -o-transform: translateY(5px);
+      transform: translateY(5px);
+      box-shadow: none; }
 
 div.alert {
   height: 200px;
