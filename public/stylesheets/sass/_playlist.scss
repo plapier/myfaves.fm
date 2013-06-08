@@ -2,7 +2,13 @@ section.main.playlist {
   float: left;
   margin-left: 300px;
   clear: both;
-  width: calc(100% - 300px);
+  @include calc(width, "100% - 300px");
+
+  @include media($tablet) {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+  }
 
   #loading-spinner {
     height: 90vh;
@@ -32,6 +38,7 @@ section.main.playlist {
     list-style: none;
     margin: 0;
     padding: 0;
+    @include clearfix;
 
     li {
       @extend %animation-show-track;
@@ -42,6 +49,14 @@ section.main.playlist {
       margin: 40px 10%;
       overflow: hidden;
       position: relative;
+
+      @include media($tablet) {
+        margin: 30px $gutter;
+      }
+
+      @include media($mobile) {
+        margin: 20px 5%;
+      }
 
       $t: 0.05s;
       $delay: $t;
@@ -63,8 +78,6 @@ section.main.playlist {
 
       .playtoggle {
         $size: 30px;
-        // background-color: $secondary-color;
-        // background-color: hsla(0, 0%, 0%, 0.2);
         background-color: transparentize($white, 0.2);
         background-position: 50% 50%;
         background-repeat: no-repeat;
@@ -115,6 +128,10 @@ section.main.playlist {
         margin-left: 48px;
         padding-left: $gutter;
         vertical-align: middle;
+
+        @include media($mobile) {
+          font-size: $title-font-size-mobile;
+        }
       }
 
       div.progress {

@@ -10,6 +10,12 @@ header.playlist-header {
   width: $sidebar-width;
   z-index: 1;
 
+  @include media($tablet) {
+    height: auto;
+    position: static;
+    width: 100%;
+  }
+
   h1 {
     background: hsla(0, 0%, 0%, 0.075);
     color: $title-color;
@@ -30,11 +36,16 @@ header.playlist-header {
     input {
       background: transparent;
       border: 0;
+      border-radius: 0;
       color: $white;
       font-size: 28px;
       margin-bottom: 4px;
       padding: 10px $gutter 14px;
       width: $sidebar-width;
+
+      @include media($tablet) {
+        width: 100%;
+      }
 
       &:hover, &:focus {
         background: #3498DB;
@@ -76,6 +87,10 @@ div.shortcuts {
 
   &:hover span {
     opacity: 1;
+  }
+
+  @include media($tablet) {
+    display: none;
   }
 
   span {
@@ -156,11 +171,11 @@ div.shortcuts {
       }
 
       &:before {
-        left: calc(50% - 2px);
+        @include calc(left, "50% - 2px");
       }
 
       &:after {
-        left: calc(50% + 3px);
+        @include calc(left, "50% + 3px");
       }
     }
   }
