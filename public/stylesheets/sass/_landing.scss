@@ -57,9 +57,19 @@ section.marketing {
   }
 }
 
+
 section.inputs {
   background: $body-background-alt;
-  padding: 50px $padding-lr;
+  padding: 40px $padding-lr 60px;
+
+  h3 {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 2.0em;
+    margin-bottom: 1em;
+    font-weight: 500;
+    text-align: center;
+  }
 
   form {
     margin: 0 auto;
@@ -120,6 +130,7 @@ footer.landing {
   a {
     color: #bdc3c7;
     text-decoration: none;
+    text-wrap: none;
 
     &:hover {
       color: #e74c3c;

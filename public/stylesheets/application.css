@@ -843,7 +843,14 @@ section.marketing {
 
 section.inputs {
   background: #34495e;
-  padding: 50px 5vw; }
+  padding: 40px 5vw 60px; }
+  section.inputs h3 {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 2.0em;
+    margin-bottom: 1em;
+    font-weight: 500;
+    text-align: center; }
   section.inputs form {
     margin: 0 auto;
     width: 50vw; }
@@ -898,7 +905,8 @@ footer.landing {
     margin: 0 auto; }
   footer.landing a {
     color: #bdc3c7;
-    text-decoration: none; }
+    text-decoration: none;
+    text-wrap: none; }
     footer.landing a:hover {
       color: #e74c3c; }
   footer.landing p {
