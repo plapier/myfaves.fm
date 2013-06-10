@@ -2,13 +2,10 @@
 // Landing Page Template
 //************************************************************************//
 $max-width: 700px;
-section.main.landing {
-  height: 100%;
-  width: 100%;
-}
+$padding-lr: 5vw;
 
 section.marketing {
-  padding: 5vh 5vw 50px;
+  padding: 5vh $padding-lr 50px;
 
   h1 {
     color: $title-color;
@@ -62,7 +59,7 @@ section.marketing {
 
 section.inputs {
   background: $body-background-alt;
-  padding: 50px 5vw;
+  padding: 50px $padding-lr;
 
   form {
     margin: 0 auto;
@@ -107,6 +104,45 @@ section.inputs {
     &:active {
       @include transform(translateY(5px));
       box-shadow: none;
+    }
+  }
+}
+
+footer.landing {
+  padding: 30px $padding-lr 25px;
+  text-align: right;
+
+  div.inner-wrapper {
+    width: 50vw;
+    margin: 0 auto;
+  }
+
+  a {
+    color: #bdc3c7;
+    text-decoration: none;
+
+    &:hover {
+      color: #e74c3c;
+    }
+  }
+
+  p {
+    color: transparentize($white, 0.45);
+    float: left;
+    font-size: 11px;
+    margin-top: 4px;
+
+    @include media($tablet) {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  iframe {
+    @include media($tablet) {
+      clear: both;
+      display: block;
+      margin: 5px auto;
     }
   }
 }

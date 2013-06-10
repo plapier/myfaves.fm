@@ -804,10 +804,6 @@ section.main.playlist {
         -moz-transition: all 0.15s ease-out 0;
         transition: all 0.15s ease-out 0; }
 
-section.main.landing {
-  height: 100%;
-  width: 100%; }
-
 section.marketing {
   padding: 5vh 5vw 50px; }
   section.marketing h1 {
@@ -893,6 +889,32 @@ section.inputs {
       -o-transform: translateY(5px);
       transform: translateY(5px);
       box-shadow: none; }
+
+footer.landing {
+  padding: 30px 5vw 25px;
+  text-align: right; }
+  footer.landing div.inner-wrapper {
+    width: 50vw;
+    margin: 0 auto; }
+  footer.landing a {
+    color: #bdc3c7;
+    text-decoration: none; }
+    footer.landing a:hover {
+      color: #e74c3c; }
+  footer.landing p {
+    color: rgba(236, 240, 241, 0.55);
+    float: left;
+    font-size: 11px;
+    margin-top: 4px; }
+    @media screen and (max-width: 768px) {
+      footer.landing p {
+        text-align: center;
+        float: none; } }
+  @media screen and (max-width: 768px) {
+    footer.landing iframe {
+      clear: both;
+      display: block;
+      margin: 5px auto; } }
 
 div.alert {
   height: 200px;

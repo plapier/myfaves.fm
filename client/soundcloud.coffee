@@ -35,7 +35,11 @@ class @ScJSONFetcher
   getResults: ->
     url = "http://api.soundcloud.com/users/#{@username}/favorites.json?client_id=#{soundcloud_id}"
     Meteor.http.get url, (error, results) =>
-      if results.statusCode is 200
+      if error
+        flash.error 'sc', "Soundcloud couldn't be reached. The service might be down."
+        Session.set('sc_status', 'ready')
+
+      else if results.statusCode is 200
         @insertNewTracks(results.data)
 
       else if results.statusCode is 404

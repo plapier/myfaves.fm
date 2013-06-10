@@ -19,7 +19,6 @@ if Meteor.isClient
     UsernameSetter('exfm', $exfm_username)
     UsernameSetter('hypem', $hypem_username)
     UsernameSetter('sc', $sc_username)
-    # $inputElement.parent().hide()
 
   Template.RenderPlaylist.events "click li.track": (event) ->
     event.preventDefault()
@@ -73,7 +72,6 @@ if Meteor.isClient
 
   Template.Spinner.rendered = ->
     showSpinner()
-
 
 # ---- Helper Functions ----
 @setUser = (user) ->

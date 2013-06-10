@@ -44,7 +44,11 @@ class @ExfmJSONFetcher
   getResults: ->
     url = "http://ex.fm/api/v3/user/#{@username}/loved?start=#{@num_start}&results=#{@num_results}"
     Meteor.http.get url, (error, results) =>
-      if results.statusCode is 200
+      if error
+        flash.error 'exfm', "exfm couldn't be reached. The service might be down."
+        Session.set('exfm_status', 'ready')
+
+      else if results.statusCode is 200
         @insertNewTracks(results.data)
 
       else if results.statusCode is 404
