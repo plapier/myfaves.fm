@@ -12,7 +12,7 @@ if Meteor.isClient
   Template.RenderTemplate.has_username = ->
     GetUsernames()
 
-  Template.Username.events "click #submit": (event) ->
+  Template.Landing.events "click #submit": (event) ->
     $exfm_username = $('#exfm_username').val()
     $hypem_username = $('#hypem_username').val()
     $sc_username = $('#sc_username').val()
@@ -60,6 +60,11 @@ if Meteor.isClient
         setUser('sc')
     "blur input#sc_username": (event) ->
       setUser('sc')
+
+  Template.Header.events "click #modal-button": (event) ->
+    $("#about").show()
+
+
 
   Template.Songs.Track = ->
     Songs.find({}, {sort: {date_loved: -1}})

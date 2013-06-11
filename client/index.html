@@ -2,27 +2,35 @@
   <meta charset="utf-8">
   <title>Favs.fm</title>
   <link rel="stylesheet" href="stylesheets/application.css">
-  <!-- <script src="http://connect.soundcloud.com/sdk.js"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
   <script type="text/javascript" src="//use.typekit.net/rkw1rla.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-41605826-1', 'myfaves.fm');
+    ga('send', 'pageview');
+  </script>
 </head>
 
 <body>
   {{> RenderTemplate}}
 </body>
 
+
 <template name="RenderTemplate">
   {{#if has_username}}
     {{> RenderPlaylist}}
   {{else}}
-    {{> Username}}
+    {{> Landing}}
   {{/if}}
 </template>
 
-<template name="Username">
+<template name="Landing">
   <section class="main landing">
     <section class="marketing">
       <h1>my<span class="faves">faves</span>.fm</h1>
@@ -41,14 +49,14 @@
   <footer class="landing">
     <div class="inner-wrapper">
       <p>Quality Craftsmanship by <a href="http://lapier.me">Phil LaPier</a></p>
-      <a href="https://twitter.com/phillapier" class="twitter-follow-button" data-show-count="false">Follow @phillapier</a>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="phillapier" data-count="none">Tweet</a>
+      {{> twitter_buttons}}
     </div>
   </footer>
 </template>
 
 <template name="RenderPlaylist">
   {{> Header}}
+  {{> AboutModal}}
   <section class="main playlist">
     {{> flashes}}
     {{#if Notices}}
@@ -75,6 +83,7 @@
       <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
       <input type="text" id="sc_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
     </div>
+    <a href="#about" id="modal-button">About</a>
     <div class="shortcuts">
       <span>Keyboard Shortcuts</span>
       <div class="space"></div>
@@ -82,7 +91,6 @@
       <div class="up"></div>
       <div class="down"></div>
       <div class="right"></div>
-    </div>
     </div>
   </header>
 </template>
