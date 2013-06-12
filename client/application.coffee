@@ -62,7 +62,7 @@ if Meteor.isClient
       setUser('sc')
 
   Template.Header.events "click #modal-button": (event) ->
-    $("#about").show()
+    $("#about").removeClass('hide').addClass('show')
 
 
 

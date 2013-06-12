@@ -1,6 +1,6 @@
 Template.AboutModal.events 
   "click #about": (event) ->
-    $("#about").hide()
+    $("#about").removeClass('show').addClass('hide')
 
   "click .inner-wrapper": (event) ->
     event.stopPropagation()

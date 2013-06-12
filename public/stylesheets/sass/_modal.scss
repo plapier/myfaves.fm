@@ -1,25 +1,51 @@
+a#modal-button {
+  color: $white;
+  color: hsla(0, 0%, 100%, 0.25);
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
+  padding: 10px 32px 14px;
+}
+
 footer.about {
   background: hsla(0, 0%, 0%, 0.45);
-  display: none;
+  visibility: hidden;
   font-size: 10px;
   height: 100%;
   position: fixed;
   width: 100%;
   z-index: 2;
+  -webkit-perspective: 800px;
+
+  &.show {
+    visibility: visible;
+    @extend %animation-fade-in;
+
+    .inner-wrapper {
+      @extend %animation-show-modal;
+    }
+  }
+
+  &.hide {
+    visibility: visible;
+    opacity: 1;
+    @extend %animation-fade-out;
+
+    .inner-wrapper {
+      @extend %animation-hide-modal;
+    }
+  }
 
   .inner-wrapper {
-    $background: #E74C3C;
-    $shadow:     darken(#C0392B, 5%);
-    background: $background;
+    background: $modal-background;
     border-radius: 12px;
-    box-shadow: 0 7px 0 $shadow;
-    color: white;
+    box-shadow: 0 7px 0 $modal-shadow;
     color: hsla(0, 0%, 100%, 0.75);
     height: 300px;
-    left: calc(50% - 200px);
+    @include calc(left, "50% - 200px");
     padding: 40px 30px;
     position: absolute;
-    top:  calc(50% - 150px);
+    @include calc(top, "50% - 150px");
     width: 400px;
 
     a {
