@@ -639,6 +639,7 @@ header.playlist-header {
       float: left; } }
   header.playlist-header h1 {
     background: rgba(0, 0, 0, 0.075);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.02);
     color: #1abc9c;
     font-family: "omnes-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 34px;
@@ -647,6 +648,25 @@ header.playlist-header {
     header.playlist-header h1 span {
       letter-spacing: -1px;
       margin-left: 1px; }
+  header.playlist-header a#about-button {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.16);
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px 10px;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    text-decoration: none;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0; }
+  header.playlist-header:hover #about-button {
+    opacity: 1; }
   header.playlist-header div.user-info {
     position: relative; }
     header.playlist-header div.user-info input {
@@ -700,10 +720,15 @@ header.playlist-header {
         background: #e74c3c; }
 
 div.shortcuts {
-  position: fixed;
   bottom: 0;
   margin-left: 32px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  position: fixed;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9); }
   div.shortcuts:hover span {
     opacity: 1; }
   @media screen and (max-width: 768px) {
@@ -984,7 +1009,7 @@ section.main.playlist {
         transition: all 0.15s ease-out 0; }
 
 section.marketing {
-  padding: 5vh 5vw 50px; }
+  padding: 5vh 5vw 8vh; }
   section.marketing h1 {
     color: #1abc9c;
     font-family: "omnes-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1022,7 +1047,7 @@ section.marketing {
 
 section.inputs {
   background: #34495e;
-  padding: 40px 5vw 60px; }
+  padding: 7vh 5vw 12vh; }
   section.inputs h3 {
     margin: 0 auto;
     color: #fff;
@@ -1097,11 +1122,15 @@ footer.landing {
       footer.landing p {
         text-align: center;
         float: none; } }
+  footer.landing iframe:first-of-type {
+    margin-right: 5px; }
   @media screen and (max-width: 768px) {
     footer.landing iframe {
       clear: both;
       display: block;
-      margin: 5px auto; } }
+      margin: 5px auto; }
+      footer.landing iframe:first-of-type {
+        margin: 5px auto; } }
 
 div.alert {
   height: 200px;
@@ -1165,8 +1194,8 @@ footer.about {
     left: calc(50% - 200px );
     padding: 40px 30px;
     position: absolute;
-    top: -webkit-calc(50% - 150px );
-    top: calc(50% - 150px );
+    top: -webkit-calc(45% - 150px );
+    top: calc(45% - 150px );
     width: 400px; }
     footer.about .inner-wrapper a {
       color: #fff;
@@ -1174,11 +1203,12 @@ footer.about {
       footer.about .inner-wrapper a:hover {
         text-decoration: underline; }
   footer.about div.avatar {
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    text-align: center; }
     footer.about div.avatar img {
       border-radius: 100px;
       box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.07);
-      display: block;
+      display: inline-block;
       height: 100px;
       margin: 0 auto;
       width: 100px; }

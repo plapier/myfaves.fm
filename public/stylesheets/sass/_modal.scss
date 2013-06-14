@@ -7,6 +7,7 @@ a#modal-button {
   padding: 10px 32px 14px;
 }
 
+
 footer.about {
   background: hsla(0, 0%, 0%, 0.45);
   visibility: hidden;
@@ -45,7 +46,7 @@ footer.about {
     @include calc(left, "50% - 200px");
     padding: 40px 30px;
     position: absolute;
-    @include calc(top, "50% - 150px");
+    @include calc(top, "45% - 150px");
     width: 400px;
 
     a {
@@ -60,12 +61,13 @@ footer.about {
 
   div.avatar {
     margin-bottom: 40px;
+    text-align: center;
 
     img {
       $size: 100px;
       border-radius: $size;
       box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.07);
-      display: block;
+      display: inline-block;
       height: $size;
       margin: 0 auto;
       width: $size;

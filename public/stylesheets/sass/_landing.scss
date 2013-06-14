@@ -5,7 +5,7 @@ $max-width: 700px;
 $padding-lr: 5vw;
 
 section.marketing {
-  padding: 5vh $padding-lr 50px;
+  padding: 5vh $padding-lr 8vh;
 
   h1 {
     color: $title-color;
@@ -60,7 +60,7 @@ section.marketing {
 
 section.inputs {
   background: $body-background-alt;
-  padding: 40px $padding-lr 60px;
+  padding: 7vh $padding-lr 12vh;
 
   h3 {
     margin: 0 auto;
@@ -150,10 +150,18 @@ footer.landing {
   }
 
   iframe {
+    &:first-of-type {
+      margin-right: 5px
+    }
+
     @include media($tablet) {
       clear: both;
       display: block;
       margin: 5px auto;
+
+      &:first-of-type {
+        margin: 5px auto;
+      }
     }
   }
 }

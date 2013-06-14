@@ -1,17 +1,19 @@
 <template name="AboutModal">
+  {{#constant}}
   <footer id="about" class="about">
     <div class="inner-wrapper">
       <div class="avatar">
-        <img src="images/phil-avatar.jpg">
+        <a href="http://lapier.me">
+          <img src="images/phil-avatar.jpg">
+        </a>
       </div>
       <section class="about">
         <div class="social">
-          <a href="https://twitter.com/phillapier" class="twitter-follow-button" data-show-count="false">Follow @phillapier</a>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="phillapier" data-count="none">Tweet</a>
+          {{> twitter_buttons}}
         </div>
-        <!-- <h3>Made by <a href="http://lapier.me">Philip LaPier</a></h3> -->
         <div>Kudos to <a href="https://twitter.com/monstercritic">Sergey Shmidt</a> and <a href="https://twitter.com/designmodo">Designmodo</a> for their inspirational <a href="http://designmodo.github.io/Flat-UI/">FlatUI</a></div>
       </section>
     <div>
   </footer>
+  {{/constant}}
 </template>

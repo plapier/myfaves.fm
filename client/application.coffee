@@ -61,7 +61,7 @@ if Meteor.isClient
     "blur input#sc_username": (event) ->
       setUser('sc')
 
-  Template.Header.events "click #modal-button": (event) ->
+  Template.Header.events "click #about-button": (event) ->
     $("#about").removeClass('hide').addClass('show')
 
 
