@@ -1,0 +1,24 @@
+<template name="Landing">
+  <section class="main landing">
+    <section class="marketing">
+      <h1>my<span class="faves">faves</span>.fm</h1>
+      <h2>Listen to all your favorite tracks pulled from <b>Soundcloud</b>, <b>Hype Machine</b>, and <b>Exfm</b>.</h2>
+    </section>
+    <section class="inputs">
+      <form>
+        <h3>Simply enter a username</h3>
+        <input type="text" id="exfm_username" placeholder="Exfm Username" autofocus>
+        <input type="text" id="hypem_username" placeholder="HypeMachine Username">
+        <input type="text" id="sc_username" placeholder="Soundcloud Username">
+        <button id="submit">Start Listening</button>
+      </form>
+    </section>
+  </section>
+  <footer class="landing">
+    <div class="inner-wrapper">
+      <p>Quality Craftsmanship by <a href="http://lapier.me">Phil LaPier</a></p>
+      {{> twitter_buttons}}
+    </div>
+  </footer>
+</template>
+

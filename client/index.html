@@ -31,38 +31,11 @@
   {{/if}}
 </template>
 
-<template name="Landing">
-  <section class="main landing">
-    <section class="marketing">
-      <h1>my<span class="faves">faves</span>.fm</h1>
-      <h2>Listen to all your favorite tracks pulled from <b>Soundcloud</b>, <b>Hype Machine</b>, and <b>Exfm</b>.</h2>
-    </section>
-    <section class="inputs">
-      <form>
-        <h3>Simply enter a username</h3>
-        <input type="text" id="exfm_username" placeholder="Exfm Username" autofocus>
-        <input type="text" id="hypem_username" placeholder="HypeMachine Username">
-        <input type="text" id="sc_username" placeholder="Soundcloud Username">
-        <button id="submit">Start Listening</button>
-      </form>
-    </section>
-  </section>
-  <footer class="landing">
-    <div class="inner-wrapper">
-      <p>Quality Craftsmanship by <a href="http://lapier.me">Phil LaPier</a></p>
-      {{> twitter_buttons}}
-    </div>
-  </footer>
-</template>
-
 <template name="RenderPlaylist">
   {{> Header}}
   {{> AboutModal}}
   <section class="main playlist">
     {{> flashes}}
-    {{#if Notices}}
-      {{> Notices}}
-    {{/if}}
     {{#if empty_database}}
       {{> Spinner}}
     {{/if}}
@@ -72,48 +45,3 @@
   </section>
 </template>
 
-<template name="Notices">
-  <div class="notice">Exfm User has 0 favorite tracks</div>
-</template>
-
-<template name="Header">
-  <header class="playlist-header">
-    <h1>my<span>faves</span>.fm</h1>
-    <a href="#about" id="about-button" class="about">?</a>
-    <div class="user-info">
-      <input type="text" id="exfm_username" placeholder="Exfm Username" value="{{ exfm_username }}">
-      <input type="text" id="hypem_username" placeholder="Hypem Username" value="{{ hypem_username }}">
-      <input type="text" id="sc_username" placeholder="Soundcloud Username" value="{{ sc_username }}">
-    </div>
-    <div class="shortcuts">
-      <span>Keyboard Shortcuts</span>
-      <div class="space"></div>
-      <div class="left"></div>
-      <div class="up"></div>
-      <div class="down"></div>
-      <div class="right"></div>
-    </div>
-  </header>
-</template>
-
-<template name="Songs">
-  {{#each Track}}
-    <li class="♫ track not-playing">
-      <a href="#" id="{{ id }}">
-        <span class="playtoggle"></span>
-        <div class="track-title">
-          <span class='artist'>{{ artist }}</span> &ndash; <span class='title'>{{ title }}</span>
-        </div>
-      </a>
-      <div class="progress"></div>
-      <div class="buffer"></div>
-      <audio preload="none">
-        <source src="{{ url }}">
-      </audio>
-    </li>
-  {{/each}}
-</template>
-
-<template name="Spinner">
-  <div id="loading-spinner"></div>
-</template>

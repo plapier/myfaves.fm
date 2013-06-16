@@ -25,12 +25,10 @@
 @include keyframes(show-track) {
   0% {
     @include transform(scale(0.90));
-    // @include transform(translate(10%, -20px));
     opacity: 0;
   }
   100% {
     @include transform(scale(1));
-    // @include transform(translate(0%, 0px));
     opacity: 1;
   }
 }
@@ -46,7 +44,6 @@
     opacity: 1;
   }
 }
-
 
 %animation-show-modal {
   @include animation(show-modal 1s $ease-out-back forwards);
@@ -89,14 +86,12 @@
 @include keyframes(hide-modal) {
   0% {
     @include transform(translateY(0px));
-    // @include transform(scale(1));
     opacity: 1;
   }
   98% {
     opacity: 0;
   }
   100% {
-    // @include transform(scale(1.5));
     @include transform(translateY(100px));
     opacity: 0;
   }

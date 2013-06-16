@@ -1,0 +1,17 @@
+<template name="Songs">
+  {{#each Track}}
+    <li class="♫ track not-playing">
+      <a href="#" id="{{ id }}">
+        <span class="playtoggle"></span>
+        <div class="track-title">
+          <span class='artist'>{{ artist }}</span> &ndash; <span class='title'>{{ title }}</span>
+        </div>
+      </a>
+      <div class="progress"></div>
+      <div class="buffer"></div>
+      <audio preload="none">
+        <source src="{{ url }}">
+      </audio>
+    </li>
+  {{/each}}
+</template>

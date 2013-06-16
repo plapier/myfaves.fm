@@ -1,3 +1,6 @@
+Template.Spinner.rendered = ->
+  showSpinner()
+
 @showSpinner = ->
   opts =
     lines: 16 # The number of lines to draw

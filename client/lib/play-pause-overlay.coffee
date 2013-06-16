@@ -1,3 +1,5 @@
+# ---- SVG PLAY/PAUSE Overlay ----
+#
 class @ShowAlert
   constructor: (track) ->
     @alert(track)
