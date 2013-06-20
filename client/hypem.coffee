@@ -123,7 +123,9 @@ class SongMatcher
     @resolve(parsed_track.data())
 
 @FetchMoreHypem = ->
-  collection_num = Session.get('hypem_collection')
-  Session.set('hypem_collection', collection_num + 1)
-  page_num = Session.get('hypem_page')
-  Session.set('hypem_page', page_num + 1)
+  if Session.getNonReactive('hypem_username')
+    Session.set("hypem_status", 'Fetching...')
+    collection_num = Session.getNonReactive('hypem_collection')
+    page_num = Session.getNonReactive('hypem_page')
+    Session.set('hypem_collection', collection_num + 1)
+    Session.set('hypem_page', page_num + 1)

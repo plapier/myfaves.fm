@@ -81,11 +81,13 @@ class @ExfmJSONFetcher
   Session.set('exfm_results_total', null)
 
 @FetchMoreExfm = ->
-  num_start      = Session.getNonReactive('exfm_start')
-  num_results    = Session.getNonReactive('exfm_results')
-  total_results  = Session.getNonReactive("exfm_results_total")
-  collection_num = Session.getNonReactive('exfm_collection')
-  if num_start <= total_results
-    Session.set("exfm_status", 'Fetching...')
-    Session.set('exfm_start', num_start + num_results)
-    Session.set('exfm_collection', collection_num + 1)
+  if Session.getNonReactive('exfm_username')
+    num_start      = Session.getNonReactive('exfm_start')
+    num_results    = Session.getNonReactive('exfm_results')
+    total_results  = Session.getNonReactive("exfm_results_total")
+    collection_num = Session.getNonReactive('exfm_collection')
+    if num_start <= total_results
+      Session.set("exfm_status", 'Fetching...')
+      Session.set('exfm_start', num_start + num_results)
+      Session.set('exfm_collection', collection_num + 1)
+      Template.Songs.preserve(["data-collection='1'"])
