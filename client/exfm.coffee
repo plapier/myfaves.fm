@@ -2,6 +2,7 @@
 Session.setDefault('exfm_username', null)
 Session.setDefault('exfm_start', 0)
 Session.setDefault('exfm_results', 21)
+Session.set('exfm_collection', 1)
 Session.set('exfm_results_total', null)
 Session.set('exfm_tracks', [])
 Session.set('exfm_status', null)
@@ -28,6 +29,7 @@ class @ExfmTrackParser
       @track.url
 
   data: ->
+    collection: Session.get("#{@source}_collection")
     source: @source
     artist: @artist
     title:  @title
@@ -36,9 +38,9 @@ class @ExfmTrackParser
 
 class @ExfmJSONFetcher
   constructor: ->
-    @username    = Session.get('exfm_username')
-    @num_start   = Session.get('exfm_start')
-    @num_results = Session.get('exfm_results')
+    @username    = Session.getNonReactive('exfm_username')
+    @num_start   = Session.get('exfm_start') ## Reactive for fetchingMore
+    @num_results = Session.getNonReactive('exfm_results')
     @getResults()
 
   getResults: ->
@@ -72,15 +74,18 @@ class @ExfmJSONFetcher
       tracks.push(parsed_track.data())
     Session.set('exfm_tracks', tracks)
     Session.set('exfm_status', 'ready')
+    console.log "Status: ready"
 
 @ResetSessionVars = ->
   Session.set('exfm_start', 0)
-  Session.set('exfm_results', 21)
   Session.set('exfm_results_total', null)
 
-FetchMore = ->
-  num_start     = Session.get('exfm_start')
-  num_results   = Session.get('exfm_results')
-  total_results = Session.get("exfm_results_total")
+@FetchMoreExfm = ->
+  num_start      = Session.getNonReactive('exfm_start')
+  num_results    = Session.getNonReactive('exfm_results')
+  total_results  = Session.getNonReactive("exfm_results_total")
+  collection_num = Session.getNonReactive('exfm_collection')
   if num_start <= total_results
+    Session.set("exfm_status", 'Fetching...')
     Session.set('exfm_start', num_start + num_results)
+    Session.set('exfm_collection', collection_num + 1)

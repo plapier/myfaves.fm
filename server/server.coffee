@@ -17,8 +17,8 @@ if Meteor.isServer
     else if process.env.ROOT_URL is "http://myfaves.fm"
       "production"
 
-  Meteor.methods parallelAsyncJob: (username) ->
-    url = "http://hypem.com/playlist/loved/#{username}/json/1/data.js"
+  Meteor.methods parallelAsyncJob: (username, page_num) ->
+    url = "http://hypem.com/playlist/loved/#{username}/json/#{page_num}/data.js"
 
     future = new Future()
     onComplete = future.resolver()

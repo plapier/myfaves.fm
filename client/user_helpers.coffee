@@ -6,6 +6,7 @@ FetchUserTracks = (source) ->
     username = Session.get("#{source}_username")
     if username?
       Session.set("#{source}_status", 'Fetching...')
+      console.log "status: fetching"
       switch source
         when 'exfm' then new ExfmJSONFetcher()
         when 'hypem' then new HypemJSONFetcher()
@@ -39,6 +40,7 @@ FetchUserTracks('sc')
 @SetUsername = (source, username) ->
   $.totalStorage("#{source}_username", username)
   Session.set("#{source}_username", username)
+  Session.set("#{source}_collection", 1) # reset collection num
   unless username?
     Session.set("#{source}_tracks", null)
     Session.set("#{source}_status", null)

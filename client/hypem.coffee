@@ -1,5 +1,6 @@
 Session.setDefault('hypem_username', null)
 Session.setDefault('hypem_page', 1)
+Session.set('hypem_collection', 1)
 Session.set('hypem_tracks', [])
 Session.set('hypem_status', null)
 
@@ -11,7 +12,7 @@ class @HypemJSONFetcher
     # @debug()
 
   getResults: ->
-    Meteor.call "parallelAsyncJob", @username, (error, results) =>
+    Meteor.call "parallelAsyncJob", @username, @page, (error, results) =>
       if error
         $('#hypem_username').addClass('error')
         flash.error 'hypem', "Hypem: User doesn't exist"
@@ -120,3 +121,9 @@ class SongMatcher
     hypem_date_loved = @date_loved
     parsed_track = new ExfmTrackParser(@source, track, hypem_date_loved)
     @resolve(parsed_track.data())
+
+@FetchMoreHypem = ->
+  collection_num = Session.get('hypem_collection')
+  Session.set('hypem_collection', collection_num + 1)
+  page_num = Session.get('hypem_page')
+  Session.set('hypem_page', page_num + 1)

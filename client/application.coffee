@@ -23,4 +23,9 @@ if Meteor.isClient
     or Session.equals('sc_status', 'Fetching...')
       true
 
+  Template.MoreButton.events "click": (events) ->
+    FetchMoreExfm()
+    # FetchMoreHypem()
+
+
 # ---- Helper Functions ----

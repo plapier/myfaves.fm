@@ -13,6 +13,7 @@ TracksInserter = ->
     # unless exfm_status is "Fetching..." or hypem_status is "Fetching..." or sc_status is "Fetching..."
 
     unless Session.equals('exfm_status', 'Fetching...') or Session.equals('hypem_status', 'Fetching...') or Session.equals('sc_status', 'Fetching...')
+      # console.log "Fetching.."
       all_tracks = []
 
       if exfm_tracks?
@@ -29,7 +30,6 @@ TracksInserter = ->
 
       for key in all_tracks
         Songs.insert key
-
-      # console.log "Super Success!!"
+        # console.log "Super Success!!"
 
 TracksInserter()

@@ -1,0 +1,19 @@
+section.notices {
+  color: transparentize($white, 0.2);
+  font-weight: 600;
+  margin: 0 10%;
+  text-align: center;
+
+  div {
+    padding: 10px 32px;
+    background-color: #e67e22;
+
+    &:nth-child(n+2) {
+      padding-top: 0;
+    }
+
+    &:last-child, &:only-child {
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}

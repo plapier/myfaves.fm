@@ -1,7 +1,7 @@
 <template name="Songs">
   {{#each Track}}
-    <li class="♫ track not-playing">
-      <a href="#" id="{{ id }}">
+  <li class="♫ track not-playing" data-source="{{ source }}" data-collection="{{ collection }}">
+      <a href="#" id="{{_id}}">
         <span class="playtoggle"></span>
         <div class="track-title">
           <span class='artist'>{{ artist }}</span> &ndash; <span class='title'>{{ title }}</span>

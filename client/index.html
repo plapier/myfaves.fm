@@ -34,14 +34,20 @@
 <template name="RenderPlaylist">
   {{> Header}}
   {{> AboutModal}}
+
   <section class="main playlist">
     {{> flashes}}
     {{#if empty_database}}
       {{> Spinner}}
+    {{else}}
+      <ol id="tracks">
+        {{> Songs}}
+      </ol>
+      {{> MoreButton}}
     {{/if}}
-    <ol id="tracks">
-      {{> Songs}}
-    </ol>
   </section>
 </template>
 
+<template name="MoreButton">
+  <button class="load-more">Load More</button>
+</template>
