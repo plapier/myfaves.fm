@@ -1,12 +1,12 @@
 section.notices {
-  color: transparentize($white, 0.2);
+  color: $white-trans;
   font-weight: 600;
   margin: 0 10%;
   text-align: center;
 
   div {
     padding: 10px 32px;
-    background-color: #e67e22;
+    background-color: $notice-background;
 
     &:nth-child(n+2) {
       padding-top: 0;

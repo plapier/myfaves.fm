@@ -90,4 +90,3 @@ class @ExfmJSONFetcher
       Session.set("exfm_status", 'Fetching...')
       Session.set('exfm_start', num_start + num_results)
       Session.set('exfm_collection', collection_num + 1)
-      Template.Songs.preserve(["data-collection='1'"])

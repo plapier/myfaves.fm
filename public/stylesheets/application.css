@@ -1,4 +1,4 @@
-/* normalize.css v2.1.0 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -515,7 +515,7 @@ footer.about.hide {
     background: rgba(0, 0, 0, 0.45); }
 
   100% {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     visibility: hidden; } }
 
 @-moz-keyframes fade-out {
@@ -523,7 +523,7 @@ footer.about.hide {
     background: rgba(0, 0, 0, 0.45); }
 
   100% {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     visibility: hidden; } }
 
 @-o-keyframes fade-out {
@@ -531,7 +531,7 @@ footer.about.hide {
     background: rgba(0, 0, 0, 0.45); }
 
   100% {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     visibility: hidden; } }
 
 @keyframes fade-out {
@@ -539,7 +539,7 @@ footer.about.hide {
     background: rgba(0, 0, 0, 0.45); }
 
   100% {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     visibility: hidden; } }
 
 footer.about.hide .inner-wrapper {
@@ -820,22 +820,11 @@ section.main.playlist {
       width: 100%; } }
   section.main.playlist ol {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    *zoom: 1; }
-    section.main.playlist ol:before, section.main.playlist ol:after {
-      content: " ";
-      display: table; }
-    section.main.playlist ol:after {
-      clear: both; }
+    margin: 40px 0 0;
+    padding: 0; }
     section.main.playlist ol li {
-      background: #2ecc71;
-      opacity: 0;
-      border-radius: 10px;
-      box-shadow: 0 5px 0 #22a35a;
-      margin: 40px 10%;
-      overflow: hidden;
-      position: relative; }
+      padding: 0 10% 40px;
+      opacity: 0; }
       @media screen and (max-width: 768px) {
         section.main.playlist ol li {
           margin: 30px 32px; } }
@@ -1643,9 +1632,13 @@ section.main.playlist {
         -moz-animation-delay: 10.0s;
         animation-delay: 10.0s; }
       section.main.playlist ol li a {
+        background: #2ecc71;
+        border-radius: 10px;
+        box-shadow: 0 5px 0 #22a35a;
         color: rgba(236, 240, 241, 0.8);
         display: table;
         padding: 20px 32px;
+        position: relative;
         table-layout: fixed;
         text-decoration: none;
         width: 100%; }
@@ -1663,32 +1656,29 @@ section.main.playlist {
         -webkit-mask-position: 50% 50%;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-size: 30px 36px; }
-      section.main.playlist ol li.playing {
+      section.main.playlist ol li.playing a {
         background: #f6d35d;
-        box-shadow: 0 5px 0 #f39c12; }
-        section.main.playlist ol li.playing a {
-          color: #f39c12;
-          opacity: 1.0;
-          -webkit-transition: all 0s;
-          -moz-transition: all 0s;
-          transition: all 0s; }
-          section.main.playlist ol li.playing a .playtoggle {
-            background-color: #f39c12;
-            clip-path: url("/images/pause.svg#polyclip");
-            mask-image: url("/images/pause.svg#poly");
-            -webkit-mask-image: url("/images/pause.svg#poly"); }
-        section.main.playlist ol li.playing .buffer {
+        box-shadow: 0 5px 0 #f39c12;
+        color: #f39c12;
+        opacity: 1.0;
+        -webkit-transition: all 0s;
+        -moz-transition: all 0s;
+        transition: all 0s; }
+        section.main.playlist ol li.playing a .playtoggle {
           background-color: #f39c12;
-          opacity: 1; }
-        section.main.playlist ol li.playing.paused .playtoggle {
-          clip-path: url("/images/play.svg#polyclip");
-          mask-image: url("/images/play.svg#poly");
-          -webkit-mask-image: url("/images/play.svg#poly"); }
+          clip-path: url("/images/pause.svg#polyclip");
+          mask-image: url("/images/pause.svg#poly");
+          -webkit-mask-image: url("/images/pause.svg#poly"); }
+      section.main.playlist ol li.playing .buffer {
+        background-color: #f39c12;
+        opacity: 1; }
+      section.main.playlist ol li.playing.paused .playtoggle {
+        clip-path: url("/images/play.svg#polyclip");
+        mask-image: url("/images/play.svg#poly");
+        -webkit-mask-image: url("/images/play.svg#poly"); }
       section.main.playlist ol li div.track-title {
-        display: table-cell;
         font-size: 28px;
         font-weight: 600;
-        margin-left: 48px;
         padding-left: 32px;
         vertical-align: middle; }
         @media screen and (max-width: 480px) {
@@ -1723,12 +1713,18 @@ button.load-more {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  background: #2ecc71;
-  color: rgba(236, 240, 241, 0.8);
+  background: #1abc9c;
   border: 0;
-  display: block;
-  width: 100%;
-  padding: 20px 32px; }
+  border-radius: 10px;
+  box-shadow: 0 5px 0 #16a085;
+  color: rgba(236, 240, 241, 0.8);
+  display: table;
+  font-size: 24px;
+  padding: 20px 32px;
+  width: 100%; }
+  @media screen and (max-width: 480px) {
+    button.load-more {
+      font-size: 14px; } }
 
 section.marketing {
   padding: 5vh 5vw 8vh; }
@@ -1898,22 +1894,24 @@ section.notices {
       border-radius: 0 0 8px 8px; }
 
 a#modal-button {
-  color: #ecf0f1;
   color: rgba(255, 255, 255, 0.25);
-  font-size: 18px;
   display: block;
-  text-decoration: none;
-  padding: 10px 32px 14px; }
+  font-size: 18px;
+  padding: 10px 32px 14px;
+  text-decoration: none; }
 
 footer.about {
   background: rgba(0, 0, 0, 0.45);
-  visibility: hidden;
   font-size: 10px;
   height: 100%;
   position: fixed;
+  visibility: hidden;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
   width: 100%;
-  z-index: 2;
-  -webkit-perspective: 800px; }
+  z-index: 2; }
   footer.about.show {
     visibility: visible; }
   footer.about.hide {
@@ -1921,8 +1919,8 @@ footer.about {
     opacity: 1; }
   footer.about .inner-wrapper {
     background: #e74c3c;
-    border-radius: 12px;
-    box-shadow: 0 7px 0 #ab3326;
+    border-radius: 10px;
+    box-shadow: 0 5px 0 #ab3326;
     color: rgba(255, 255, 255, 0.75);
     height: 300px;
     left: -webkit-calc(50% - 200px );
@@ -1967,3 +1965,5 @@ footer.about {
       footer.about section.about div.social iframe {
         display: block;
         margin: 10px auto; }
+
+/*# sourceMappingURL=application.css.map */

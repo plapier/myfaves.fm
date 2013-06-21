@@ -36,14 +36,20 @@
   {{> AboutModal}}
   <section class="main playlist">
     {{> flashes}}
-    <ol id="tracks">
-      {{> Songs}}
-    </ol>
-    {{> MoreButton}}
-
+    {{#isolate}}
+      {{#if empty_database}}
+        {{> Spinner}}
+      {{/if}}
+    {{/isolate}}
+      <ol id="tracks">
+        {{> Songs}}
+        {{> MoreButton}}
+      </ol>
   </section>
 </template>
 
 <template name="MoreButton">
-  <button class="load-more">Load More</button>
+  <li class="button">
+    <button class="load-more">load more tracks</button>
+  </li>
 </template>

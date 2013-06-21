@@ -24,9 +24,9 @@
 
 section.main.playlist {
   float: left;
-  margin-left: 300px;
+  margin-left: $sidebar-width;
   clear: both;
-  @include calc(width, "100% - 300px");
+  @include calc(width, "100% - " + $sidebar-width);
 
   @include media($tablet) {
     float: none;
@@ -36,19 +36,13 @@ section.main.playlist {
 
   ol {
     list-style: none;
-    margin: 0;
+    margin: 40px 0 0;
     padding: 0;
-    @include clearfix;
 
     li {
       @extend %animation-show-track;
-      background: $secondary-background;
+      padding: 0 10% 40px;
       opacity: 0;
-      border-radius: $border-radius;
-      box-shadow: 0 5px 0 $secondary-color;
-      margin: 40px 10%;
-      overflow: hidden;
-      position: relative;
 
       @include media($tablet) {
         margin: 30px $gutter;
@@ -68,9 +62,13 @@ section.main.playlist {
       }
 
       a {
-        color: transparentize($white, 0.2);
+        background: $secondary-background;
+        border-radius: $border-radius;
+        box-shadow: 0 $shadow-height 0 $secondary-color;
+        color: $white-trans;
         display: table;
         padding: 20px 32px;
+        position: relative;
         table-layout: fixed;
         text-decoration: none;
         width: 100%;
@@ -78,7 +76,7 @@ section.main.playlist {
 
       .playtoggle {
         $size: 30px;
-        background-color: transparentize($white, 0.2);
+        background-color: $white-trans;
         background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: contain;
@@ -93,10 +91,9 @@ section.main.playlist {
       }
 
       &.playing {
-        background: $primary-background;
-        box-shadow: 0 5px 0 $primary-color;
-
         a {
+          background: $primary-background;
+          box-shadow: 0 $shadow-height 0 $primary-color;
           color: $primary-color;
           opacity: 1.0;
           @include transition(all 0s);
@@ -122,10 +119,8 @@ section.main.playlist {
       }
 
       div.track-title {
-        display: table-cell;
         font-size: $title-font-size;
         font-weight: $title-font-weight;
-        margin-left: 48px;
         padding-left: $gutter;
         vertical-align: middle;
 
@@ -161,10 +156,17 @@ section.main.playlist {
 
 button.load-more {
   @include appearance(none);
-  background: $secondary-background;
-  color: transparentize($white, 0.2);
+  background: $turquoise;
   border: 0;
-  display: block;
-  width: 100%;
+  border-radius: $border-radius;
+  box-shadow: 0 $shadow-height 0 $turquoise-alt;
+  color: $white-trans;
+  display: table;
+  font-size: 24px;
   padding: 20px 32px;
+  width: 100%;
+
+  @include media($mobile) {
+    font-size: 14px;
+  }
 }

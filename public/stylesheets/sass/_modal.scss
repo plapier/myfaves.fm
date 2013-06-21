@@ -1,22 +1,24 @@
 a#modal-button {
-  color: $white;
   color: hsla(0, 0%, 100%, 0.25);
-  font-size: 18px;
   display: block;
-  text-decoration: none;
+  font-size: 18px;
   padding: 10px 32px 14px;
+  text-decoration: none;
 }
 
 
 footer.about {
   background: hsla(0, 0%, 0%, 0.45);
-  visibility: hidden;
   font-size: 10px;
   height: 100%;
   position: fixed;
+  visibility: hidden;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
   width: 100%;
   z-index: 2;
-  -webkit-perspective: 800px;
 
   &.show {
     visibility: visible;
@@ -39,8 +41,8 @@ footer.about {
 
   .inner-wrapper {
     background: $modal-background;
-    border-radius: 12px;
-    box-shadow: 0 7px 0 $modal-shadow;
+    border-radius: $border-radius;
+    box-shadow: 0 $shadow-height 0 $modal-shadow;
     color: hsla(0, 0%, 100%, 0.75);
     height: 300px;
     @include calc(left, "50% - 200px");

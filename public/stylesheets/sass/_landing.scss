@@ -102,7 +102,7 @@ section.inputs {
     background: $secondary-background;
     border: 0;
     border-radius: 4px;
-    box-shadow: 0 5px 0 $secondary-color;
+    box-shadow: 0 $shadow-height 0 $secondary-color;
     color: $white;
     font-size: 36px;
     font-weight: 600;

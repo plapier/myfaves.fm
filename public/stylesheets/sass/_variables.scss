@@ -1,42 +1,64 @@
-$sidebar-width: 300px;
+//************************************************************************//
+// Colors
+//************************************************************************//
+$dark-blue: #34495e; // dark
+$dark-blue-alt: #2c3e50; // darkest
+
+$green: #2ECC71;
+$green-alt: #22A35A;
+
+$orange: #e67e22;
+$orange-alt: #D35400;
+
+$purple: #9B59B6;
+$purple-alt: #8E44AD;
+
+$red: #E74C3C;
+$red-alt: #C0392B;
+
+$turquoise: #1ABC9C;
+$turquoise-alt: #16A085;
+
+$yellow: #F6D35D;
+$yellow-alt: #f39c12;
 
 $white: #ECF0F1;
-$body-background: #2c3e50; // darkest
-$body-background-alt: #34495e; // dark
+$white-trans: transparentize($white, 0.2);
+
+//************************************************************************//
+// Variables
+//************************************************************************//
+$sidebar-width: 300px;
+
+$body-background: $dark-blue-alt;
+$body-background-alt: $dark-blue;
 
 // Yellow
-//************************************************************************//
-$primary-background: #F6D35D;
-$primary-background-timer: #F4BC35;
-$primary-color: #F4BC35;
-
-// $primary-background: #f1c40f;
-$primary-color: #f39c12;
+$primary-background: $yellow;
+$primary-color: $yellow-alt;
 
 // Green
-//************************************************************************//
-$secondary-background: #2ECC71;
-// $secondary-color: #27AE60;
-$secondary-color: #22A35A;
+$secondary-background: $green;
+$secondary-color: $green-alt;
+
+$notice-background: $orange;
 
 $header-background-1: $body-background-alt;
-// $header-background-2: darken($secondary-background, 10%);
-$header-background-2: #4D5B69;
 $header-color-1:      $white;
-$header-color-2:      darken($secondary-color, 10%);
 
 $base-font-family: "proxima-nova-soft", $helvetica;
 $title-font-family: "omnes-pro", $helvetica;
 $title-font-size: 28px;
 $title-font-size-mobile: 18px;
 $title-font-weight: 600;
-$title-color: #1abc9c;
+$title-color: $turquoise;
 
 $border-radius: 10px;
 $gutter: 32px;
+$shadow-height: 5px;
 
 
 // Modal About Overlay
 //************************************************************************//
-$modal-background: #E74C3C;
-$modal-shadow:     darken(#C0392B, 5%);
+$modal-background: $red;
+$modal-shadow:     darken($red-alt, 5%);

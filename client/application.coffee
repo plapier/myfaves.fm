@@ -18,12 +18,11 @@ if Meteor.isClient
     new PlaySong(clickedElement)
 
   Template.RenderPlaylist.empty_database = ->
-    # if Songs.find({}).count() is 0
-      # true
-    if Session.equals('exfm_status', 'Fetching...') \
-    or Session.equals('hypem_status', 'Fetching...') \
-    or Session.equals('sc_status', 'Fetching...')
-      true
+    if Songs.find({}).count() is 0
+      if Session.equals('exfm_status', 'Fetching...') \
+      or Session.equals('hypem_status', 'Fetching...') \
+      or Session.equals('sc_status', 'Fetching...')
+        true
 
   Template.MoreButton.events "click": (events) ->
     FetchMoreExfm()
