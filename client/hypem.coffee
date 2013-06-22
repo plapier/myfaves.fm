@@ -124,8 +124,8 @@ class SongMatcher
 
 @FetchMoreHypem = ->
   if Session.getNonReactive('hypem_username')
-    Session.set("hypem_status", 'Fetching...')
     collection_num = Session.getNonReactive('hypem_collection')
-    page_num = Session.getNonReactive('hypem_page')
+    page_num       = Session.getNonReactive('hypem_page')
+    Session.set("hypem_status", 'Fetching...')
     Session.set('hypem_collection', collection_num + 1)
     Session.set('hypem_page', page_num + 1)

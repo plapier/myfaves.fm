@@ -602,6 +602,44 @@ footer.about.hide .inner-wrapper {
     transform: translateY(100px);
     opacity: 0; } }
 
+button.load-more div.spinner {
+  -webkit-animation: spinner-zoom-in 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -moz-animation: spinner-zoom-in 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: spinner-zoom-in 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center; }
+
+@-webkit-keyframes spinner-zoom-in {
+  0% {
+    -webkit-transform: scale(0); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes spinner-zoom-in {
+  0% {
+    -moz-transform: scale(0); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes spinner-zoom-in {
+  0% {
+    -o-transform: scale(0); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes spinner-zoom-in {
+  0% {
+    transform: scale(0); }
+
+  100% {
+    transform: scale(1); } }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -636,7 +674,7 @@ header.playlist-header {
       height: auto;
       position: static;
       width: 100%;
-      float: left; } }
+      float: none; } }
   header.playlist-header h1 {
     background: rgba(0, 0, 0, 0.075);
     border-bottom: 2px solid rgba(0, 0, 0, 0.02);
@@ -1725,6 +1763,25 @@ button.load-more {
   @media screen and (max-width: 480px) {
     button.load-more {
       font-size: 14px; } }
+  button.load-more span.text {
+    display: inline-block;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    transition: all 0.15s; }
+    button.load-more span.text.hide {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0); }
 
 section.marketing {
   padding: 5vh 5vw 8vh; }

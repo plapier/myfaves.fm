@@ -6,7 +6,6 @@ FetchUserTracks = (source) ->
     username = Session.get("#{source}_username")
     if username?
       Session.set("#{source}_status", 'Fetching...')
-      console.log "status: fetching"
       switch source
         when 'exfm' then new ExfmJSONFetcher()
         when 'hypem' then new HypemJSONFetcher()

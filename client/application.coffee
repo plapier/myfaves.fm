@@ -12,21 +12,17 @@ if Meteor.isClient
   Template.RenderTemplate.has_username = ->
     GetUsernames()
 
-  Template.RenderPlaylist.events "click li.track": (event) ->
+  Template.RenderPlaylist.events "click li.track a": (event) ->
     event.preventDefault()
-    clickedElement = $(event.currentTarget)
+    clickedElement = $(event.currentTarget).parent()
     new PlaySong(clickedElement)
 
   Template.RenderPlaylist.empty_database = ->
+    ## Render the loading spinner if the database is empty
     if Songs.find({}).count() is 0
       if Session.equals('exfm_status', 'Fetching...') \
       or Session.equals('hypem_status', 'Fetching...') \
       or Session.equals('sc_status', 'Fetching...')
         true
-
-  Template.MoreButton.events "click": (events) ->
-    FetchMoreExfm()
-    FetchMoreHypem()
-
 
 # ---- Helper Functions ----

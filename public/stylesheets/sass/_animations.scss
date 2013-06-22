@@ -96,3 +96,17 @@
     opacity: 0;
   }
 }
+
+%spinner-zoom-in {
+  @include animation(spinner-zoom-in 0.4s $ease-out-expo forwards);
+  @include transform-origin(center);
+}
+
+@include keyframes(spinner-zoom-in) {
+  0% {
+    @include transform(scale(0));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}

@@ -169,4 +169,21 @@ button.load-more {
   @include media($mobile) {
     font-size: 14px;
   }
+
+  span.text {
+    display: inline-block;
+    opacity: 1;
+    pointer-events: none;
+    @include transform(scale(1));
+    @include transition(all 0.15s);
+
+    &.hide {
+      opacity: 0;
+      @include transform(scale(0));
+    }
+  }
+
+  div.spinner {
+    @extend %spinner-zoom-in;
+  }
 }

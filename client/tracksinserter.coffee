@@ -1,3 +1,8 @@
+@restoreButton = ->
+  $button = $('#more-button')
+  $button.find('.spinner').remove()
+  $button.find('.text').removeClass('hide')
+
 TracksInserter = ->
   Deps.autorun ->
 
@@ -14,6 +19,7 @@ TracksInserter = ->
 
     unless Session.equals('exfm_status', 'Fetching...') or Session.equals('hypem_status', 'Fetching...') or Session.equals('sc_status', 'Fetching...')
       # console.log "Fetching.."
+      restoreButton()
       all_tracks = []
 
       if exfm_tracks?

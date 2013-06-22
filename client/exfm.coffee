@@ -1,4 +1,3 @@
-@soundcloud_id = "dcfa20cb4e60440dbf3e8bb3c54b68a8"
 Session.setDefault('exfm_username', null)
 Session.setDefault('exfm_start', 0)
 Session.setDefault('exfm_results', 21)
@@ -74,7 +73,6 @@ class @ExfmJSONFetcher
       tracks.push(parsed_track.data())
     Session.set('exfm_tracks', tracks)
     Session.set('exfm_status', 'ready')
-    console.log "Status: ready"
 
 @ResetSessionVars = ->
   Session.set('exfm_start', 0)
