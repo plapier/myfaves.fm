@@ -869,803 +869,803 @@ section.main.playlist {
       @media screen and (max-width: 480px) {
         section.main.playlist ol li {
           margin: 20px 5%; } }
-      section.main.playlist ol li:nth-child(1) {
+      section.main.playlist ol li.animate:nth-of-type(1) {
         -webkit-animation-delay: 0.05s;
         -moz-animation-delay: 0.05s;
         animation-delay: 0.05s; }
-      section.main.playlist ol li:nth-child(2) {
+      section.main.playlist ol li.animate:nth-of-type(2) {
         -webkit-animation-delay: 0.1s;
         -moz-animation-delay: 0.1s;
         animation-delay: 0.1s; }
-      section.main.playlist ol li:nth-child(3) {
+      section.main.playlist ol li.animate:nth-of-type(3) {
         -webkit-animation-delay: 0.15s;
         -moz-animation-delay: 0.15s;
         animation-delay: 0.15s; }
-      section.main.playlist ol li:nth-child(4) {
+      section.main.playlist ol li.animate:nth-of-type(4) {
         -webkit-animation-delay: 0.2s;
         -moz-animation-delay: 0.2s;
         animation-delay: 0.2s; }
-      section.main.playlist ol li:nth-child(5) {
+      section.main.playlist ol li.animate:nth-of-type(5) {
         -webkit-animation-delay: 0.25s;
         -moz-animation-delay: 0.25s;
         animation-delay: 0.25s; }
-      section.main.playlist ol li:nth-child(6) {
+      section.main.playlist ol li.animate:nth-of-type(6) {
         -webkit-animation-delay: 0.3s;
         -moz-animation-delay: 0.3s;
         animation-delay: 0.3s; }
-      section.main.playlist ol li:nth-child(7) {
+      section.main.playlist ol li.animate:nth-of-type(7) {
         -webkit-animation-delay: 0.35s;
         -moz-animation-delay: 0.35s;
         animation-delay: 0.35s; }
-      section.main.playlist ol li:nth-child(8) {
+      section.main.playlist ol li.animate:nth-of-type(8) {
         -webkit-animation-delay: 0.4s;
         -moz-animation-delay: 0.4s;
         animation-delay: 0.4s; }
-      section.main.playlist ol li:nth-child(9) {
+      section.main.playlist ol li.animate:nth-of-type(9) {
         -webkit-animation-delay: 0.45s;
         -moz-animation-delay: 0.45s;
         animation-delay: 0.45s; }
-      section.main.playlist ol li:nth-child(10) {
+      section.main.playlist ol li.animate:nth-of-type(10) {
         -webkit-animation-delay: 0.5s;
         -moz-animation-delay: 0.5s;
         animation-delay: 0.5s; }
-      section.main.playlist ol li:nth-child(11) {
+      section.main.playlist ol li.animate:nth-of-type(11) {
         -webkit-animation-delay: 0.55s;
         -moz-animation-delay: 0.55s;
         animation-delay: 0.55s; }
-      section.main.playlist ol li:nth-child(12) {
+      section.main.playlist ol li.animate:nth-of-type(12) {
         -webkit-animation-delay: 0.6s;
         -moz-animation-delay: 0.6s;
         animation-delay: 0.6s; }
-      section.main.playlist ol li:nth-child(13) {
+      section.main.playlist ol li.animate:nth-of-type(13) {
         -webkit-animation-delay: 0.65s;
         -moz-animation-delay: 0.65s;
         animation-delay: 0.65s; }
-      section.main.playlist ol li:nth-child(14) {
+      section.main.playlist ol li.animate:nth-of-type(14) {
         -webkit-animation-delay: 0.7s;
         -moz-animation-delay: 0.7s;
         animation-delay: 0.7s; }
-      section.main.playlist ol li:nth-child(15) {
+      section.main.playlist ol li.animate:nth-of-type(15) {
         -webkit-animation-delay: 0.75s;
         -moz-animation-delay: 0.75s;
         animation-delay: 0.75s; }
-      section.main.playlist ol li:nth-child(16) {
+      section.main.playlist ol li.animate:nth-of-type(16) {
         -webkit-animation-delay: 0.8s;
         -moz-animation-delay: 0.8s;
         animation-delay: 0.8s; }
-      section.main.playlist ol li:nth-child(17) {
+      section.main.playlist ol li.animate:nth-of-type(17) {
         -webkit-animation-delay: 0.85s;
         -moz-animation-delay: 0.85s;
         animation-delay: 0.85s; }
-      section.main.playlist ol li:nth-child(18) {
+      section.main.playlist ol li.animate:nth-of-type(18) {
         -webkit-animation-delay: 0.9s;
         -moz-animation-delay: 0.9s;
         animation-delay: 0.9s; }
-      section.main.playlist ol li:nth-child(19) {
+      section.main.playlist ol li.animate:nth-of-type(19) {
         -webkit-animation-delay: 0.95s;
         -moz-animation-delay: 0.95s;
         animation-delay: 0.95s; }
-      section.main.playlist ol li:nth-child(20) {
+      section.main.playlist ol li.animate:nth-of-type(20) {
         -webkit-animation-delay: 1.0s;
         -moz-animation-delay: 1.0s;
         animation-delay: 1.0s; }
-      section.main.playlist ol li:nth-child(21) {
+      section.main.playlist ol li.animate:nth-of-type(21) {
         -webkit-animation-delay: 1.05s;
         -moz-animation-delay: 1.05s;
         animation-delay: 1.05s; }
-      section.main.playlist ol li:nth-child(22) {
+      section.main.playlist ol li.animate:nth-of-type(22) {
         -webkit-animation-delay: 1.1s;
         -moz-animation-delay: 1.1s;
         animation-delay: 1.1s; }
-      section.main.playlist ol li:nth-child(23) {
+      section.main.playlist ol li.animate:nth-of-type(23) {
         -webkit-animation-delay: 1.15s;
         -moz-animation-delay: 1.15s;
         animation-delay: 1.15s; }
-      section.main.playlist ol li:nth-child(24) {
+      section.main.playlist ol li.animate:nth-of-type(24) {
         -webkit-animation-delay: 1.2s;
         -moz-animation-delay: 1.2s;
         animation-delay: 1.2s; }
-      section.main.playlist ol li:nth-child(25) {
+      section.main.playlist ol li.animate:nth-of-type(25) {
         -webkit-animation-delay: 1.25s;
         -moz-animation-delay: 1.25s;
         animation-delay: 1.25s; }
-      section.main.playlist ol li:nth-child(26) {
+      section.main.playlist ol li.animate:nth-of-type(26) {
         -webkit-animation-delay: 1.3s;
         -moz-animation-delay: 1.3s;
         animation-delay: 1.3s; }
-      section.main.playlist ol li:nth-child(27) {
+      section.main.playlist ol li.animate:nth-of-type(27) {
         -webkit-animation-delay: 1.35s;
         -moz-animation-delay: 1.35s;
         animation-delay: 1.35s; }
-      section.main.playlist ol li:nth-child(28) {
+      section.main.playlist ol li.animate:nth-of-type(28) {
         -webkit-animation-delay: 1.4s;
         -moz-animation-delay: 1.4s;
         animation-delay: 1.4s; }
-      section.main.playlist ol li:nth-child(29) {
+      section.main.playlist ol li.animate:nth-of-type(29) {
         -webkit-animation-delay: 1.45s;
         -moz-animation-delay: 1.45s;
         animation-delay: 1.45s; }
-      section.main.playlist ol li:nth-child(30) {
+      section.main.playlist ol li.animate:nth-of-type(30) {
         -webkit-animation-delay: 1.5s;
         -moz-animation-delay: 1.5s;
         animation-delay: 1.5s; }
-      section.main.playlist ol li:nth-child(31) {
+      section.main.playlist ol li.animate:nth-of-type(31) {
         -webkit-animation-delay: 1.55s;
         -moz-animation-delay: 1.55s;
         animation-delay: 1.55s; }
-      section.main.playlist ol li:nth-child(32) {
+      section.main.playlist ol li.animate:nth-of-type(32) {
         -webkit-animation-delay: 1.6s;
         -moz-animation-delay: 1.6s;
         animation-delay: 1.6s; }
-      section.main.playlist ol li:nth-child(33) {
+      section.main.playlist ol li.animate:nth-of-type(33) {
         -webkit-animation-delay: 1.65s;
         -moz-animation-delay: 1.65s;
         animation-delay: 1.65s; }
-      section.main.playlist ol li:nth-child(34) {
+      section.main.playlist ol li.animate:nth-of-type(34) {
         -webkit-animation-delay: 1.7s;
         -moz-animation-delay: 1.7s;
         animation-delay: 1.7s; }
-      section.main.playlist ol li:nth-child(35) {
+      section.main.playlist ol li.animate:nth-of-type(35) {
         -webkit-animation-delay: 1.75s;
         -moz-animation-delay: 1.75s;
         animation-delay: 1.75s; }
-      section.main.playlist ol li:nth-child(36) {
+      section.main.playlist ol li.animate:nth-of-type(36) {
         -webkit-animation-delay: 1.8s;
         -moz-animation-delay: 1.8s;
         animation-delay: 1.8s; }
-      section.main.playlist ol li:nth-child(37) {
+      section.main.playlist ol li.animate:nth-of-type(37) {
         -webkit-animation-delay: 1.85s;
         -moz-animation-delay: 1.85s;
         animation-delay: 1.85s; }
-      section.main.playlist ol li:nth-child(38) {
+      section.main.playlist ol li.animate:nth-of-type(38) {
         -webkit-animation-delay: 1.9s;
         -moz-animation-delay: 1.9s;
         animation-delay: 1.9s; }
-      section.main.playlist ol li:nth-child(39) {
+      section.main.playlist ol li.animate:nth-of-type(39) {
         -webkit-animation-delay: 1.95s;
         -moz-animation-delay: 1.95s;
         animation-delay: 1.95s; }
-      section.main.playlist ol li:nth-child(40) {
+      section.main.playlist ol li.animate:nth-of-type(40) {
         -webkit-animation-delay: 2.0s;
         -moz-animation-delay: 2.0s;
         animation-delay: 2.0s; }
-      section.main.playlist ol li:nth-child(41) {
+      section.main.playlist ol li.animate:nth-of-type(41) {
         -webkit-animation-delay: 2.05s;
         -moz-animation-delay: 2.05s;
         animation-delay: 2.05s; }
-      section.main.playlist ol li:nth-child(42) {
+      section.main.playlist ol li.animate:nth-of-type(42) {
         -webkit-animation-delay: 2.1s;
         -moz-animation-delay: 2.1s;
         animation-delay: 2.1s; }
-      section.main.playlist ol li:nth-child(43) {
+      section.main.playlist ol li.animate:nth-of-type(43) {
         -webkit-animation-delay: 2.15s;
         -moz-animation-delay: 2.15s;
         animation-delay: 2.15s; }
-      section.main.playlist ol li:nth-child(44) {
+      section.main.playlist ol li.animate:nth-of-type(44) {
         -webkit-animation-delay: 2.2s;
         -moz-animation-delay: 2.2s;
         animation-delay: 2.2s; }
-      section.main.playlist ol li:nth-child(45) {
+      section.main.playlist ol li.animate:nth-of-type(45) {
         -webkit-animation-delay: 2.25s;
         -moz-animation-delay: 2.25s;
         animation-delay: 2.25s; }
-      section.main.playlist ol li:nth-child(46) {
+      section.main.playlist ol li.animate:nth-of-type(46) {
         -webkit-animation-delay: 2.3s;
         -moz-animation-delay: 2.3s;
         animation-delay: 2.3s; }
-      section.main.playlist ol li:nth-child(47) {
+      section.main.playlist ol li.animate:nth-of-type(47) {
         -webkit-animation-delay: 2.35s;
         -moz-animation-delay: 2.35s;
         animation-delay: 2.35s; }
-      section.main.playlist ol li:nth-child(48) {
+      section.main.playlist ol li.animate:nth-of-type(48) {
         -webkit-animation-delay: 2.4s;
         -moz-animation-delay: 2.4s;
         animation-delay: 2.4s; }
-      section.main.playlist ol li:nth-child(49) {
+      section.main.playlist ol li.animate:nth-of-type(49) {
         -webkit-animation-delay: 2.45s;
         -moz-animation-delay: 2.45s;
         animation-delay: 2.45s; }
-      section.main.playlist ol li:nth-child(50) {
+      section.main.playlist ol li.animate:nth-of-type(50) {
         -webkit-animation-delay: 2.5s;
         -moz-animation-delay: 2.5s;
         animation-delay: 2.5s; }
-      section.main.playlist ol li:nth-child(51) {
+      section.main.playlist ol li.animate:nth-of-type(51) {
         -webkit-animation-delay: 2.55s;
         -moz-animation-delay: 2.55s;
         animation-delay: 2.55s; }
-      section.main.playlist ol li:nth-child(52) {
+      section.main.playlist ol li.animate:nth-of-type(52) {
         -webkit-animation-delay: 2.6s;
         -moz-animation-delay: 2.6s;
         animation-delay: 2.6s; }
-      section.main.playlist ol li:nth-child(53) {
+      section.main.playlist ol li.animate:nth-of-type(53) {
         -webkit-animation-delay: 2.65s;
         -moz-animation-delay: 2.65s;
         animation-delay: 2.65s; }
-      section.main.playlist ol li:nth-child(54) {
+      section.main.playlist ol li.animate:nth-of-type(54) {
         -webkit-animation-delay: 2.7s;
         -moz-animation-delay: 2.7s;
         animation-delay: 2.7s; }
-      section.main.playlist ol li:nth-child(55) {
+      section.main.playlist ol li.animate:nth-of-type(55) {
         -webkit-animation-delay: 2.75s;
         -moz-animation-delay: 2.75s;
         animation-delay: 2.75s; }
-      section.main.playlist ol li:nth-child(56) {
+      section.main.playlist ol li.animate:nth-of-type(56) {
         -webkit-animation-delay: 2.8s;
         -moz-animation-delay: 2.8s;
         animation-delay: 2.8s; }
-      section.main.playlist ol li:nth-child(57) {
+      section.main.playlist ol li.animate:nth-of-type(57) {
         -webkit-animation-delay: 2.85s;
         -moz-animation-delay: 2.85s;
         animation-delay: 2.85s; }
-      section.main.playlist ol li:nth-child(58) {
+      section.main.playlist ol li.animate:nth-of-type(58) {
         -webkit-animation-delay: 2.9s;
         -moz-animation-delay: 2.9s;
         animation-delay: 2.9s; }
-      section.main.playlist ol li:nth-child(59) {
+      section.main.playlist ol li.animate:nth-of-type(59) {
         -webkit-animation-delay: 2.95s;
         -moz-animation-delay: 2.95s;
         animation-delay: 2.95s; }
-      section.main.playlist ol li:nth-child(60) {
+      section.main.playlist ol li.animate:nth-of-type(60) {
         -webkit-animation-delay: 3.0s;
         -moz-animation-delay: 3.0s;
         animation-delay: 3.0s; }
-      section.main.playlist ol li:nth-child(61) {
+      section.main.playlist ol li.animate:nth-of-type(61) {
         -webkit-animation-delay: 3.05s;
         -moz-animation-delay: 3.05s;
         animation-delay: 3.05s; }
-      section.main.playlist ol li:nth-child(62) {
+      section.main.playlist ol li.animate:nth-of-type(62) {
         -webkit-animation-delay: 3.1s;
         -moz-animation-delay: 3.1s;
         animation-delay: 3.1s; }
-      section.main.playlist ol li:nth-child(63) {
+      section.main.playlist ol li.animate:nth-of-type(63) {
         -webkit-animation-delay: 3.15s;
         -moz-animation-delay: 3.15s;
         animation-delay: 3.15s; }
-      section.main.playlist ol li:nth-child(64) {
+      section.main.playlist ol li.animate:nth-of-type(64) {
         -webkit-animation-delay: 3.2s;
         -moz-animation-delay: 3.2s;
         animation-delay: 3.2s; }
-      section.main.playlist ol li:nth-child(65) {
+      section.main.playlist ol li.animate:nth-of-type(65) {
         -webkit-animation-delay: 3.25s;
         -moz-animation-delay: 3.25s;
         animation-delay: 3.25s; }
-      section.main.playlist ol li:nth-child(66) {
+      section.main.playlist ol li.animate:nth-of-type(66) {
         -webkit-animation-delay: 3.3s;
         -moz-animation-delay: 3.3s;
         animation-delay: 3.3s; }
-      section.main.playlist ol li:nth-child(67) {
+      section.main.playlist ol li.animate:nth-of-type(67) {
         -webkit-animation-delay: 3.35s;
         -moz-animation-delay: 3.35s;
         animation-delay: 3.35s; }
-      section.main.playlist ol li:nth-child(68) {
+      section.main.playlist ol li.animate:nth-of-type(68) {
         -webkit-animation-delay: 3.4s;
         -moz-animation-delay: 3.4s;
         animation-delay: 3.4s; }
-      section.main.playlist ol li:nth-child(69) {
+      section.main.playlist ol li.animate:nth-of-type(69) {
         -webkit-animation-delay: 3.45s;
         -moz-animation-delay: 3.45s;
         animation-delay: 3.45s; }
-      section.main.playlist ol li:nth-child(70) {
+      section.main.playlist ol li.animate:nth-of-type(70) {
         -webkit-animation-delay: 3.5s;
         -moz-animation-delay: 3.5s;
         animation-delay: 3.5s; }
-      section.main.playlist ol li:nth-child(71) {
+      section.main.playlist ol li.animate:nth-of-type(71) {
         -webkit-animation-delay: 3.55s;
         -moz-animation-delay: 3.55s;
         animation-delay: 3.55s; }
-      section.main.playlist ol li:nth-child(72) {
+      section.main.playlist ol li.animate:nth-of-type(72) {
         -webkit-animation-delay: 3.6s;
         -moz-animation-delay: 3.6s;
         animation-delay: 3.6s; }
-      section.main.playlist ol li:nth-child(73) {
+      section.main.playlist ol li.animate:nth-of-type(73) {
         -webkit-animation-delay: 3.65s;
         -moz-animation-delay: 3.65s;
         animation-delay: 3.65s; }
-      section.main.playlist ol li:nth-child(74) {
+      section.main.playlist ol li.animate:nth-of-type(74) {
         -webkit-animation-delay: 3.7s;
         -moz-animation-delay: 3.7s;
         animation-delay: 3.7s; }
-      section.main.playlist ol li:nth-child(75) {
+      section.main.playlist ol li.animate:nth-of-type(75) {
         -webkit-animation-delay: 3.75s;
         -moz-animation-delay: 3.75s;
         animation-delay: 3.75s; }
-      section.main.playlist ol li:nth-child(76) {
+      section.main.playlist ol li.animate:nth-of-type(76) {
         -webkit-animation-delay: 3.8s;
         -moz-animation-delay: 3.8s;
         animation-delay: 3.8s; }
-      section.main.playlist ol li:nth-child(77) {
+      section.main.playlist ol li.animate:nth-of-type(77) {
         -webkit-animation-delay: 3.85s;
         -moz-animation-delay: 3.85s;
         animation-delay: 3.85s; }
-      section.main.playlist ol li:nth-child(78) {
+      section.main.playlist ol li.animate:nth-of-type(78) {
         -webkit-animation-delay: 3.9s;
         -moz-animation-delay: 3.9s;
         animation-delay: 3.9s; }
-      section.main.playlist ol li:nth-child(79) {
+      section.main.playlist ol li.animate:nth-of-type(79) {
         -webkit-animation-delay: 3.95s;
         -moz-animation-delay: 3.95s;
         animation-delay: 3.95s; }
-      section.main.playlist ol li:nth-child(80) {
+      section.main.playlist ol li.animate:nth-of-type(80) {
         -webkit-animation-delay: 4.0s;
         -moz-animation-delay: 4.0s;
         animation-delay: 4.0s; }
-      section.main.playlist ol li:nth-child(81) {
+      section.main.playlist ol li.animate:nth-of-type(81) {
         -webkit-animation-delay: 4.05s;
         -moz-animation-delay: 4.05s;
         animation-delay: 4.05s; }
-      section.main.playlist ol li:nth-child(82) {
+      section.main.playlist ol li.animate:nth-of-type(82) {
         -webkit-animation-delay: 4.1s;
         -moz-animation-delay: 4.1s;
         animation-delay: 4.1s; }
-      section.main.playlist ol li:nth-child(83) {
+      section.main.playlist ol li.animate:nth-of-type(83) {
         -webkit-animation-delay: 4.15s;
         -moz-animation-delay: 4.15s;
         animation-delay: 4.15s; }
-      section.main.playlist ol li:nth-child(84) {
+      section.main.playlist ol li.animate:nth-of-type(84) {
         -webkit-animation-delay: 4.2s;
         -moz-animation-delay: 4.2s;
         animation-delay: 4.2s; }
-      section.main.playlist ol li:nth-child(85) {
+      section.main.playlist ol li.animate:nth-of-type(85) {
         -webkit-animation-delay: 4.25s;
         -moz-animation-delay: 4.25s;
         animation-delay: 4.25s; }
-      section.main.playlist ol li:nth-child(86) {
+      section.main.playlist ol li.animate:nth-of-type(86) {
         -webkit-animation-delay: 4.3s;
         -moz-animation-delay: 4.3s;
         animation-delay: 4.3s; }
-      section.main.playlist ol li:nth-child(87) {
+      section.main.playlist ol li.animate:nth-of-type(87) {
         -webkit-animation-delay: 4.35s;
         -moz-animation-delay: 4.35s;
         animation-delay: 4.35s; }
-      section.main.playlist ol li:nth-child(88) {
+      section.main.playlist ol li.animate:nth-of-type(88) {
         -webkit-animation-delay: 4.4s;
         -moz-animation-delay: 4.4s;
         animation-delay: 4.4s; }
-      section.main.playlist ol li:nth-child(89) {
+      section.main.playlist ol li.animate:nth-of-type(89) {
         -webkit-animation-delay: 4.45s;
         -moz-animation-delay: 4.45s;
         animation-delay: 4.45s; }
-      section.main.playlist ol li:nth-child(90) {
+      section.main.playlist ol li.animate:nth-of-type(90) {
         -webkit-animation-delay: 4.5s;
         -moz-animation-delay: 4.5s;
         animation-delay: 4.5s; }
-      section.main.playlist ol li:nth-child(91) {
+      section.main.playlist ol li.animate:nth-of-type(91) {
         -webkit-animation-delay: 4.55s;
         -moz-animation-delay: 4.55s;
         animation-delay: 4.55s; }
-      section.main.playlist ol li:nth-child(92) {
+      section.main.playlist ol li.animate:nth-of-type(92) {
         -webkit-animation-delay: 4.6s;
         -moz-animation-delay: 4.6s;
         animation-delay: 4.6s; }
-      section.main.playlist ol li:nth-child(93) {
+      section.main.playlist ol li.animate:nth-of-type(93) {
         -webkit-animation-delay: 4.65s;
         -moz-animation-delay: 4.65s;
         animation-delay: 4.65s; }
-      section.main.playlist ol li:nth-child(94) {
+      section.main.playlist ol li.animate:nth-of-type(94) {
         -webkit-animation-delay: 4.7s;
         -moz-animation-delay: 4.7s;
         animation-delay: 4.7s; }
-      section.main.playlist ol li:nth-child(95) {
+      section.main.playlist ol li.animate:nth-of-type(95) {
         -webkit-animation-delay: 4.75s;
         -moz-animation-delay: 4.75s;
         animation-delay: 4.75s; }
-      section.main.playlist ol li:nth-child(96) {
+      section.main.playlist ol li.animate:nth-of-type(96) {
         -webkit-animation-delay: 4.8s;
         -moz-animation-delay: 4.8s;
         animation-delay: 4.8s; }
-      section.main.playlist ol li:nth-child(97) {
+      section.main.playlist ol li.animate:nth-of-type(97) {
         -webkit-animation-delay: 4.85s;
         -moz-animation-delay: 4.85s;
         animation-delay: 4.85s; }
-      section.main.playlist ol li:nth-child(98) {
+      section.main.playlist ol li.animate:nth-of-type(98) {
         -webkit-animation-delay: 4.9s;
         -moz-animation-delay: 4.9s;
         animation-delay: 4.9s; }
-      section.main.playlist ol li:nth-child(99) {
+      section.main.playlist ol li.animate:nth-of-type(99) {
         -webkit-animation-delay: 4.95s;
         -moz-animation-delay: 4.95s;
         animation-delay: 4.95s; }
-      section.main.playlist ol li:nth-child(100) {
+      section.main.playlist ol li.animate:nth-of-type(100) {
         -webkit-animation-delay: 5.0s;
         -moz-animation-delay: 5.0s;
         animation-delay: 5.0s; }
-      section.main.playlist ol li:nth-child(101) {
+      section.main.playlist ol li.animate:nth-of-type(101) {
         -webkit-animation-delay: 5.05s;
         -moz-animation-delay: 5.05s;
         animation-delay: 5.05s; }
-      section.main.playlist ol li:nth-child(102) {
+      section.main.playlist ol li.animate:nth-of-type(102) {
         -webkit-animation-delay: 5.1s;
         -moz-animation-delay: 5.1s;
         animation-delay: 5.1s; }
-      section.main.playlist ol li:nth-child(103) {
+      section.main.playlist ol li.animate:nth-of-type(103) {
         -webkit-animation-delay: 5.15s;
         -moz-animation-delay: 5.15s;
         animation-delay: 5.15s; }
-      section.main.playlist ol li:nth-child(104) {
+      section.main.playlist ol li.animate:nth-of-type(104) {
         -webkit-animation-delay: 5.2s;
         -moz-animation-delay: 5.2s;
         animation-delay: 5.2s; }
-      section.main.playlist ol li:nth-child(105) {
+      section.main.playlist ol li.animate:nth-of-type(105) {
         -webkit-animation-delay: 5.25s;
         -moz-animation-delay: 5.25s;
         animation-delay: 5.25s; }
-      section.main.playlist ol li:nth-child(106) {
+      section.main.playlist ol li.animate:nth-of-type(106) {
         -webkit-animation-delay: 5.3s;
         -moz-animation-delay: 5.3s;
         animation-delay: 5.3s; }
-      section.main.playlist ol li:nth-child(107) {
+      section.main.playlist ol li.animate:nth-of-type(107) {
         -webkit-animation-delay: 5.35s;
         -moz-animation-delay: 5.35s;
         animation-delay: 5.35s; }
-      section.main.playlist ol li:nth-child(108) {
+      section.main.playlist ol li.animate:nth-of-type(108) {
         -webkit-animation-delay: 5.4s;
         -moz-animation-delay: 5.4s;
         animation-delay: 5.4s; }
-      section.main.playlist ol li:nth-child(109) {
+      section.main.playlist ol li.animate:nth-of-type(109) {
         -webkit-animation-delay: 5.45s;
         -moz-animation-delay: 5.45s;
         animation-delay: 5.45s; }
-      section.main.playlist ol li:nth-child(110) {
+      section.main.playlist ol li.animate:nth-of-type(110) {
         -webkit-animation-delay: 5.5s;
         -moz-animation-delay: 5.5s;
         animation-delay: 5.5s; }
-      section.main.playlist ol li:nth-child(111) {
+      section.main.playlist ol li.animate:nth-of-type(111) {
         -webkit-animation-delay: 5.55s;
         -moz-animation-delay: 5.55s;
         animation-delay: 5.55s; }
-      section.main.playlist ol li:nth-child(112) {
+      section.main.playlist ol li.animate:nth-of-type(112) {
         -webkit-animation-delay: 5.6s;
         -moz-animation-delay: 5.6s;
         animation-delay: 5.6s; }
-      section.main.playlist ol li:nth-child(113) {
+      section.main.playlist ol li.animate:nth-of-type(113) {
         -webkit-animation-delay: 5.65s;
         -moz-animation-delay: 5.65s;
         animation-delay: 5.65s; }
-      section.main.playlist ol li:nth-child(114) {
+      section.main.playlist ol li.animate:nth-of-type(114) {
         -webkit-animation-delay: 5.7s;
         -moz-animation-delay: 5.7s;
         animation-delay: 5.7s; }
-      section.main.playlist ol li:nth-child(115) {
+      section.main.playlist ol li.animate:nth-of-type(115) {
         -webkit-animation-delay: 5.75s;
         -moz-animation-delay: 5.75s;
         animation-delay: 5.75s; }
-      section.main.playlist ol li:nth-child(116) {
+      section.main.playlist ol li.animate:nth-of-type(116) {
         -webkit-animation-delay: 5.8s;
         -moz-animation-delay: 5.8s;
         animation-delay: 5.8s; }
-      section.main.playlist ol li:nth-child(117) {
+      section.main.playlist ol li.animate:nth-of-type(117) {
         -webkit-animation-delay: 5.85s;
         -moz-animation-delay: 5.85s;
         animation-delay: 5.85s; }
-      section.main.playlist ol li:nth-child(118) {
+      section.main.playlist ol li.animate:nth-of-type(118) {
         -webkit-animation-delay: 5.9s;
         -moz-animation-delay: 5.9s;
         animation-delay: 5.9s; }
-      section.main.playlist ol li:nth-child(119) {
+      section.main.playlist ol li.animate:nth-of-type(119) {
         -webkit-animation-delay: 5.95s;
         -moz-animation-delay: 5.95s;
         animation-delay: 5.95s; }
-      section.main.playlist ol li:nth-child(120) {
+      section.main.playlist ol li.animate:nth-of-type(120) {
         -webkit-animation-delay: 6.0s;
         -moz-animation-delay: 6.0s;
         animation-delay: 6.0s; }
-      section.main.playlist ol li:nth-child(121) {
+      section.main.playlist ol li.animate:nth-of-type(121) {
         -webkit-animation-delay: 6.05s;
         -moz-animation-delay: 6.05s;
         animation-delay: 6.05s; }
-      section.main.playlist ol li:nth-child(122) {
+      section.main.playlist ol li.animate:nth-of-type(122) {
         -webkit-animation-delay: 6.1s;
         -moz-animation-delay: 6.1s;
         animation-delay: 6.1s; }
-      section.main.playlist ol li:nth-child(123) {
+      section.main.playlist ol li.animate:nth-of-type(123) {
         -webkit-animation-delay: 6.15s;
         -moz-animation-delay: 6.15s;
         animation-delay: 6.15s; }
-      section.main.playlist ol li:nth-child(124) {
+      section.main.playlist ol li.animate:nth-of-type(124) {
         -webkit-animation-delay: 6.2s;
         -moz-animation-delay: 6.2s;
         animation-delay: 6.2s; }
-      section.main.playlist ol li:nth-child(125) {
+      section.main.playlist ol li.animate:nth-of-type(125) {
         -webkit-animation-delay: 6.25s;
         -moz-animation-delay: 6.25s;
         animation-delay: 6.25s; }
-      section.main.playlist ol li:nth-child(126) {
+      section.main.playlist ol li.animate:nth-of-type(126) {
         -webkit-animation-delay: 6.3s;
         -moz-animation-delay: 6.3s;
         animation-delay: 6.3s; }
-      section.main.playlist ol li:nth-child(127) {
+      section.main.playlist ol li.animate:nth-of-type(127) {
         -webkit-animation-delay: 6.35s;
         -moz-animation-delay: 6.35s;
         animation-delay: 6.35s; }
-      section.main.playlist ol li:nth-child(128) {
+      section.main.playlist ol li.animate:nth-of-type(128) {
         -webkit-animation-delay: 6.4s;
         -moz-animation-delay: 6.4s;
         animation-delay: 6.4s; }
-      section.main.playlist ol li:nth-child(129) {
+      section.main.playlist ol li.animate:nth-of-type(129) {
         -webkit-animation-delay: 6.45s;
         -moz-animation-delay: 6.45s;
         animation-delay: 6.45s; }
-      section.main.playlist ol li:nth-child(130) {
+      section.main.playlist ol li.animate:nth-of-type(130) {
         -webkit-animation-delay: 6.5s;
         -moz-animation-delay: 6.5s;
         animation-delay: 6.5s; }
-      section.main.playlist ol li:nth-child(131) {
+      section.main.playlist ol li.animate:nth-of-type(131) {
         -webkit-animation-delay: 6.55s;
         -moz-animation-delay: 6.55s;
         animation-delay: 6.55s; }
-      section.main.playlist ol li:nth-child(132) {
+      section.main.playlist ol li.animate:nth-of-type(132) {
         -webkit-animation-delay: 6.6s;
         -moz-animation-delay: 6.6s;
         animation-delay: 6.6s; }
-      section.main.playlist ol li:nth-child(133) {
+      section.main.playlist ol li.animate:nth-of-type(133) {
         -webkit-animation-delay: 6.65s;
         -moz-animation-delay: 6.65s;
         animation-delay: 6.65s; }
-      section.main.playlist ol li:nth-child(134) {
+      section.main.playlist ol li.animate:nth-of-type(134) {
         -webkit-animation-delay: 6.7s;
         -moz-animation-delay: 6.7s;
         animation-delay: 6.7s; }
-      section.main.playlist ol li:nth-child(135) {
+      section.main.playlist ol li.animate:nth-of-type(135) {
         -webkit-animation-delay: 6.75s;
         -moz-animation-delay: 6.75s;
         animation-delay: 6.75s; }
-      section.main.playlist ol li:nth-child(136) {
+      section.main.playlist ol li.animate:nth-of-type(136) {
         -webkit-animation-delay: 6.8s;
         -moz-animation-delay: 6.8s;
         animation-delay: 6.8s; }
-      section.main.playlist ol li:nth-child(137) {
+      section.main.playlist ol li.animate:nth-of-type(137) {
         -webkit-animation-delay: 6.85s;
         -moz-animation-delay: 6.85s;
         animation-delay: 6.85s; }
-      section.main.playlist ol li:nth-child(138) {
+      section.main.playlist ol li.animate:nth-of-type(138) {
         -webkit-animation-delay: 6.9s;
         -moz-animation-delay: 6.9s;
         animation-delay: 6.9s; }
-      section.main.playlist ol li:nth-child(139) {
+      section.main.playlist ol li.animate:nth-of-type(139) {
         -webkit-animation-delay: 6.95s;
         -moz-animation-delay: 6.95s;
         animation-delay: 6.95s; }
-      section.main.playlist ol li:nth-child(140) {
+      section.main.playlist ol li.animate:nth-of-type(140) {
         -webkit-animation-delay: 7.0s;
         -moz-animation-delay: 7.0s;
         animation-delay: 7.0s; }
-      section.main.playlist ol li:nth-child(141) {
+      section.main.playlist ol li.animate:nth-of-type(141) {
         -webkit-animation-delay: 7.05s;
         -moz-animation-delay: 7.05s;
         animation-delay: 7.05s; }
-      section.main.playlist ol li:nth-child(142) {
+      section.main.playlist ol li.animate:nth-of-type(142) {
         -webkit-animation-delay: 7.1s;
         -moz-animation-delay: 7.1s;
         animation-delay: 7.1s; }
-      section.main.playlist ol li:nth-child(143) {
+      section.main.playlist ol li.animate:nth-of-type(143) {
         -webkit-animation-delay: 7.15s;
         -moz-animation-delay: 7.15s;
         animation-delay: 7.15s; }
-      section.main.playlist ol li:nth-child(144) {
+      section.main.playlist ol li.animate:nth-of-type(144) {
         -webkit-animation-delay: 7.2s;
         -moz-animation-delay: 7.2s;
         animation-delay: 7.2s; }
-      section.main.playlist ol li:nth-child(145) {
+      section.main.playlist ol li.animate:nth-of-type(145) {
         -webkit-animation-delay: 7.25s;
         -moz-animation-delay: 7.25s;
         animation-delay: 7.25s; }
-      section.main.playlist ol li:nth-child(146) {
+      section.main.playlist ol li.animate:nth-of-type(146) {
         -webkit-animation-delay: 7.3s;
         -moz-animation-delay: 7.3s;
         animation-delay: 7.3s; }
-      section.main.playlist ol li:nth-child(147) {
+      section.main.playlist ol li.animate:nth-of-type(147) {
         -webkit-animation-delay: 7.35s;
         -moz-animation-delay: 7.35s;
         animation-delay: 7.35s; }
-      section.main.playlist ol li:nth-child(148) {
+      section.main.playlist ol li.animate:nth-of-type(148) {
         -webkit-animation-delay: 7.4s;
         -moz-animation-delay: 7.4s;
         animation-delay: 7.4s; }
-      section.main.playlist ol li:nth-child(149) {
+      section.main.playlist ol li.animate:nth-of-type(149) {
         -webkit-animation-delay: 7.45s;
         -moz-animation-delay: 7.45s;
         animation-delay: 7.45s; }
-      section.main.playlist ol li:nth-child(150) {
+      section.main.playlist ol li.animate:nth-of-type(150) {
         -webkit-animation-delay: 7.5s;
         -moz-animation-delay: 7.5s;
         animation-delay: 7.5s; }
-      section.main.playlist ol li:nth-child(151) {
+      section.main.playlist ol li.animate:nth-of-type(151) {
         -webkit-animation-delay: 7.55s;
         -moz-animation-delay: 7.55s;
         animation-delay: 7.55s; }
-      section.main.playlist ol li:nth-child(152) {
+      section.main.playlist ol li.animate:nth-of-type(152) {
         -webkit-animation-delay: 7.6s;
         -moz-animation-delay: 7.6s;
         animation-delay: 7.6s; }
-      section.main.playlist ol li:nth-child(153) {
+      section.main.playlist ol li.animate:nth-of-type(153) {
         -webkit-animation-delay: 7.65s;
         -moz-animation-delay: 7.65s;
         animation-delay: 7.65s; }
-      section.main.playlist ol li:nth-child(154) {
+      section.main.playlist ol li.animate:nth-of-type(154) {
         -webkit-animation-delay: 7.7s;
         -moz-animation-delay: 7.7s;
         animation-delay: 7.7s; }
-      section.main.playlist ol li:nth-child(155) {
+      section.main.playlist ol li.animate:nth-of-type(155) {
         -webkit-animation-delay: 7.75s;
         -moz-animation-delay: 7.75s;
         animation-delay: 7.75s; }
-      section.main.playlist ol li:nth-child(156) {
+      section.main.playlist ol li.animate:nth-of-type(156) {
         -webkit-animation-delay: 7.8s;
         -moz-animation-delay: 7.8s;
         animation-delay: 7.8s; }
-      section.main.playlist ol li:nth-child(157) {
+      section.main.playlist ol li.animate:nth-of-type(157) {
         -webkit-animation-delay: 7.85s;
         -moz-animation-delay: 7.85s;
         animation-delay: 7.85s; }
-      section.main.playlist ol li:nth-child(158) {
+      section.main.playlist ol li.animate:nth-of-type(158) {
         -webkit-animation-delay: 7.9s;
         -moz-animation-delay: 7.9s;
         animation-delay: 7.9s; }
-      section.main.playlist ol li:nth-child(159) {
+      section.main.playlist ol li.animate:nth-of-type(159) {
         -webkit-animation-delay: 7.95s;
         -moz-animation-delay: 7.95s;
         animation-delay: 7.95s; }
-      section.main.playlist ol li:nth-child(160) {
+      section.main.playlist ol li.animate:nth-of-type(160) {
         -webkit-animation-delay: 8.0s;
         -moz-animation-delay: 8.0s;
         animation-delay: 8.0s; }
-      section.main.playlist ol li:nth-child(161) {
+      section.main.playlist ol li.animate:nth-of-type(161) {
         -webkit-animation-delay: 8.05s;
         -moz-animation-delay: 8.05s;
         animation-delay: 8.05s; }
-      section.main.playlist ol li:nth-child(162) {
+      section.main.playlist ol li.animate:nth-of-type(162) {
         -webkit-animation-delay: 8.1s;
         -moz-animation-delay: 8.1s;
         animation-delay: 8.1s; }
-      section.main.playlist ol li:nth-child(163) {
+      section.main.playlist ol li.animate:nth-of-type(163) {
         -webkit-animation-delay: 8.15s;
         -moz-animation-delay: 8.15s;
         animation-delay: 8.15s; }
-      section.main.playlist ol li:nth-child(164) {
+      section.main.playlist ol li.animate:nth-of-type(164) {
         -webkit-animation-delay: 8.2s;
         -moz-animation-delay: 8.2s;
         animation-delay: 8.2s; }
-      section.main.playlist ol li:nth-child(165) {
+      section.main.playlist ol li.animate:nth-of-type(165) {
         -webkit-animation-delay: 8.25s;
         -moz-animation-delay: 8.25s;
         animation-delay: 8.25s; }
-      section.main.playlist ol li:nth-child(166) {
+      section.main.playlist ol li.animate:nth-of-type(166) {
         -webkit-animation-delay: 8.3s;
         -moz-animation-delay: 8.3s;
         animation-delay: 8.3s; }
-      section.main.playlist ol li:nth-child(167) {
+      section.main.playlist ol li.animate:nth-of-type(167) {
         -webkit-animation-delay: 8.35s;
         -moz-animation-delay: 8.35s;
         animation-delay: 8.35s; }
-      section.main.playlist ol li:nth-child(168) {
+      section.main.playlist ol li.animate:nth-of-type(168) {
         -webkit-animation-delay: 8.4s;
         -moz-animation-delay: 8.4s;
         animation-delay: 8.4s; }
-      section.main.playlist ol li:nth-child(169) {
+      section.main.playlist ol li.animate:nth-of-type(169) {
         -webkit-animation-delay: 8.45s;
         -moz-animation-delay: 8.45s;
         animation-delay: 8.45s; }
-      section.main.playlist ol li:nth-child(170) {
+      section.main.playlist ol li.animate:nth-of-type(170) {
         -webkit-animation-delay: 8.5s;
         -moz-animation-delay: 8.5s;
         animation-delay: 8.5s; }
-      section.main.playlist ol li:nth-child(171) {
+      section.main.playlist ol li.animate:nth-of-type(171) {
         -webkit-animation-delay: 8.55s;
         -moz-animation-delay: 8.55s;
         animation-delay: 8.55s; }
-      section.main.playlist ol li:nth-child(172) {
+      section.main.playlist ol li.animate:nth-of-type(172) {
         -webkit-animation-delay: 8.6s;
         -moz-animation-delay: 8.6s;
         animation-delay: 8.6s; }
-      section.main.playlist ol li:nth-child(173) {
+      section.main.playlist ol li.animate:nth-of-type(173) {
         -webkit-animation-delay: 8.65s;
         -moz-animation-delay: 8.65s;
         animation-delay: 8.65s; }
-      section.main.playlist ol li:nth-child(174) {
+      section.main.playlist ol li.animate:nth-of-type(174) {
         -webkit-animation-delay: 8.7s;
         -moz-animation-delay: 8.7s;
         animation-delay: 8.7s; }
-      section.main.playlist ol li:nth-child(175) {
+      section.main.playlist ol li.animate:nth-of-type(175) {
         -webkit-animation-delay: 8.75s;
         -moz-animation-delay: 8.75s;
         animation-delay: 8.75s; }
-      section.main.playlist ol li:nth-child(176) {
+      section.main.playlist ol li.animate:nth-of-type(176) {
         -webkit-animation-delay: 8.8s;
         -moz-animation-delay: 8.8s;
         animation-delay: 8.8s; }
-      section.main.playlist ol li:nth-child(177) {
+      section.main.playlist ol li.animate:nth-of-type(177) {
         -webkit-animation-delay: 8.85s;
         -moz-animation-delay: 8.85s;
         animation-delay: 8.85s; }
-      section.main.playlist ol li:nth-child(178) {
+      section.main.playlist ol li.animate:nth-of-type(178) {
         -webkit-animation-delay: 8.9s;
         -moz-animation-delay: 8.9s;
         animation-delay: 8.9s; }
-      section.main.playlist ol li:nth-child(179) {
+      section.main.playlist ol li.animate:nth-of-type(179) {
         -webkit-animation-delay: 8.95s;
         -moz-animation-delay: 8.95s;
         animation-delay: 8.95s; }
-      section.main.playlist ol li:nth-child(180) {
+      section.main.playlist ol li.animate:nth-of-type(180) {
         -webkit-animation-delay: 9.0s;
         -moz-animation-delay: 9.0s;
         animation-delay: 9.0s; }
-      section.main.playlist ol li:nth-child(181) {
+      section.main.playlist ol li.animate:nth-of-type(181) {
         -webkit-animation-delay: 9.05s;
         -moz-animation-delay: 9.05s;
         animation-delay: 9.05s; }
-      section.main.playlist ol li:nth-child(182) {
+      section.main.playlist ol li.animate:nth-of-type(182) {
         -webkit-animation-delay: 9.1s;
         -moz-animation-delay: 9.1s;
         animation-delay: 9.1s; }
-      section.main.playlist ol li:nth-child(183) {
+      section.main.playlist ol li.animate:nth-of-type(183) {
         -webkit-animation-delay: 9.15s;
         -moz-animation-delay: 9.15s;
         animation-delay: 9.15s; }
-      section.main.playlist ol li:nth-child(184) {
+      section.main.playlist ol li.animate:nth-of-type(184) {
         -webkit-animation-delay: 9.2s;
         -moz-animation-delay: 9.2s;
         animation-delay: 9.2s; }
-      section.main.playlist ol li:nth-child(185) {
+      section.main.playlist ol li.animate:nth-of-type(185) {
         -webkit-animation-delay: 9.25s;
         -moz-animation-delay: 9.25s;
         animation-delay: 9.25s; }
-      section.main.playlist ol li:nth-child(186) {
+      section.main.playlist ol li.animate:nth-of-type(186) {
         -webkit-animation-delay: 9.3s;
         -moz-animation-delay: 9.3s;
         animation-delay: 9.3s; }
-      section.main.playlist ol li:nth-child(187) {
+      section.main.playlist ol li.animate:nth-of-type(187) {
         -webkit-animation-delay: 9.35s;
         -moz-animation-delay: 9.35s;
         animation-delay: 9.35s; }
-      section.main.playlist ol li:nth-child(188) {
+      section.main.playlist ol li.animate:nth-of-type(188) {
         -webkit-animation-delay: 9.4s;
         -moz-animation-delay: 9.4s;
         animation-delay: 9.4s; }
-      section.main.playlist ol li:nth-child(189) {
+      section.main.playlist ol li.animate:nth-of-type(189) {
         -webkit-animation-delay: 9.45s;
         -moz-animation-delay: 9.45s;
         animation-delay: 9.45s; }
-      section.main.playlist ol li:nth-child(190) {
+      section.main.playlist ol li.animate:nth-of-type(190) {
         -webkit-animation-delay: 9.5s;
         -moz-animation-delay: 9.5s;
         animation-delay: 9.5s; }
-      section.main.playlist ol li:nth-child(191) {
+      section.main.playlist ol li.animate:nth-of-type(191) {
         -webkit-animation-delay: 9.55s;
         -moz-animation-delay: 9.55s;
         animation-delay: 9.55s; }
-      section.main.playlist ol li:nth-child(192) {
+      section.main.playlist ol li.animate:nth-of-type(192) {
         -webkit-animation-delay: 9.6s;
         -moz-animation-delay: 9.6s;
         animation-delay: 9.6s; }
-      section.main.playlist ol li:nth-child(193) {
+      section.main.playlist ol li.animate:nth-of-type(193) {
         -webkit-animation-delay: 9.65s;
         -moz-animation-delay: 9.65s;
         animation-delay: 9.65s; }
-      section.main.playlist ol li:nth-child(194) {
+      section.main.playlist ol li.animate:nth-of-type(194) {
         -webkit-animation-delay: 9.7s;
         -moz-animation-delay: 9.7s;
         animation-delay: 9.7s; }
-      section.main.playlist ol li:nth-child(195) {
+      section.main.playlist ol li.animate:nth-of-type(195) {
         -webkit-animation-delay: 9.75s;
         -moz-animation-delay: 9.75s;
         animation-delay: 9.75s; }
-      section.main.playlist ol li:nth-child(196) {
+      section.main.playlist ol li.animate:nth-of-type(196) {
         -webkit-animation-delay: 9.8s;
         -moz-animation-delay: 9.8s;
         animation-delay: 9.8s; }
-      section.main.playlist ol li:nth-child(197) {
+      section.main.playlist ol li.animate:nth-of-type(197) {
         -webkit-animation-delay: 9.85s;
         -moz-animation-delay: 9.85s;
         animation-delay: 9.85s; }
-      section.main.playlist ol li:nth-child(198) {
+      section.main.playlist ol li.animate:nth-of-type(198) {
         -webkit-animation-delay: 9.9s;
         -moz-animation-delay: 9.9s;
         animation-delay: 9.9s; }
-      section.main.playlist ol li:nth-child(199) {
+      section.main.playlist ol li.animate:nth-of-type(199) {
         -webkit-animation-delay: 9.95s;
         -moz-animation-delay: 9.95s;
         animation-delay: 9.95s; }
-      section.main.playlist ol li:nth-child(200) {
+      section.main.playlist ol li.animate:nth-of-type(200) {
         -webkit-animation-delay: 10.0s;
         -moz-animation-delay: 10.0s;
         animation-delay: 10.0s; }

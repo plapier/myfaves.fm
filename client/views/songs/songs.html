@@ -1,17 +1,21 @@
 <template name="Songs">
   {{#each Track}}
-  <li class="♫ track not-playing" data-source="{{ source }}" data-collection="{{ collection }}">
-      <a href="#" id="{{_id}}">
-        <span class="playtoggle"></span>
-        <div class="track-title">
-          <span class='artist'>{{ artist }}</span> &ndash; <span class='title'>{{ title }}</span>
-        </div>
-        <div class="progress"></div>
-        <div class="buffer"></div>
-        <audio preload="none">
-          <source src="{{ url }}">
-        </audio>
-      </a>
-    </li>
+    {{> TrackItem}}
   {{/each}}
+</template>
+
+<template name="TrackItem">
+  <li class="♫ track not-playing" data-source="{{ source }}" data-collection="{{ collection }}">
+    <a href="#" id="{{_id}}">
+      <span class="playtoggle"></span>
+      <div class="track-title">
+        <span class='artist'>{{ artist }}</span> &ndash; <span class='title'>{{ title }}</span>
+      </div>
+      <div class="progress"></div>
+      <div class="buffer"></div>
+      <audio preload="none">
+        <source src="{{ url }}">
+      </audio>
+    </a>
+  </li>
 </template>

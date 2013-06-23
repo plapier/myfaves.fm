@@ -55,11 +55,23 @@ section.main.playlist {
       $t: 0.05s;
       $delay: $t;
       @for $child from 1 through 200 {
-        &:nth-child(#{$child}) {
+        &.animate:nth-of-type(#{$child}) {
           @include animation-delay($delay);
           $delay: $delay + $t;
         }
       }
+
+      // &.button {
+        // opacity: 1;
+      // }
+
+      // &.animate {
+        // @extend %animation-show-track;
+      // }
+
+      // &.show {
+        // opacity: 1;
+      // }
 
       a {
         background: $secondary-background;

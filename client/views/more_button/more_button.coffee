@@ -6,14 +6,6 @@ Template.MoreButton.events "click": (events) ->
   FetchMoreHypem()
   FetchMoreSc()
 
-# Template.MoreButton.MoreSpinner = ->
-  # if Songs.find({}).count() >= 1
-    # if Session.equals('exfm_status', 'Fetching...') \
-    # or Session.equals('hypem_status', 'Fetching...') \
-    # or Session.equals('sc_status', 'Fetching...')
-      # true
-
-
 @showButtonSpinner = ->
   opts =
     lines: 16 # The number of lines to draw
