@@ -1,4 +1,4 @@
-Template.MoreButton.events "click": (events) ->
+Template.MoreButton.events "click": (event) ->
   $clickedElement = $(event.currentTarget)
   $clickedElement.find('.text').addClass('hide')
   showButtonSpinner()

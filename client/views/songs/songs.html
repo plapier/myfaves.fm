@@ -2,6 +2,12 @@
   {{#each Track}}
     {{> TrackItem}}
   {{/each}}
+
+  {{#isolate}}
+    {{#if has_data}}
+      {{> MoreButton}}
+    {{/if}}
+  {{/isolate}}
 </template>
 
 <template name="TrackItem">

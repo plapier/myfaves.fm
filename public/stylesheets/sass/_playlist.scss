@@ -40,7 +40,6 @@ section.main.playlist {
     padding: 0;
 
     li {
-      // @extend %animation-show-track;
       padding: 0 10% 40px;
       opacity: 0;
 
@@ -52,21 +51,8 @@ section.main.playlist {
         margin: 20px 5%;
       }
 
-      // $t: 0.05s;
-      // $delay: 0s;
-      // @for $child from 1 through 200 {
-        // &.animate:nth-of-type(#{$child}) {
-          // @include animation-delay($delay);
-          // $delay: $delay + $t;
-        // }
-      // }
-
-      // &.animate {
-        // @extend %animation-show-track;
-      // }
-
-      &.button {
-        opacity: 1;
+      &.button.show {
+        @extend %animation-fade-in;
       }
 
       &.show {

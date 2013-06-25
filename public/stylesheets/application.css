@@ -419,7 +419,7 @@ table {
     transform: scale(1);
     opacity: 1; } }
 
-footer.about.show {
+section.main.playlist ol li.button.show, footer.about.show {
   -webkit-animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   -moz-animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
@@ -864,8 +864,6 @@ section.main.playlist {
       @media screen and (max-width: 480px) {
         section.main.playlist ol li {
           margin: 20px 5%; } }
-      section.main.playlist ol li.button {
-        opacity: 1; }
       section.main.playlist ol li.show {
         opacity: 1; }
       section.main.playlist ol li a {

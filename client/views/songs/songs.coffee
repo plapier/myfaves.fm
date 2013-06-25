@@ -6,8 +6,13 @@ Template.Songs.rendered = ->
   delay = 0
   for track in tracks
     delay_str = "#{delay * 0.0001}s"
-    $(track).css('-webkit-animation', "show-track 0.5s ease-in #{delay_str} forwards")
+    $(track).css('-webkit-animation', "show-track 0.5s ease-in #{delay_str} forwards").css('animation', "show-track 0.5s ease-in #{delay_str} forwards")
     delay = 500 + delay
+
+Template.Songs.has_data = ->
+  db_count = Songs.find({}).count()
+  if db_count >= 1
+    true
 
 Template.TrackItem.rendered = ->
   track = this.find '.loading'
@@ -21,4 +26,3 @@ Template.TrackItem.rendered = ->
   # console.log "created"
 
 # Template.Songs.destroyed = ->
-  # console.log "destroyed"
