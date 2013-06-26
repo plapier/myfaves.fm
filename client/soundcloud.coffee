@@ -69,8 +69,6 @@ class @ScJSONFetcher
     collection = Session.getNonReactive('sc_collection')
     offset     = Session.getNonReactive('sc_offset')
     limit      = Session.getNonReactive('sc_limit')
-    console.log offset
-    console.log limit
     Session.set("sc_status", 'Fetching...')
     Session.set('sc_collection', collection + 1)
     Session.set('sc_offset', offset + limit)
