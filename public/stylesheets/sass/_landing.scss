@@ -14,7 +14,7 @@ section.marketing {
     letter-spacing: -3px;
     font-weight: 600;
     line-height: 1;
-    margin: 0 0 5vh;
+    margin: 0 0 3vh;
     text-align: center;
     $shadow: darken($title-color, 15%);
     text-shadow: 0 1px 0 $shadow, 0 2px 0 $shadow,
@@ -60,7 +60,7 @@ section.marketing {
 
 section.inputs {
   background: $body-background-alt;
-  padding: 7vh $padding-lr 12vh;
+  padding: 5vh $padding-lr 9vh;
 
   h3 {
     margin: 0 auto;

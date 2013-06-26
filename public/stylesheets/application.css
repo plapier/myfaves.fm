@@ -986,7 +986,7 @@ section.marketing {
     letter-spacing: -3px;
     font-weight: 600;
     line-height: 1;
-    margin: 0 0 5vh;
+    margin: 0 0 3vh;
     text-align: center;
     text-shadow: 0 1px 0 #117964, 0 2px 0 #117964, 0 3px 0 #117964, 0 4px 0 #117964; }
     @media screen and (max-width: 768px) {
@@ -1016,7 +1016,7 @@ section.marketing {
 
 section.inputs {
   background: #34495e;
-  padding: 7vh 5vw 12vh; }
+  padding: 5vh 5vw 9vh; }
   section.inputs h3 {
     margin: 0 auto;
     color: #fff;
