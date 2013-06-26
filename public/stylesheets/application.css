@@ -693,13 +693,10 @@ header.playlist-header {
     border-radius: 50px;
     width: 30px;
     height: 30px;
-    opacity: 0;
     text-decoration: none;
     -webkit-transition: all 0.15s ease-out 0;
     -moz-transition: all 0.15s ease-out 0;
     transition: all 0.15s ease-out 0; }
-  header.playlist-header:hover #about-button {
-    opacity: 1; }
   header.playlist-header div.user-info {
     position: relative; }
     header.playlist-header div.user-info input {
@@ -1147,13 +1144,6 @@ section.notices {
     section.notices div:last-child, section.notices div:only-child {
       border-radius: 0 0 8px 8px; }
 
-a#modal-button {
-  color: rgba(255, 255, 255, 0.25);
-  display: block;
-  font-size: 18px;
-  padding: 10px 32px 14px;
-  text-decoration: none; }
-
 footer.about {
   background: rgba(0, 0, 0, 0.45);
   font-size: 10px;
@@ -1162,7 +1152,6 @@ footer.about {
   visibility: hidden;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
-  -ms-perspective: 800px;
   perspective: 800px;
   width: 100%;
   z-index: 2; }
@@ -1176,48 +1165,62 @@ footer.about {
     border-radius: 10px;
     box-shadow: 0 5px 0 #ab3326;
     color: rgba(255, 255, 255, 0.75);
-    height: 300px;
-    left: -webkit-calc(50% - 200px );
-    left: calc(50% - 200px );
-    padding: 40px 30px;
+    height: 400px;
+    left: -webkit-calc(50% - 250px );
+    left: calc(50% - 250px );
+    top: -webkit-calc(45% - 200px );
+    top: calc(45% - 200px );
     position: absolute;
-    top: -webkit-calc(45% - 150px );
-    top: calc(45% - 150px );
-    width: 400px; }
+    width: 500px; }
     footer.about .inner-wrapper a {
       color: #fff;
       text-decoration: none; }
       footer.about .inner-wrapper a:hover {
         text-decoration: underline; }
-  footer.about div.avatar {
-    margin-bottom: 40px;
-    text-align: center; }
-    footer.about div.avatar img {
+  footer.about header, footer.about section, footer.about footer {
+    padding: 40px 30px; }
+  footer.about header.avatar {
+    text-align: center;
+    padding-bottom: 0; }
+    footer.about header.avatar img {
       border-radius: 100px;
       box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.07);
       display: inline-block;
       height: 100px;
       margin: 0 auto;
       width: 100px; }
+    footer.about header.avatar a:hover {
+      text-decoration: none; }
+    footer.about header.avatar a h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 1.2em; }
   footer.about section.about {
-    text-align: center; }
+    text-align: center;
+    border-bottom: 2px solid rgba(192, 57, 43, 0.4);
+    padding-top: 20px;
+    padding-bottom: 25px; }
     footer.about section.about h3 {
       font-weight: 400;
       font-size: 13px; }
-    footer.about section.about div.social {
-      margin-bottom: 40px; }
-      footer.about section.about div.social a {
-        background: #ECF0F1;
-        border-radius: 3px;
-        box-shadow: 0 3px 0 #BDC3C7;
-        color: #7F8C8D;
-        display: inline-block;
-        font-size: 13px;
-        font-weight: bold;
-        padding: 5px 10px;
-        text-decoration: none; }
-      footer.about section.about div.social iframe {
-        display: block;
-        margin: 10px auto; }
+    footer.about section.about div.social a {
+      background: #ECF0F1;
+      border-radius: 3px;
+      box-shadow: 0 3px 0 #BDC3C7;
+      color: #7F8C8D;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 5px 10px;
+      text-decoration: none; }
+    footer.about section.about div.social iframe {
+      margin: 10px auto; }
+  footer.about footer {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    text-align: center; }
+    footer.about footer p {
+      margin: 0.5em 0; }
 
 /*# sourceMappingURL=application.css.map */

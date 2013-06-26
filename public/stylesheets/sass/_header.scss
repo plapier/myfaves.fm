@@ -41,16 +41,16 @@ header.playlist-header {
     border-radius: 50px;
     width: 30px;
     height: 30px;
-    opacity: 0;
+    // opacity: 0;
     text-decoration: none;
     @include transition;
   }
 
-  &:hover {
-    #about-button {
-      opacity: 1;
-    }
-  }
+  // &:hover {
+    // #about-button {
+      // opacity: 1;
+    // }
+  // }
 
   div.user-info {
     position: relative;
