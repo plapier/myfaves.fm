@@ -7,8 +7,10 @@ Setup
 ==========
 Install meteor.
 
-From Root
+From project root
+
     $ meteor
 
 From /public
+
     $ sass --watch stylesheets/sass:stylesheets'
