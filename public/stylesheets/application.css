@@ -753,12 +753,7 @@ div.shortcuts {
   bottom: 0;
   margin-left: 32px;
   padding-bottom: 20px;
-  position: fixed;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9); }
+  position: fixed; }
   div.shortcuts:hover span {
     opacity: 1; }
   @media screen and (max-width: 768px) {
