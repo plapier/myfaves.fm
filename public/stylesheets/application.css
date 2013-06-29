@@ -1021,9 +1021,19 @@ section.inputs {
     margin: 0 auto;
     color: #fff;
     font-size: 2.0em;
-    margin-bottom: 1em;
+    margin-bottom: 0.2em;
     font-weight: 500;
     text-align: center; }
+  section.inputs h4 {
+    color: rgba(236, 240, 241, 0.8);
+    font-weight: 500;
+    margin-bottom: 2em;
+    margin-top: 0;
+    text-align: center; }
+    section.inputs h4 a {
+      color: rgba(236, 240, 241, 0.55); }
+      section.inputs h4 a:hover {
+        color: #1abc9c; }
   section.inputs form {
     margin: 0 auto;
     width: 50vw; }
