@@ -7,8 +7,7 @@ Template.Landing.events "click #submit": (event) ->
   UsernameSetter('sc', $sc_username)
 
 Template.Landing.events "click #demo": (event) ->
-  console.log "fired"
   UsernameSetter('exfm', 'plapier')
-  UsernameSetter('sc', 'natural-satellite')
+  UsernameSetter('hypem', 'phillapier')
 
 
