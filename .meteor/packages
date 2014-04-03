@@ -5,6 +5,7 @@
 
 autopublish
 insecure
-preserve-inputs
 coffeescript
 http
+standard-app-packages
+jquery-scrollintoview

@@ -40,13 +40,12 @@
   {{> AboutModal}}
   <section class="main playlist">
     {{> flashes}}
-    {{#isolate}}
-      {{#if empty_database}}
-        {{> Spinner}}
-      {{/if}}
-    {{/isolate}}
-    <ol id="tracks">
-      {{> Songs}}
-    </ol>
+    {{#if empty_database}}
+      {{> Spinner}}
+    {{else}}
+      <ol id="tracks" domflag>
+        {{> Songs}}
+      </ol>
+    {{/if}}
   </section>
 </template>

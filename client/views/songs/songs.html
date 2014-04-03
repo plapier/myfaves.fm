@@ -3,11 +3,9 @@
     {{> TrackItem}}
   {{/each}}
 
-  {{#isolate}}
-    {{#if has_data}}
-      {{> MoreButton}}
-    {{/if}}
-  {{/isolate}}
+  {{#if has_data}}
+    {{> MoreButton}}
+  {{/if}}
 </template>
 
 <template name="TrackItem">
