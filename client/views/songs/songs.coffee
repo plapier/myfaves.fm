@@ -6,7 +6,6 @@ Template.Songs.rendered = ->
   delay = 0
   for track in tracks
     delay_str = "#{delay * 0.0001}s"
-    console.log $(track)
     $(track).css('-webkit-animation', "show-track 0.5s ease-in #{delay_str} forwards").css('animation', "show-track 0.5s ease-in #{delay_str} forwards")
     delay = 500 + delay
 
