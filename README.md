@@ -14,3 +14,7 @@ From project root
 From /public
 
     $ sass --watch stylesheets/sass:stylesheets'
+
+Deploying with heroku:
+  The heroku-buildpack is needed
+  https://github.com/oortcloud/heroku-buildpack-meteorite
