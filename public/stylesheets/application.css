@@ -346,7 +346,6 @@ table {
   100% {
     -webkit-transform: scale(4);
     opacity: 0; } }
-
 @-moz-keyframes show-alert {
   0% {
     -moz-transform: scale(0);
@@ -358,7 +357,6 @@ table {
   100% {
     -moz-transform: scale(4);
     opacity: 0; } }
-
 @-o-keyframes show-alert {
   0% {
     -o-transform: scale(0);
@@ -370,7 +368,6 @@ table {
   100% {
     -o-transform: scale(4);
     opacity: 0; } }
-
 @keyframes show-alert {
   0% {
     transform: scale(0);
@@ -382,7 +379,6 @@ table {
   100% {
     transform: scale(4);
     opacity: 0; } }
-
 @-webkit-keyframes show-track {
   0% {
     -webkit-transform: scale(0.9);
@@ -391,7 +387,6 @@ table {
   100% {
     -webkit-transform: scale(1);
     opacity: 1; } }
-
 @-moz-keyframes show-track {
   0% {
     -moz-transform: scale(0.9);
@@ -400,7 +395,6 @@ table {
   100% {
     -moz-transform: scale(1);
     opacity: 1; } }
-
 @-o-keyframes show-track {
   0% {
     -o-transform: scale(0.9);
@@ -409,7 +403,6 @@ table {
   100% {
     -o-transform: scale(1);
     opacity: 1; } }
-
 @keyframes show-track {
   0% {
     transform: scale(0.9);
@@ -418,7 +411,6 @@ table {
   100% {
     transform: scale(1);
     opacity: 1; } }
-
 section.main.playlist ol li.button.show, footer.about.show {
   -webkit-animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   -moz-animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -430,28 +422,24 @@ section.main.playlist ol li.button.show, footer.about.show {
 
   to {
     opacity: 1; } }
-
 @-moz-keyframes fade-in {
   from {
     opacity: 0; }
 
   to {
     opacity: 1; } }
-
 @-o-keyframes fade-in {
   from {
     opacity: 0; }
 
   to {
     opacity: 1; } }
-
 @keyframes fade-in {
   from {
     opacity: 0; }
 
   to {
     opacity: 1; } }
-
 footer.about.show .inner-wrapper {
   -webkit-animation: show-modal 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   -moz-animation: show-modal 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -472,7 +460,6 @@ footer.about.show .inner-wrapper {
   100% {
     -webkit-transform: rotateX(0deg);
     box-shadow: 0 7px 0 #ab3326; } }
-
 @-moz-keyframes show-modal {
   0% {
     -moz-transform: rotateX(-40deg);
@@ -481,7 +468,6 @@ footer.about.show .inner-wrapper {
   100% {
     -moz-transform: rotateX(0deg);
     box-shadow: 0 7px 0 #ab3326; } }
-
 @-o-keyframes show-modal {
   0% {
     -o-transform: rotateX(-40deg);
@@ -490,7 +476,6 @@ footer.about.show .inner-wrapper {
   100% {
     -o-transform: rotateX(0deg);
     box-shadow: 0 7px 0 #ab3326; } }
-
 @keyframes show-modal {
   0% {
     transform: rotateX(-40deg);
@@ -499,7 +484,6 @@ footer.about.show .inner-wrapper {
   100% {
     transform: rotateX(0deg);
     box-shadow: 0 7px 0 #ab3326; } }
-
 footer.about.hide {
   -webkit-animation: fade-out 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   -moz-animation: fade-out 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -512,7 +496,6 @@ footer.about.hide {
   100% {
     background: transparent;
     visibility: hidden; } }
-
 @-moz-keyframes fade-out {
   0% {
     background: rgba(0, 0, 0, 0.45); }
@@ -520,7 +503,6 @@ footer.about.hide {
   100% {
     background: transparent;
     visibility: hidden; } }
-
 @-o-keyframes fade-out {
   0% {
     background: rgba(0, 0, 0, 0.45); }
@@ -528,7 +510,6 @@ footer.about.hide {
   100% {
     background: transparent;
     visibility: hidden; } }
-
 @keyframes fade-out {
   0% {
     background: rgba(0, 0, 0, 0.45); }
@@ -536,7 +517,6 @@ footer.about.hide {
   100% {
     background: transparent;
     visibility: hidden; } }
-
 footer.about.hide .inner-wrapper {
   -webkit-animation: hide-modal 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
   -moz-animation: hide-modal 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
@@ -560,7 +540,6 @@ footer.about.hide .inner-wrapper {
   100% {
     -webkit-transform: translateY(100px);
     opacity: 0; } }
-
 @-moz-keyframes hide-modal {
   0% {
     -moz-transform: translateY(0px);
@@ -572,7 +551,6 @@ footer.about.hide .inner-wrapper {
   100% {
     -moz-transform: translateY(100px);
     opacity: 0; } }
-
 @-o-keyframes hide-modal {
   0% {
     -o-transform: translateY(0px);
@@ -584,7 +562,6 @@ footer.about.hide .inner-wrapper {
   100% {
     -o-transform: translateY(100px);
     opacity: 0; } }
-
 @keyframes hide-modal {
   0% {
     transform: translateY(0px);
@@ -596,7 +573,6 @@ footer.about.hide .inner-wrapper {
   100% {
     transform: translateY(100px);
     opacity: 0; } }
-
 button.load-more div.spinner {
   -webkit-animation: spinner-zoom-in 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   -moz-animation: spinner-zoom-in 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
@@ -613,28 +589,24 @@ button.load-more div.spinner {
 
   100% {
     -webkit-transform: scale(1); } }
-
 @-moz-keyframes spinner-zoom-in {
   0% {
     -moz-transform: scale(0); }
 
   100% {
     -moz-transform: scale(1); } }
-
 @-o-keyframes spinner-zoom-in {
   0% {
     -o-transform: scale(0); }
 
   100% {
     -o-transform: scale(1); } }
-
 @keyframes spinner-zoom-in {
   0% {
     transform: scale(0); }
 
   100% {
     transform: scale(1); } }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -972,6 +944,11 @@ button.load-more {
       -o-transform: scale(0);
       transform: scale(0); }
 
+section.notices.landing {
+  margin: 0; }
+  section.notices.landing div:only-child {
+    border-radius: 0; }
+
 section.marketing {
   padding: 5vh 5vw 8vh; }
   section.marketing h1 {
@@ -1048,6 +1025,8 @@ section.inputs {
     section.inputs input:focus, section.inputs input:active {
       box-shadow: 0;
       outline: none; }
+    section.inputs input:disabled {
+      cursor: not-allowed; }
   section.inputs button {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1227,5 +1206,3 @@ footer.about {
     text-align: center; }
     footer.about footer p {
       margin: 0.5em 0; }
-
-/*# sourceMappingURL=application.css.map */

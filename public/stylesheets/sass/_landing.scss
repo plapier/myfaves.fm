@@ -4,6 +4,14 @@
 $max-width: 700px;
 $padding-lr: 5vw;
 
+section.notices.landing {
+  margin: 0;
+
+  div:only-child {
+    border-radius: 0;
+  }
+}
+
 section.marketing {
   padding: 5vh $padding-lr 8vh;
 
@@ -110,6 +118,10 @@ section.inputs {
     &:focus, &:active {
       box-shadow: 0;
       outline: none;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
     }
   }
 
