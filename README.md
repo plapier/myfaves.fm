@@ -11,9 +11,9 @@ From project root
 
     $ meteor
 
-From /public
+Compile Sass
 
-    $ sass --watch stylesheets/sass:stylesheets'
+    $ sass --watch public/stylesheets/sass:public/stylesheets/
 
 Deploying with heroku:
   The heroku-buildpack is needed
