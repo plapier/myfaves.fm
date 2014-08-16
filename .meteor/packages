@@ -8,3 +8,6 @@ insecure
 coffeescript
 http
 standard-app-packages
+scss
+bourbon
+neat
