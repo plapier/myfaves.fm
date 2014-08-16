@@ -1,7 +1,27 @@
 {
   "meteor": {},
   "dependencies": {
-    "basePackages": {},
-    "packages": {}
+    "basePackages": {
+      "scss": {},
+      "bourbon": {},
+      "neat": {}
+    },
+    "packages": {
+      "scss": {
+        "git": "https://github.com/fourseven/meteor-scss.git",
+        "tag": "v0.9.3",
+        "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
+      },
+      "bourbon": {
+        "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
+        "tag": "v3.1.8.1",
+        "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
+      },
+      "neat": {
+        "git": "https://github.com/chicagogrooves/meteor-neat.git",
+        "tag": "v1.5.0",
+        "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
+      }
+    }
   }
 }

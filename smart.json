@@ -1,4 +1,7 @@
 {
   "packages": {
+    "scss": {},
+    "bourbon": {},
+    "neat": {}
   }
 }
